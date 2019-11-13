@@ -1754,6 +1754,8 @@ exports.tests = [
     ie11: false,
     firefox10: false,
     firefox52: false,
+    firefox71: false,
+    firefox72: true,
     chrome77: false,
     chrome78: {val: 'flagged', note_id: "chrome-nullish", note_html: "The feature have to be enabled via <code>--js-flags=\"--harmony-nullish\"</code> flag"},
     safaritp: {val: 'flagged', note_id: "safari-nullish"},
