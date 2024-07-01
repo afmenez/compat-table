@@ -381,6 +381,12 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers',
+          note_html: 'The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.iterator_helpers</code> setting under <code>about:config</code>.'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -405,6 +411,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -430,6 +441,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -460,6 +476,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -503,6 +524,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -525,6 +551,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -547,6 +578,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -569,6 +605,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -591,6 +632,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -615,6 +661,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -637,6 +688,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -659,6 +715,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -681,6 +742,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -703,6 +769,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -726,6 +797,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -748,6 +824,11 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
         chrome77: false,
         chrome126: true,
         duktape2_0: false,
@@ -757,6 +838,14 @@ exports.tests = [
         rhino1_7_13: false
       }
     },
+  ]
+},
+{
+  name: 'Async Iterator Helpers',
+  category: STAGE2,
+  significance: 'large',
+  spec: 'https://github.com/tc39/proposal-async-iterator-helpers',
+  subtests: [
     {
       name: 'instanceof AsyncIterator',
       exec: function () {/*
@@ -770,6 +859,16 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers',
+          note_html: 'The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.async_iterator_helpers</code> setting under <code>about:config</code>.'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -793,6 +892,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -921,6 +1029,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -950,6 +1067,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -973,6 +1099,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1002,6 +1137,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1025,6 +1169,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1054,6 +1207,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1078,6 +1240,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1107,6 +1278,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1130,6 +1310,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1153,6 +1342,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1182,6 +1380,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
@@ -1205,6 +1412,15 @@ exports.tests = [
         ie11: false,
         firefox10: false,
         firefox60: false,
+        firefox116: false,
+        firefox117: {
+          val: 'flagged',
+          note_id: 'ff-iterator-helpers'
+        },
+        firefox128: {
+          val: 'flagged',
+          note_id: 'ff-async-iterator-helpers'
+        },
         chrome77: false,
         duktape2_0: false,
         graalvm21_3_3: false,
