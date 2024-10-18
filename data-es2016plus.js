@@ -8331,15 +8331,27 @@ exports.tests = [
     spec: 'https://github.com/tc39/proposal-promise-try',
     mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try',
     exec: function () {/*
+      if (!('try' in Promise)) {
+        return false;
+      }
       var called = false;
       var argsMatch = false;
       var p = Promise.try(function () { called = true; })
       var p2 = Promise.try(function () {
         'use strict';
-        argsMatch = this === undefined && arguments.length === 2 && args[0] === p && args[1] === 2;
-      }, [p, 2]);
+        argsMatch = this === undefined && arguments.length === 2 && arguments[0] === p && arguments[1] === 2;
+      }, p, 2);
 
-      return p instanceof Promise && called && argsMatch;
+      if (!(p instanceof Promise) || !(p2 instanceof Promise)) {
+        return false;
+      }
+
+      p2.then(function () {
+        if (!called || !argsMatch) {
+          return;
+        }
+        asyncTestPassed();
+      });
     */},
     res: {
       ie11: false,
