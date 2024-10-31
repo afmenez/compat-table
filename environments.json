@@ -1051,7 +1051,7 @@
     "short": "IE 8",
     "release": "2009-03-19",
     "retire": "2016-01-12",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "esintl",
@@ -1064,7 +1064,7 @@
     "short": "IE 9",
     "release": "2011-03-14",
     "retire": "2016-01-12",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "esintl",
@@ -1077,7 +1077,7 @@
     "short": "IE 10",
     "release": "2012-10-26",
     "retire": "2016-01-12",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -1090,7 +1090,8 @@
     "family": "Chakra",
     "short": "IE 11",
     "release": "2013-10-17",
-    "obsolete": false,
+    "retire": "2022-06-15",
+    "obsolete": true,
     "test_suites": [
       "es5",
       "es6",
@@ -3454,7 +3455,7 @@
     "release": "2018-10-02",
     "retire": "2021-03-09",
     "short": "Edge 18",
-    "obsolete": true
+    "obsolete": "very"
   },
   "edge79": {
     "full": "Microsoft Edge 79",
