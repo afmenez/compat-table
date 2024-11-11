@@ -6261,7 +6261,7 @@
     "short": "JrS 1.0",
     "platformtype": "engine",
     "release": "2016-09-02",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6"
@@ -6273,7 +6273,7 @@
     "short": "JrS 2.0",
     "platformtype": "engine",
     "release": "2019-08-01",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6"
@@ -6285,7 +6285,7 @@
     "short": "JrS 2.1.0",
     "platformtype": "engine",
     "release": "2019-10-16",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6"
@@ -6297,7 +6297,7 @@
     "short": "JrS 2.2.0",
     "platformtype": "engine",
     "release": "2020-02-11",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6"
@@ -6322,6 +6322,19 @@
     "short": "JrS 2.4.0",
     "platformtype": "engine",
     "release": "2021-01-22",
+    "obsolete": true,
+    "test_suites": [
+      "es5",
+      "es6",
+      "es2016plus"
+    ]
+  },
+  "jerryscript3_0_0": {
+    "full": "JerryScript 3.0.0",
+    "family": "JerryScript",
+    "short": "JrS 3.0.0",
+    "platformtype": "engine",
+    "release": "2024-12-18",
     "obsolete": false,
     "test_suites": [
       "es5",

@@ -43,4 +43,4 @@ function jerryRunner(testFilename) {
     }
 }
 
-runner_support.runTests(jerryRunner, jerryKey, 'JerryScript', { suites: suites });
+runner_support.runTests(jerryRunner, jerryKey, 'JerryScript', { suites: suites, logCommand: 'print' });

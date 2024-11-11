@@ -975,6 +975,7 @@ exports.tests = [
         safari15: true,
         graalvm21_3_3: true,
         hermes0_7_0: true,
+        jerryscript3_0_0: true,
         reactnative0_70_3: true,
         rhino1_7_15: true,
       }
@@ -1082,6 +1083,7 @@ exports.tests = [
       opera11: true,
       graalvm21_3_3: true,
       hermes0_7_0: true,
+      jerryscript3_0_0: true,
       reactnative0_70_3: true,
       rhino1_7_15: true,
     }
@@ -1432,6 +1434,7 @@ exports.tests = [
       duktape2_0: true,
       graalvm21_3_3: true,
       hermes0_7_0: true,
+      jerryscript3_0_0: false,
       reactnative0_70_3: true,
       rhino1_7_14: true,
     }
@@ -1465,6 +1468,7 @@ exports.tests = [
       duktape2_0: true,
       graalvm21_3_3: true,
       hermes0_7_0: true,
+      jerryscript3_0_0: true,
       reactnative0_70_3: true,
       rhino1_7_14: true,
     }
@@ -1493,6 +1497,7 @@ exports.tests = [
       duktape2_0: true,
       graalvm21_3_3: true,
       hermes0_7_0: true,
+      jerryscript3_0_0: true,
       reactnative0_70_3: true,
       rhino1_7_14: true,
     }
