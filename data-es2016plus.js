@@ -8343,6 +8343,7 @@ exports.tests = [
         note_id: 'ff-promise-try',
         note_html: 'The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.promise_try</code> setting under <code>about:config</code>.'
       },
+      firefox134: true,
       node23: true,
     }
   }
