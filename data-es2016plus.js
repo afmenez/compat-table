@@ -3866,7 +3866,7 @@ exports.tests = [
     subtests: [{
       name: 'functions created with the Function constructor',
       exec: function () {/*
-        var fn = function ('a', ' /\x2A a \x2A/ b, c /\x2A b \x2A/ //', '/\x2A c \x2A/ ; /\x2A d \x2A/ //');
+        var fn = Function ('a', ' /\x2A a \x2A/ b, c /\x2A b \x2A/ //', '/\x2A c \x2A/ ; /\x2A d \x2A/ //');
         var str = 'function anonymous(a, /\x2A a \x2A/ b, c /\x2A b \x2A/ //\n) {\n/\x2A c \x2A/ ; /\x2A d \x2A/ //\n}';
         return fn + '' === str;
     */},
