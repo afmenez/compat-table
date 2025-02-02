@@ -5167,13 +5167,69 @@
     "short": "OP 112",
     "unstable": true
   },
+  "rhino1_7_6": {
+    "full": "Rhino 1.7.6",
+    "short": "Rhino 1.7.6",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2015-04-15",
+    "obsolete": "very"
+  },
+  "rhino1_7_7": {
+    "full": "Rhino 1.7.7",
+    "short": "Rhino 1.7.7",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2015-06-17",
+    "obsolete": "very"
+  },
+  "rhino1_7_8": {
+    "full": "Rhino 1.7.8",
+    "short": "Rhino 1.7.8",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2018-01-22",
+    "obsolete": "very"
+  },
+  "rhino1_7_9": {
+    "full": "Rhino 1.7.9",
+    "short": "Rhino 1.7.9",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2018-03-15",
+    "obsolete": "very"
+  },
+  "rhino1_7_10": {
+    "full": "Rhino 1.7.10",
+    "short": "Rhino 1.7.10",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2019-05-20",
+    "obsolete": "very"
+  },
+  "rhino1_7_11": {
+    "full": "Rhino 1.7.11",
+    "short": "Rhino 1.7.11",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2019-05-30",
+    "obsolete": "very"
+  },
+  "rhino1_7_12": {
+    "full": "Rhino 1.7.12",
+    "short": "Rhino 1.7.12",
+    "family": "Rhino",
+    "platformtype": "engine",
+    "release": "2020-01-12",
+    "obsolete": "very"
+  },
   "rhino1_7_13": {
     "full": "Rhino 1.7.13",
     "short": "Rhino 1.7.13",
     "family": "Rhino",
     "platformtype": "engine",
     "release": "2020-09-02",
-    "obsolete": true
+    "obsolete": "very"
   },
   "rhino1_7_14": {
     "full": "Rhino 1.7.14",
@@ -5181,7 +5237,7 @@
     "family": "Rhino",
     "platformtype": "engine",
     "release": "2022-01-06",
-    "obsolete": true
+    "obsolete": "very"
   },
   "rhino1_7_15": {
     "full": "Rhino 1.7.15",
