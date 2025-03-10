@@ -2,7 +2,7 @@ var common = require('./data-common');
 
 var babel = common.babel;
 var typescript = common.typescript;
-var firefox = common.firefox;
+// var firefox = common.firefox;
 // var graalvm = common.graalvm;
 
 exports.name = 'ES Next';
@@ -941,26 +941,6 @@ exports.tests = [
       }
     }
   ]
-},
-{
-  name: 'RegExp Escaping',
-  category: STAGE3,
-  significance: 'medium',
-  spec: 'https://github.com/tc39/proposal-regex-escaping',
-  mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape',
-  exec: function () {/*
-    return RegExp.escape("The Quick Brown Fox") === "\\x54he\\x20Quick\\x20Brown\\x20Fox" &&
-      RegExp.escape("(*.*)") === "\\(\\*\\.\\*\\)" &&
-      RegExp.escape("｡^･ｪ･^｡") === "｡\\^･ｪ･\\^｡" &&
-      RegExp.escape("\\d \\D (?:)") === "\\\\d\\x20\\\\D\\x20\\(\\?\\x3a\\)";
-  */},
-  res: {
-    chrome129: false,
-    firefox115: false,
-    firefox130: false,
-    firefox131: firefox.nightly,
-    firefox134: true,
-  }
 },
 {
   name: 'Uint8Array to/from base64 and hex',
