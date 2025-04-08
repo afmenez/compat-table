@@ -7770,7 +7770,7 @@
     "short": "Samsung 1",
     "platformtype": "mobile",
     "equals": "chrome18",
-    "release": "2013-09-25",
+    "release": "2013-04-27",
     "obsolete": "very"
   },
   "samsung1_5": {
@@ -7948,7 +7948,7 @@
     "platformtype": "mobile",
     "equals": "chrome102",
     "release": "2022-11-01",
-    "obsolete": true
+    "obsolete": "very"
   },
   "samsung20": {
     "full": "Samsung Internet for Android 20",
@@ -7957,7 +7957,7 @@
     "platformtype": "mobile",
     "equals": "chrome106",
     "release": "2023-02-10",
-    "obsolete": true
+    "obsolete": "very"
   },
   "samsung21": {
     "full": "Samsung Internet for Android 21",
@@ -7966,7 +7966,7 @@
     "platformtype": "mobile",
     "equals": "chrome110",
     "release": "2023-05-19",
-    "obsolete": true
+    "obsolete": "very"
   },
   "samsung22": {
     "full": "Samsung Internet for Android 22",
@@ -7975,6 +7975,51 @@
     "platformtype": "mobile",
     "equals": "chrome111",
     "release": "2023-07-14",
+    "obsolete": "very"
+  },
+  "samsung23": {
+    "full": "Samsung Internet for Android 23",
+    "family": "Samsung",
+    "short": "Samsung 23",
+    "platformtype": "mobile",
+    "equals": "chrome115",
+    "release": "2023-10-18",
+    "obsolete": "very"
+  },
+  "samsung24": {
+    "full": "Samsung Internet for Android 24",
+    "family": "Samsung",
+    "short": "Samsung 24",
+    "platformtype": "mobile",
+    "equals": "chrome117",
+    "release": "2024-01-25",
+    "obsolete": true
+  },
+  "samsung25": {
+    "full": "Samsung Internet for Android 25",
+    "family": "Samsung",
+    "short": "Samsung 25",
+    "platformtype": "mobile",
+    "equals": "chrome121",
+    "release": "2024-04-24",
+    "obsolete": true
+  },
+  "samsung26": {
+    "full": "Samsung Internet for Android 26",
+    "family": "Samsung",
+    "short": "Samsung 26",
+    "platformtype": "mobile",
+    "equals": "chrome122",
+    "release": "2024-06-07",
+    "obsolete": true
+  },
+  "samsung27": {
+    "full": "Samsung Internet for Android 27",
+    "family": "Samsung",
+    "short": "Samsung 27",
+    "platformtype": "mobile",
+    "equals": "chrome125",
+    "release": "2024-11-06",
     "obsolete": false
   },
   "opera_mobile10_1": {
