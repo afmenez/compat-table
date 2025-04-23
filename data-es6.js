@@ -6618,6 +6618,24 @@ exports.tests = [
         rhino1_7_13: false,
         rhino1_7_14: true,
       }
+    },
+    {
+      name: 'arbitrary escape sequences in tagged template literals',
+      exec: function() {/*
+        function strings(array) {
+          return array;
+        }
+        var str = strings`\1\xz\uz\u{110000}\u{z}`;
+        return str.length === 1 && str[0] === undefined && str.raw.length === 1 && str.raw[0]==="\\1\\xz\\uz\\u{110000}\\u{z}"
+      */},
+      res: {
+        chrome62: true,
+        edge79: true,
+        firefox53: true,
+        opera49: true,
+        safari11: true,
+        node8_10: true,
+      }
     }
   ],
 },
