@@ -3583,6 +3583,7 @@ exports.tests = [
           firefox134: true,
           safari17_6: false,
           safari18: false,
+          safari18_4: true,
           jerryscript3_0_0: false,
           rhino1_8_0: false
         }
@@ -7517,6 +7518,7 @@ exports.tests = [
           firefox133: false,
           firefox134: true,
           safari17_6: false,
+          safari18_4: true,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
