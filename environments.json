@@ -4328,28 +4328,28 @@
     "family": "JavaScriptCore",
     "short": "SF&nbsp;16.6",
     "release": "2023-07-24",
-    "obsolete": true
+    "obsolete": "very"
   },
   "safari17": {
     "full": "Safari 17",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;17.0",
     "release": "2023-09-26",
-    "obsolete": true
+    "obsolete": "very"
   },
   "safari17_1": {
     "full": "Safari 17.1",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;17.1",
     "release": "2023-10-25",
-    "obsolete": true
+    "obsolete": "very"
   },
   "safari17_2": {
     "full": "Safari 17.2",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;17.2",
     "release": "2023-12-11",
-    "obsolete": true
+    "obsolete": "very"
   },
   "safari17_3": {
     "full": "Safari 17.3",
@@ -4377,13 +4377,41 @@
     "family": "JavaScriptCore",
     "short": "SF&nbsp;17.6",
     "release": "2024-07-29",
-    "obsolete": false
+    "obsolete": true
   },
   "safari18": {
     "full": "Safari 18",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;18",
     "release": "2024-09-16",
+    "obsolete": true
+  },
+  "safari18_1": {
+    "full": "Safari 18.1",
+    "family": "JavaScriptCore",
+    "short": "SF&nbsp;18.1",
+    "release": "2024-10-28",
+    "obsolete": true
+  },
+  "safari18_2": {
+    "full": "Safari 18.2",
+    "family": "JavaScriptCore",
+    "short": "SF&nbsp;18.2",
+    "release": "2024-12-11",
+    "obsolete": false
+  },
+  "safari18_3": {
+    "full": "Safari 18.3",
+    "family": "JavaScriptCore",
+    "short": "SF&nbsp;18.3",
+    "release": "2025-01-27",
+    "obsolete": false
+  },
+  "safari18_4": {
+    "full": "Safari 18.4",
+    "family": "JavaScriptCore",
+    "short": "SF&nbsp;18.4",
+    "release": "2025-03-31",
     "obsolete": false
   },
   "safaritp": {
