@@ -3,12 +3,9 @@
 ## Maintainers
 
 The current maintainers are:
- 
+
  - [@chicoxyzzy](https://github.com/chicoxyzzy)
- - [@kangax](https://github.com/kangax)
  - [@ljharb](https://github.com/ljharb)
- - [@webbedspace](https://github.com/webbedspace)
- - [@zloirock](https://github.com/zloirock)
 
 To become a maintainer, an existing maintainer must privately nominate you to the other maintainers.
 Within 2 weeks, if [a majority of maintainers have explicitly approved and zero maintainers have rejected the nomination](#decisions), it will pass.
@@ -21,7 +18,11 @@ If after that time, they have reviewed or commented on one or more PRs, the PR w
 
 ### Emeritus
 
-This section is a list of maintainers that are no longer active: (Currently empty)
+This section is a list of maintainers that are no longer active:
+
+ - [@kangax](https://github.com/kangax)
+ - [@webbedspace](https://github.com/webbedspace)
+ - [@zloirock](https://github.com/zloirock)
 
 ### Permissions
 
