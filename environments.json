@@ -4418,7 +4418,8 @@
     "full": "Safari 18.5 beta",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;18.5",
-    "unstable": true
+    "release": "2025-05-12",
+    "obsolete": false
   },
   "safaritp": {
     "full": "Safari Technology Preview 217",
@@ -6181,7 +6182,7 @@
   "node22_0": {
     "full": "Node.js",
     "family": "Node.js",
-    "short": "Node &gt;=22",
+    "short": "Node &gt;=22 &lt;23",
     "platformtype": "engine",
     "equals": "chrome124",
     "release": "2024-04-24",
@@ -6198,7 +6199,7 @@
   "node23_0": {
     "full": "Node.js",
     "family": "Node.js",
-    "short": "Node &gt;=23",
+    "short": "Node &gt;=23 &lt;24",
     "platformtype": "engine",
     "equals": "chrome129",
     "release": "2024-10-16",
