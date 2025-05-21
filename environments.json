@@ -5368,7 +5368,7 @@
     "note_id": "harmony-flag-old",
     "note_html": "Flagged features have to be enabled via <code>--harmony</code> flag",
     "release": "2011-08-26",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5387,7 +5387,7 @@
     "note_id": "harmony-flag-old",
     "note_html": "Flagged features have to be enabled via <code>--harmony</code> flag",
     "release": "2011-11-04",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5406,7 +5406,7 @@
     "note_id": "harmony-flag-old",
     "note_html": "Flagged features have to be enabled via <code>--harmony</code> flag",
     "release": "2012-06-22",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5426,7 +5426,7 @@
     "note_html": "Flagged features have to be enabled via <code>--harmony</code> flag",
     "release": "2013-03-11",
     "retire": "2016-10-31",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5446,7 +5446,7 @@
     "note_html": "Flagged features have to be enabled via <code>--harmony</code> or <code>--es_staging</code> flag",
     "release": "2015-02-06",
     "retire": "2016-12-31",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5963,7 +5963,7 @@
     "note_id": "harmony-flag",
     "equals": "chrome84",
     "release": "2020-07-20",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -5999,7 +5999,7 @@
     "note_id": "harmony-flag",
     "equals": "chrome90",
     "release": "2021-04-20",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6016,7 +6016,7 @@
     "platformtype": "engine",
     "equals": "chrome93",
     "release": "2021-09-07",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6033,6 +6033,7 @@
     "platformtype": "engine",
     "equals": "chrome94",
     "release": "2021-10-08",
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6049,7 +6050,7 @@
     "platformtype": "engine",
     "equals": "chrome95",
     "release": "2021-10-19",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6066,7 +6067,7 @@
     "platformtype": "engine",
     "equals": "chrome96",
     "release": "2021-11-30",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6083,7 +6084,7 @@
     "platformtype": "engine",
     "equals": "chrome101",
     "release": "2022-04-18",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6100,6 +6101,7 @@
     "platformtype": "engine",
     "equals": "chrome102",
     "release": "2022-06-02",
+    "obsolete": true,
     "test_suites": [
       "es5",
       "es6",
@@ -6116,7 +6118,7 @@
     "platformtype": "engine",
     "equals": "chrome107",
     "release": "2022-10-17",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6133,7 +6135,7 @@
     "platformtype": "engine",
     "equals": "chrome108",
     "release": "2022-11-29",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6150,7 +6152,6 @@
     "platformtype": "engine",
     "equals": "chrome113",
     "release": "2023-04-18",
-    "obsolete": false,
     "test_suites": [
       "es5",
       "es6",
@@ -6167,7 +6168,7 @@
     "platformtype": "engine",
     "equals": "chrome118",
     "release": "2023-10-24",
-    "obsolete": true,
+    "obsolete": "very",
     "test_suites": [
       "es5",
       "es6",
@@ -6201,6 +6202,22 @@
     "platformtype": "engine",
     "equals": "chrome129",
     "release": "2024-10-16",
+    "test_suites": [
+      "es5",
+      "es6",
+      "es2016plus",
+      "esnext",
+      "esintl",
+      "non-standard"
+    ]
+  },
+  "node24_0": {
+    "full": "Node.js",
+    "family": "Node.js",
+    "short": "Node &gt;=24",
+    "platformtype": "engine",
+    "equals": "chrome136",
+    "release": "2025-05-06",
     "obsolete": false,
     "test_suites": [
       "es5",
