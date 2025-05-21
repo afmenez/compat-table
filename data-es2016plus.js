@@ -8592,10 +8592,12 @@ exports.tests = [
     */},
     res: {
       chrome129: false,
+      chrome136: true,
       firefox115: false,
       firefox130: false,
       firefox131: firefox.nightly,
       firefox134: true,
+      safari18_2: true,
       rhino1_8_0: false,
     }
   },
