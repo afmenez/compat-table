@@ -1089,10 +1089,200 @@ exports.tests = [
 
   ]
 },
+{
+  name: 'Explicit Resource Management',
+  category: STAGE3,
+  significance: 'large',
+  spec: 'https://github.com/tc39/proposal-explicit-resource-management',
+  subtests: [
+    {
+      name: 'using',
+      exec: function () {/*
+        var resource = {
+          disposed: false,
+          [Symbol.dispose]() {
+            this.disposed = true;
+          }
+        };
+        {
+          using _ = resource;
+        }
+        return resource.disposed
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: 'for (using ... of',
+      exec: function () {/*
+        var resource1 = {
+          disposed: false,
+          [Symbol.dispose]() {
+            this.disposed = true;
+          }
+        };
+        var resource2 = {
+          disposed: false,
+          [Symbol.dispose]() {
+            this.disposed = true;
+          }
+        };
+        {
+          for (using _ of [resource1, resource2]);
+        }
+        return resource1.disposed && resource2.disposed;
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: 'await using',
+      exec: function () {/*
+        (async function () {
+          var resource = {
+            disposed: false,
+            async [Symbol.asyncDispose]() {
+              this.disposed = true;
+            }
+          };
+          {
+            await using _ = resource;
+          }
+          return resource.disposed && asyncTestPassed();
+        }());
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: 'for (await using ... of',
+      exec: function () {/*
+        var resource1 = {
+          disposed: false,
+          async [Symbol.asyncDispose]() {
+            this.disposed = true;
+          }
+        };
+        var resource2 = {
+          disposed: false,
+          async [Symbol.asyncDispose]() {
+            this.disposed = true;
+          }
+        };
+        (async function () {
+          for (await using _ of [resource1, resource2]);
+          return resource1.disposed && resource2.disposed && asyncTestPassed();
+        }());
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: "SuppressedError",
+      exec: function () {/*
+        var err1 = new Error();
+        var err2 = new Error();
+        var err3 = new Error();
+        try {
+          using _1 = { [Symbol.dispose]() { throw err1 } },
+                _2 = { [Symbol.dispose]() { throw err2 } };
+          throw err3;
+        } catch (e) {
+          return (
+            e instanceof SuppressedError
+            && e.error === err1
+            && e.suppressed instanceof SuppressedError
+            && e.suppressed.error === err2
+            && e.suppressed.suppressed === err3
+          );
+        }
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: "DisposableStack",
+      exec: function () {/*
+        var stack1 = new DisposableStack();
+        var resource1 = { disposed: false };
+        var resource2 = { disposed: false };
+        var resource3 = { disposed: false, [Symbol.dispose]() { this.disposed = true } };
+        var adopted = stack1.adopt(resource1, function (r) { r.disposed = true });
+        var deferred = stack1.defer(function (r) { resource2.disposed = true });
+        var stack2 = stack1.move();
+        var used = stack2.use(resource3);
+        stack2.dispose();
+        return (
+          resource1.disposed && adopted === resource1
+          && resource2.disposed && deferred === undefined
+          && resource3.disposed && used === resource3
+        );
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    },
+    {
+      name: "AsyncDisposableStack",
+      exec: function () {/*
+        var stack1 = new AsyncDisposableStack();
+        var resource1 = { disposed: false };
+        var resource2 = { disposed: false };
+        var resource3 = { disposed: false, async [Symbol.asyncDispose]() { this.disposed = true } };
+        var adopted = stack1.adopt(resource1, async function (r) { r.disposed = true });
+        var deferred = stack1.defer(async function (r) { resource2.disposed = true });
+        var stack2 = stack1.move();
+        var used = stack2.use(resource3);
+        stack2.disposeAsync().then(function () {
+          resource1.disposed && adopted === resource1 &&
+          resource2.disposed && deferred === undefined &&
+          resource3.disposed && used === resource3 &&
+          asyncTestPassed();
+        });
+      */},
+      res: {
+        ie11: false,
+        chrome134: true,
+        firefox139: false,
+        safari18_5: false,
+        node24_0: true,
+      }
+    }
+  ]
+}
 ];
 
 
-//Shift annex B features to the bottom
+// Shift annex B features to the bottom
 exports.tests = exports.tests.reduce(function(a,e) {
   var index = [STAGE3, STAGE27, STAGE2].indexOf(e.category);
   if (index === -1) {
