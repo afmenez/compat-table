@@ -1112,7 +1112,13 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+          note_html: 'The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.explicit_resource_management</code> setting under <code>about:config</code>.'
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1140,7 +1146,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1164,7 +1175,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1192,7 +1208,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1220,7 +1241,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1246,7 +1272,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
@@ -1272,7 +1303,12 @@ exports.tests = [
       res: {
         ie11: false,
         chrome134: true,
-        firefox139: false,
+        firefox115: false,
+        firefox133: false,
+        firefox134: {
+          val: 'flagged',
+          note_id: 'ff-explicit-resource-management',
+        },
         safari18_5: false,
         node24_0: true,
       }
