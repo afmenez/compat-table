@@ -288,59 +288,82 @@ exports.tests = [
 },
 {
   name: 'Map.prototype.upsert',
-  category: STAGE27,
+  category: STAGE3,
   significance: 'small',
   spec: 'https://github.com/tc39/proposal-upsert',
   subtests: [
     {
-      name: 'Map.prototype.upsert',
+      name: 'Map.prototype.getOrInsert',
+      mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsert',
       exec: function () {/*
         const map = new Map([['a', 1]]);
-        if (map.upsert('a', it => 2, () => 3) !== 2) return false;
-        if (map.upsert('b', it => 2, () => 3) !== 3) return false;
-        return Array.from(map).join() === 'a,2,b,3';
+        if (map.getOrInsert('a', 2) !== 1) return false;
+        if (map.getOrInsert('b', 2) !== 2) return false;
+        return Array.from(map).join() === 'a,1,b,2';
       */},
       res: {
-        babel6corejs2: false,
-        babel7corejs3: babel.corejs,
-        typescript1corejs2: typescript.fallthrough,
-        typescript3_2corejs3: typescript.corejs,
         ie11: false,
         firefox10: false,
-        firefox60: false,
+        firefox144: true,
         chrome77: false,
-        duktape2_0: false,
-        graalvm21_3_3: false,
-        hermes0_7_0: false,
-        reactnative0_70_3: false,
-        rhino1_7_13: false
+        chrome145: true,
       }
     },
     {
-      name: 'WeakMap.prototype.upsert',
+      name: 'Map.prototype.getOrInsertComputed',
+      mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsertComputed',
+      exec: function () {/*
+        const map = new Map([['a', 1]]);
+        const defaultCreator = (key) => 2;
+        if (map.getOrInsertComputed('a', defaultCreator) !== 1) return false;
+        if (map.getOrInsertComputed('b', defaultCreator) !== 2) return false;
+        return Array.from(map).join() === 'a,1,b,2';
+      */},
+      res: {
+        ie11: false,
+        firefox10: false,
+        firefox144: true,
+        chrome77: false,
+        chrome145: true,
+      }
+    },
+    {
+      name: 'WeakMap.prototype.getOrInsert',
+      mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsert',
       exec: function () {/*
         const a = {}, b = {};
         const map = new WeakMap([[a, 1]]);
-        if (map.upsert(a, it => 2, () => 3) !== 2) return false;
-        if (map.upsert(b, it => 2, () => 3) !== 3) return false;
-        return map.get(a) === 2 && map.get(b) === 3;
+        if (map.getOrInsert(a, 2) !== 1) return false;
+        if (map.getOrInsert(b, 2) !== 2) return false;
+        return map.get(a) === 1 && map.get(b) === 2;
       */},
       res: {
-        babel6corejs2: false,
-        babel7corejs3: babel.corejs,
-        typescript1corejs2: typescript.fallthrough,
-        typescript3_2corejs3: typescript.corejs,
         ie11: false,
         firefox10: false,
-        firefox60: false,
+        firefox144: true,
         chrome77: false,
-        duktape2_0: false,
-        graalvm21_3_3: false,
-        hermes0_7_0: false,
-        reactnative0_70_3: false,
-        rhino1_7_13: false
+        chrome145: true,
       }
-    }
+    },
+    {
+      name: 'WeakMap.prototype.getOrInsertComputed',
+      mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsertComputed',
+      exec: function () {/*
+        const a = {}, b = {};
+        const defaultCreator = (key) => 2;
+        const map = new WeakMap([[a, 1]]);
+        if (map.getOrInsertComputed(a, defaultCreator) !== 1) return false;
+        if (map.getOrInsertComputed(b, defaultCreator) !== 2) return false;
+        return map.get(a) === 1 && map.get(b) === 2;
+      */},
+      res: {
+        ie11: false,
+        firefox10: false,
+        firefox144: true,
+        chrome77: false,
+        chrome145: true,
+      }
+    },
   ]
 },
 {
