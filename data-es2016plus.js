@@ -3587,6 +3587,19 @@ exports.tests = [
           jerryscript3_0_0: false,
           rhino1_8_0: false
         }
+      },
+      {
+        name: 'Unicode 17.0',
+        // 2025 September 9
+        exec: function () {/*
+          return /\p{Script=Sidetic}/u.test("\u{10940}") && /\p{Emoji}/u.test("🫍");
+        */},
+        res: {
+          chrome140: false,
+          node24_0: false,
+          firefox142: false,
+          safari18_5: false,
+        }
       }
     ]
   },
@@ -7521,6 +7534,19 @@ exports.tests = [
           safari18_4: true,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
+        }
+      },
+      {
+        name: 'Unicode 17.0',
+        exec: function () {/*
+        return /^\p{RGI_Emoji}$/v.test("🧑‍🩰‍🏽");
+      */},
+        res: {
+          ie11: false,
+          chrome140: false,
+          node22_0: false,
+          firefox142: false,
+          safari18_5: false
         }
       }
     ]
