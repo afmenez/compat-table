@@ -3556,6 +3556,7 @@ exports.tests = [
           firefox115: false,
           firefox117: false,
           firefox118: false,
+          firefox128: false,
           firefox133: false,
           firefox134: true,
           safari11_1: false,
@@ -3578,6 +3579,7 @@ exports.tests = [
           chrome128: false,
           node22_0: false,
           firefox115: false,
+          firefox128: false,
           firefox130: false,
           firefox133: false,
           firefox134: true,
@@ -3597,6 +3599,9 @@ exports.tests = [
         res: {
           chrome140: false,
           node24_0: false,
+          firefox115: false,
+          firefox128: false,
+          firefox140: false,
           firefox142: false,
           safari18_5: false,
         }
@@ -7505,6 +7510,7 @@ exports.tests = [
           firefox115: false,
           firefox117: false,
           firefox118: false,
+          firefox128: false,
           firefox133: false,
           firefox134: true,
           safaritp: false,
@@ -7527,6 +7533,7 @@ exports.tests = [
           chrome128: false,
           node22_0: false,
           firefox115: false,
+          firefox128: false,
           firefox130: false,
           firefox133: false,
           firefox134: true,
@@ -7545,6 +7552,9 @@ exports.tests = [
           ie11: false,
           chrome140: false,
           node22_0: false,
+          firefox115: false,
+          firefox128: false,
+          firefox140: false,
           firefox142: false,
           safari18_5: false
         }
