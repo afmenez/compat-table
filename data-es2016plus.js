@@ -7079,7 +7079,8 @@ exports.tests = [
         name: 'shows up in flags',
         exec: function () {/*
           var expected = ['hasIndices'];
-          // Sorted alphabetically by shortname – "dgimsuy".
+          // Sorted alphabetically by shortname as of ES2022 – "dgimsuy".
+          // Any flags introduced after ES2022 will be ignored by this test.
           if ('global' in RegExp.prototype) expected.push('global');
           if ('ignoreCase' in RegExp.prototype) expected.push('ignoreCase');
           if ('multiline' in RegExp.prototype) expected.push('multiline');
@@ -7089,11 +7090,11 @@ exports.tests = [
           var actual = [];
           var p = new Proxy({}, { get: function (o, k) { actual.push(k); return o[k]; }});
           Object.getOwnPropertyDescriptor(RegExp.prototype, 'flags').get.call(p);
-          if (expected.length !== actual.length) return false;
-          for (var i = 0; i < expected.length; i++) {
-            if (expected[i] !== actual[i]) return false;
+          var i = 0;
+          for (var j = 0; i < expected.length && j < actual.length; i++, j++) {
+            if (expected[i] !== actual[j]) j++;
           }
-          return true;
+          return i === expected.length;
         */},
         res: {
           ie11: false,
