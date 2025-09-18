@@ -7556,7 +7556,8 @@ exports.tests = [
           firefox128: false,
           firefox140: false,
           firefox142: false,
-          safari18_5: false
+          safari18_5: false,
+          safari26: true,
         }
       }
     ]
