@@ -958,6 +958,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
@@ -982,6 +983,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
@@ -1007,6 +1009,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
@@ -1028,6 +1031,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
@@ -1051,6 +1055,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
@@ -1075,6 +1080,7 @@ exports.tests = [
       res: {
         ie11: false,
         chrome129: false,
+        chrome141: true,
         firefox115: false,
         firefox125: false,
         firefox126: {
