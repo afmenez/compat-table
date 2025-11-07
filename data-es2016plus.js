@@ -3510,6 +3510,7 @@ exports.tests = [
           node17_2: true,
           duktape2_0: false,
           graalvm21_3_3: false,
+          graalvm22_2: true,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
           rhino1_7_13: false,
