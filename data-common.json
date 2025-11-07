@@ -162,11 +162,6 @@
       "note_id": "graalvm-js-ecmascript-version-staging",
       "note_html": "Requires the <code>--js.ecmascript-version=staging</code> flag."
     },
-    "newSetMethodsFlag": {
-      "val": "flagged",
-      "note_id": "graalvm-experimental-options-js-new-set-methods",
-      "note_html": "Requires the <code>--experimental-options --js.new-set-methods</code> flags."
-    },
     "v8CompatFlag": {
       "val": "flagged",
       "note_id": "graalvm-experimental-options-js-v8-compat",

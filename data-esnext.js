@@ -968,6 +968,7 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
       }
     },
@@ -992,8 +993,8 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
-
       }
     },
     {
@@ -1018,6 +1019,7 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
       }
     },
@@ -1040,6 +1042,7 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
       }
     },
@@ -1064,6 +1067,7 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
       }
     },
@@ -1089,6 +1093,7 @@ exports.tests = [
         },
         firefox133: true,
         safari18_2: true,
+        graalvm21_3_3: false,
         rhino1_8_0: false,
       }
     },
@@ -1128,6 +1133,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1162,6 +1168,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1192,6 +1199,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1226,6 +1234,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1260,6 +1269,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1292,6 +1302,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     },
     {
@@ -1324,6 +1335,7 @@ exports.tests = [
         firefox141: true,
         safari18_5: false,
         node24_0: true,
+        graalvm21_3_3: false,
       }
     }
   ]

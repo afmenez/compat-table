@@ -22,7 +22,7 @@ var flagsForSuite = {
     'es5': [],
     'es6': [ [ '--js.ecmascript-version=6' ] ],
     'es2016plus': [ [ '--js.ecmascript-version=staging' ] ],
-    'esnext': [ [ '--js.ecmascript-version=staging' ], [ '--experimental-options', '--js.new-set-methods' ] ],
+    'esnext': [ [ '--js.ecmascript-version=staging' ] ],
     'esintl': [],
     'non-standard': [ [ '--experimental-options', '--js.nashorn-compat' ], [ '--experimental-options', '--js.v8-compat' ], [ '--experimental-options', '--js.global-property' ] ]
 };

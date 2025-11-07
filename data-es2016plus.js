@@ -3415,6 +3415,7 @@ exports.tests = [
           node10_9: false,
           node11_0: true,
           duktape2_0: false,
+          graalvm21_3_3: true,
           ie11: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
@@ -3437,6 +3438,7 @@ exports.tests = [
           node12_0: false,
           node12_5: true,
           duktape2_0: false,
+          graalvm21_3_3: true,
           ie11: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
@@ -3459,6 +3461,7 @@ exports.tests = [
           node12_0: false,
           node12_5: true,
           duktape2_0: false,
+          graalvm21_3_3: true,
           ie11: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
@@ -3481,6 +3484,7 @@ exports.tests = [
           node13_2: false,
           node14_0: true,
           duktape2_0: false,
+          graalvm21_3_3: true,
           ie11: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
@@ -3505,6 +3509,7 @@ exports.tests = [
           node17_0: false,
           node17_2: true,
           duktape2_0: false,
+          graalvm21_3_3: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
           rhino1_7_13: false,
@@ -3532,6 +3537,7 @@ exports.tests = [
           node19_0: false,
           node19_2: true,
           duktape2_0: false,
+          graalvm21_3_3: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
           rhino1_7_13: false,
@@ -3564,6 +3570,7 @@ exports.tests = [
           safari17: false,
           safari18: true,
           duktape2_0: false,
+          graalvm21_3_3: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
           rhino1_7_13: false,
@@ -3586,6 +3593,7 @@ exports.tests = [
           safari17_6: false,
           safari18: false,
           safari18_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false
         }
@@ -3604,6 +3612,7 @@ exports.tests = [
           firefox140: false,
           firefox142: false,
           safari18_5: false,
+          graalvm21_3_3: false,
         }
       }
     ]
@@ -5981,6 +5990,7 @@ exports.tests = [
           safari16: true,
           safari17: true,
           safaritp: true,
+          graalvm21_3_3: true,
           jerryscript3_0_0: true,
           rhino1_8_0: false
         }
@@ -7261,6 +7271,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7284,6 +7295,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7307,6 +7319,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7330,6 +7343,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7351,6 +7365,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7372,6 +7387,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7393,6 +7409,7 @@ exports.tests = [
           firefox115: true,
           safari15_5: false,
           safari16: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7423,6 +7440,7 @@ exports.tests = [
           safari16_6: false,
           safari17: true,
           safaritp: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_7_15: false,
         }
@@ -7445,6 +7463,7 @@ exports.tests = [
           safari16_6: false,
           safari17: true,
           safaritp: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_7_15: false,
         }
@@ -7466,6 +7485,7 @@ exports.tests = [
           safari16_6: false,
           safari17: true,
           safaritp: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_7_15: false,
         }
@@ -7490,6 +7510,7 @@ exports.tests = [
           safari16_6: false,
           safari17: true,
           safaritp: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_7_15: false,
         }
@@ -7519,6 +7540,7 @@ exports.tests = [
           safari18: true,
           ie11: false,
           duktape2_0: false,
+          graalvm21_3_3: false,
           jerryscript2_3_0: false,
           hermes0_7_0: false,
           rhino1_7_13: false,
@@ -7540,6 +7562,7 @@ exports.tests = [
           firefox134: true,
           safari17_6: false,
           safari18_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -7559,6 +7582,7 @@ exports.tests = [
           firefox142: false,
           safari18_5: false,
           safari26: true,
+          graalvm21_3_3: false,
         }
       }
     ]
@@ -7619,6 +7643,7 @@ exports.tests = [
           firefox122: true,
           chrome114: true,
           safari17_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -7641,6 +7666,7 @@ exports.tests = [
           firefox122: true,
           chrome114: true,
           safari17_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -7668,6 +7694,7 @@ exports.tests = [
       node22_0: true,
       safari17_6: true,
       safaritp: true,
+      graalvm21_3_3: false,
       jerryscript3_0_0: false,
       rhino1_8_0: false,
     }
@@ -7699,6 +7726,7 @@ exports.tests = [
           },
           firefox119: true,
           safari17_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7725,6 +7753,7 @@ exports.tests = [
           },
           firefox119: true,
           safari17_4: true,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: true,
         }
@@ -7751,6 +7780,7 @@ exports.tests = [
       safaritp: true,
       ie11: false,
       duktape2_0: false,
+      graalvm21_3_3: false,
       jerryscript2_3_0: false,
       hermes0_7_0: false,
       rhino1_7_13: false,
@@ -7790,7 +7820,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7824,7 +7854,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7857,7 +7887,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7890,7 +7920,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7921,7 +7951,7 @@ exports.tests = [
           duktape2_0: false,
           graalvm19: false,
           graalvm20_1: graalvm.es2021flag,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7951,7 +7981,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -7981,7 +8011,7 @@ exports.tests = [
           safari17: true,
           duktape2_0: false,
           graalvm19: false,
-          graalvm21_3_3: graalvm.newSetMethodsFlag,
+          graalvm21_3_3: false,
           hermes0_7_0: false,
           jerryscript3_0_0: false,
           reactnative0_70_3: false,
@@ -8016,6 +8046,7 @@ exports.tests = [
           },
           firefox132: true,
           safari17_5: false,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -8039,6 +8070,7 @@ exports.tests = [
           },
           firefox132: true,
           safari17_5: false,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -8062,6 +8094,7 @@ exports.tests = [
           },
           firefox132: true,
           safari17_5: false,
+          graalvm21_3_3: false,
           jerryscript3_0_0: false,
           rhino1_8_0: false,
         }
@@ -8628,6 +8661,7 @@ exports.tests = [
       },
       firefox134: true,
       safari18_2: true,
+      graalvm21_3_3: false,
       jerryscript3_0_0: false,
       rhino1_8_0: false,
     }
@@ -8652,6 +8686,7 @@ exports.tests = [
       firefox131: firefox.nightly,
       firefox134: true,
       safari18_2: true,
+      graalvm21_3_3: false,
       rhino1_8_0: false,
     }
   },

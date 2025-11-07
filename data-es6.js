@@ -5,8 +5,8 @@ var typescript = common.typescript;
 var chrome = common.chrome;
 var edge = common.edge;
 var safari = common.safari;
-var graalvm = common.graalvm;
 var hermes = common.hermes;
+var graalvm = common.graalvm;
 
 exports.name = 'ES6';
 exports.target_file = 'es6/index.html';
@@ -6635,6 +6635,7 @@ exports.tests = [
         opera49: true,
         safari11: true,
         node8_10: true,
+        graalvm21_3_3: true,
       }
     }
   ],
