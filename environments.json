@@ -6856,6 +6856,23 @@
       "non-standard"
     ]
   },
+  "graalvm25_0_1": {
+    "full": "GraalVM JavaScript 25.0.1",
+    "family": "GraalVM",
+    "short": "GraalVM 25.0.1",
+    "platformtype": "engine",
+    "release": "2025-10-21",
+    "obsolete": false,
+    "unstable": false,
+    "test_suites": [
+      "es5",
+      "es6",
+      "es2016plus",
+      "esnext",
+      "esintl",
+      "non-standard"
+    ]
+  },
   "hermes0_7_0": {
     "full": "Hermes 0.7.0",
     "family": "Hermes",

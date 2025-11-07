@@ -13,10 +13,11 @@
  */
 
 var child_process = require('child_process');
+var fs = require('fs');
 var runner_support = require('./runner_support');
 
 var jsCommand = 'js';
-var jsArgs = [ '--js.intl-402' ];
+var jsArgs = [];
 
 var flagsForSuite = {
     'es5': [],
@@ -35,9 +36,16 @@ var graalvmKey = (function () {
 
     var version = /[\d\.]+/.exec(stdout)[0];
     console.log('GraalVM version is: ' + version);
-    return 'graalvm' + version.replace(/\.0(?:$|(?=\.))/g, '').replace(/\./g, '_');
+    return 'graalvm' + version.replace(/\.0(?:$|(?!\.))/g, '').replace(/\./g, '_');
 })();
 console.log('GraalVM result key is: test.res.' + graalvmKey);
+
+// On older releases of GraalVM, add the --js.intl-402 option to enable Intl features
+var environments = JSON.parse(fs.readFileSync('environments.json').toString());
+if (environments[graalvmKey] != undefined && environments[graalvmKey].note_id == "graalvm-js-intl-mode") {
+    jsArgs.push('--js.intl-402');
+    console.log('Setting --js.intl-402');
+}
 
 function exec(flags, testFilename) {
     try {

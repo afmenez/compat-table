@@ -3,7 +3,7 @@ var common = require('./data-common');
 var babel = common.babel;
 var typescript = common.typescript;
 // var firefox = common.firefox;
-// var graalvm = common.graalvm;
+var graalvm = common.graalvm;
 
 exports.name = 'ES Next';
 exports.target_file = 'esnext/index.html';
@@ -969,6 +969,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
@@ -994,6 +995,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
@@ -1020,6 +1022,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
@@ -1043,6 +1046,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
@@ -1068,6 +1072,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
@@ -1094,6 +1099,7 @@ exports.tests = [
         firefox133: true,
         safari18_2: true,
         graalvm21_3_3: false,
+        graalvm25_0_1: graalvm.esStagingFlag,
         rhino1_8_0: false,
       }
     },
