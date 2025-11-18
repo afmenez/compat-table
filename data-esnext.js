@@ -1244,6 +1244,28 @@ exports.tests = [
       }
     },
     {
+      name: 'Symbol.dispose with bound function',
+      exec: function () {/*
+        var disposed = false;
+        var resource = {
+          [Symbol.dispose]: close.bind(null),
+        };
+        function close() {
+          disposed = true;
+        }
+        {
+          using _ = resource;
+        }
+        return disposed;
+      */},
+      res: {
+        chrome143: true,
+        firefox147: true,
+        node24_0: false,
+        node25_0: true,
+      }
+    },
+    {
       name: "SuppressedError",
       exec: function () {/*
         var err1 = new Error();
