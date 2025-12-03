@@ -7589,7 +7589,7 @@ exports.tests = [
       {
         name: 'Unicode 17.0',
         exec: function () {/*
-        return /^\p{RGI_Emoji}$/v.test("🧑‍🩰‍🏽");
+        return /^\p{RGI_Emoji}$/v.test("🧑🏽‍🩰");
       */},
         res: {
           ie11: false,
@@ -7599,6 +7599,7 @@ exports.tests = [
           firefox128: false,
           firefox140: false,
           firefox142: false,
+          firefox148: true,
           safari18_5: false,
           safari26: true,
           graalvm21_3_3: false,
