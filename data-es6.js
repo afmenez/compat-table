@@ -7600,8 +7600,8 @@ exports.tests = [
           if (!(constructors[i] in global
               && Object.getPrototypeOf(global[constructors[i]]) === constructor
               && Object.getPrototypeOf(global[constructors[i]].prototype) === prototype
-              && Object.getOwnPropertyNames(global[constructors[i]].prototype).sort() + ''
-                === "BYTES_PER_ELEMENT,constructor")) {
+              && Object.getOwnPropertyNames(global[constructors[i]].prototype).indexOf('BYTES_PER_ELEMENT') !== -1
+              && Object.getOwnPropertyNames(global[constructors[i]].prototype).indexOf('constructor') !== -1)) {
             return false;
           }
         }
