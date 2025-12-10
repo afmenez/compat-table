@@ -3541,7 +3541,7 @@
     "family": "V8",
     "short": "CH 131",
     "release": "2024-11-12",
-    "obsolete": true
+    "obsolete": "very"
   },
   "chrome132": {
     "full": "Chrome 132",
@@ -3618,18 +3618,25 @@
     "family": "V8",
     "short": "CH 142",
     "release": "2025-10-28",
-    "obsolete": false
+    "obsolete": true
   },
   "chrome143": {
-    "full": "Chrome 143 Beta",
+    "full": "Chrome 143",
     "family": "V8",
     "short": "CH 143",
-    "unstable": true
+    "release": "2025-11-02",
+    "obsolete": false
   },
   "chrome144": {
-    "full": "Chrome 144 Dev",
+    "full": "Chrome 144 Beta",
     "family": "V8",
     "short": "CH 144",
+    "unstable": true
+  },
+  "chrome145": {
+    "full": "Chrome 145 Dev",
+    "family": "V8",
+    "short": "CH 145",
     "unstable": true
   },
   "edge12": {
@@ -4113,7 +4120,7 @@
     "short": "Edge 131",
     "equals": "chrome131",
     "release": "2024-11-14",
-    "obsolete": true
+    "obsolete": "very"
   },
   "edge132": {
     "full": "Microsoft Edge 132",
@@ -4201,13 +4208,21 @@
     "short": "Edge 142",
     "equals": "chrome142",
     "release": "2025-10-30",
-    "obsolete": false
+    "obsolete": true
   },
   "edge143": {
-    "full": "Microsoft Edge 143 Beta",
+    "full": "Microsoft Edge 143",
     "family": "V8",
     "short": "Edge 143",
     "equals": "chrome143",
+    "release": "2025-12-04",
+    "obsolete": false
+  },
+  "edge144": {
+    "full": "Microsoft Edge 144 Beta",
+    "family": "V8",
+    "short": "Edge 144",
+    "equals": "chrome144",
     "unstable": true
   },
   "safari1": {
