@@ -1263,7 +1263,10 @@ exports.tests = [
         return disposed;
       */},
       res: {
+        chrome140: false,
+        chrome141: true,
         chrome143: true,
+        firefox141: true,
         firefox147: true,
         node24_0: false,
         node25_0: true,
