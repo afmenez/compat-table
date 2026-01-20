@@ -1063,7 +1063,8 @@ exports.tests = [
       jerryscript2_2_0: true,
       hermes0_7_0: true,
       reactnative0_70_3: true,
-      rhino1_7_13: false
+      rhino1_7_13: false,
+      rhino1_9_0: true
     }
   },
   {

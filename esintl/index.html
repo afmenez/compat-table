@@ -204,7 +204,8 @@
 <th class="platform opera111 desktop" data-browser="opera111"><a href="#opera111" class="browser-name"><abbr title="Opera 111">OP 111</abbr></a></th>
 <th class="platform opera112 desktop unstable" data-browser="opera112"><a href="#opera112" class="browser-name"><abbr title="Opera 112 Beta">OP 112</abbr></a></th>
 <th class="platform rhino1_7_15 engine obsolete" data-browser="rhino1_7_15"><a href="#rhino1_7_15" class="browser-name"><abbr title="Rhino 1.7.15">Rhino 1.7.15</abbr></a></th>
-<th class="platform rhino1_8_0 engine" data-browser="rhino1_8_0"><a href="#rhino1_8_0" class="browser-name"><abbr title="Rhino 1.8.0">Rhino 1.8.0</abbr></a></th>
+<th class="platform rhino1_8_0 engine obsolete" data-browser="rhino1_8_0"><a href="#rhino1_8_0" class="browser-name"><abbr title="Rhino 1.8.0">Rhino 1.8.0</abbr></a></th>
+<th class="platform rhino1_9_0 engine" data-browser="rhino1_9_0"><a href="#rhino1_9_0" class="browser-name"><abbr title="Rhino 1.9.0">Rhino 1.9.0</abbr></a></th>
 <th class="platform phantom2_1 engine obsolete" data-browser="phantom2_1"><a href="#phantom2_1" class="browser-name"><abbr title="PhantomJS 2.1">PJS</abbr></a></th>
 <th class="platform node18_3 engine obsolete" data-browser="node18_3"><a href="#node18_3" class="browser-name"><abbr title="Node.js">Node &gt;=18.3 &lt;19</abbr></a></th>
 <th class="platform node20_0 engine" data-browser="node20_0"><a href="#node20_0" class="browser-name"><abbr title="Node.js">Node &gt;=20 &lt;21</abbr></a></th>
@@ -332,7 +333,8 @@
 <td class="tally" data-browser="opera111" data-tally="1">2/2</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">2/2</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/2</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/2</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/2</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/2</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/2</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">2/2</td>
 <td class="tally" data-browser="node20_0" data-tally="1">2/2</td>
@@ -459,7 +461,8 @@ return typeof Intl === &apos;object&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -586,7 +589,8 @@ return Intl.constructor === Object;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -710,7 +714,8 @@ return Intl.constructor === Object;
 <td class="tally" data-browser="opera111" data-tally="1">5/5</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">5/5</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/5</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/5</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/5</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/5</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/5</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">5/5</td>
 <td class="tally" data-browser="node20_0" data-tally="1">5/5</td>
@@ -837,7 +842,8 @@ return typeof Intl.Collator === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -964,7 +970,8 @@ return new Intl.Collator() instanceof Intl.Collator;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -1091,7 +1098,8 @@ return Intl.Collator() instanceof Intl.Collator;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -1240,7 +1248,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -1384,7 +1393,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -1508,7 +1518,8 @@ try {
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -1635,7 +1646,8 @@ return typeof Intl.Collator().compare === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -1759,7 +1771,8 @@ return typeof Intl.Collator().compare === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -1886,7 +1899,8 @@ return typeof Intl.Collator().resolvedOptions === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2010,7 +2024,8 @@ return typeof Intl.Collator().resolvedOptions === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">6/6</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">6/6</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/6</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/6</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/6</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">6/6</td>
 <td class="tally" data-browser="node20_0" data-tally="1">6/6</td>
@@ -2137,7 +2152,8 @@ return typeof Intl.NumberFormat === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2264,7 +2280,8 @@ return typeof Intl.NumberFormat === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2391,7 +2408,8 @@ return new Intl.NumberFormat() instanceof Intl.NumberFormat;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2518,7 +2536,8 @@ return Intl.NumberFormat() instanceof Intl.NumberFormat;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2667,7 +2686,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2811,7 +2831,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -2935,7 +2956,8 @@ try {
 <td class="tally" data-browser="opera111" data-tally="1">7/7</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">7/7</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/7</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="0">0/7</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/7</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/7</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/7</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">7/7</td>
 <td class="tally" data-browser="node20_0" data-tally="1">7/7</td>
@@ -3062,7 +3084,8 @@ return typeof Intl.DateTimeFormat === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3189,7 +3212,8 @@ return new Intl.DateTimeFormat() instanceof Intl.DateTimeFormat;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3316,7 +3340,8 @@ return Intl.DateTimeFormat() instanceof Intl.DateTimeFormat;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3465,7 +3490,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3609,7 +3635,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3737,7 +3764,8 @@ return tz !== void undefined &amp;&amp; tz.length &gt; 0;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3872,7 +3900,8 @@ try {
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="no obsolete" data-browser="rhino1_7_15">No</td>
-<td class="no" data-browser="rhino1_8_0">No</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
 <td class="unknown obsolete" data-browser="phantom2_1">?</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -3996,7 +4025,8 @@ try {
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -4123,7 +4153,8 @@ return typeof String.prototype.localeCompare === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -4247,7 +4278,8 @@ return typeof String.prototype.localeCompare === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -4374,7 +4406,8 @@ return typeof Number.prototype.toLocaleString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -4498,7 +4531,8 @@ return typeof Number.prototype.toLocaleString === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -4625,7 +4659,8 @@ return typeof Array.prototype.toLocaleString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -4749,7 +4784,8 @@ return typeof Array.prototype.toLocaleString === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -4876,7 +4912,8 @@ return typeof Object.prototype.toLocaleString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -5000,7 +5037,8 @@ return typeof Object.prototype.toLocaleString === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -5127,7 +5165,8 @@ return typeof Date.prototype.toLocaleString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -5251,7 +5290,8 @@ return typeof Date.prototype.toLocaleString === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -5378,7 +5418,8 @@ return typeof Date.prototype.toLocaleDateString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>
@@ -5502,7 +5543,8 @@ return typeof Date.prototype.toLocaleDateString === &apos;function&apos;;
 <td class="tally" data-browser="opera111" data-tally="1">1/1</td>
 <td class="tally unstable" data-browser="opera112" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="rhino1_7_15" data-tally="1">1/1</td>
-<td class="tally" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="1">1/1</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="phantom2_1" data-tally="1">1/1</td>
 <td class="tally obsolete" data-browser="node18_3" data-tally="1">1/1</td>
 <td class="tally" data-browser="node20_0" data-tally="1">1/1</td>
@@ -5629,7 +5671,8 @@ return typeof Date.prototype.toLocaleTimeString === &apos;function&apos;;
 <td class="yes" data-browser="opera111">Yes</td>
 <td class="yes unstable" data-browser="opera112">Yes</td>
 <td class="yes obsolete" data-browser="rhino1_7_15">Yes</td>
-<td class="yes" data-browser="rhino1_8_0">Yes</td>
+<td class="yes obsolete" data-browser="rhino1_8_0">Yes</td>
+<td class="yes" data-browser="rhino1_9_0">Yes</td>
 <td class="yes obsolete" data-browser="phantom2_1">Yes</td>
 <td class="yes obsolete" data-browser="node18_3">Yes</td>
 <td class="yes" data-browser="node20_0">Yes</td>

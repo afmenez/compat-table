@@ -1917,6 +1917,7 @@ exports.tests = [
     hermes0_7_0: false,
     reactnative0_70_3: false,
     rhino1_7_13: true,
+    rhino1_9_0: false,
     phantom1_9: false,
     duktape2_0: false,
     graalvm19: false

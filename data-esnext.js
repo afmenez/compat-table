@@ -1140,6 +1140,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1175,6 +1176,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1206,6 +1208,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1241,6 +1244,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1263,6 +1267,7 @@ exports.tests = [
         firefox147: true,
         node24_0: false,
         node25_0: true,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1298,6 +1303,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1331,6 +1337,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     },
     {
@@ -1364,6 +1371,7 @@ exports.tests = [
         safari18_5: false,
         node24_0: true,
         graalvm21_3_3: false,
+        rhino1_9_0: false,
       }
     }
   ]
