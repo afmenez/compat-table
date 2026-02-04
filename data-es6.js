@@ -15218,6 +15218,30 @@ exports.tests = [
       }
     },
     {
+      name: 'rest with identical number of elements in RHS',
+      exec: function(){/*
+        var [a, ...b] = [3, 4];
+        var [...c] = [5];
+        return a === 3 && b instanceof Array && (b + "") === "4" &&
+           c instanceof Array && (c + "") === "5";
+      */},
+      res: {
+        tr: true,
+        babel6corejs2: babel.corejs,
+        typescript1corejs2: true,
+        firefox2: false,
+        firefox34: true,
+        opera10_50: false,
+        safari13_1: false,
+        safari14_1: true,
+        ie11: false,
+        edge13: edge.experimental,
+        edge14: true,
+        chrome49: true,
+        node6: true,
+      }
+    },
+    {
       name: 'defaults',
       exec: function(){/*
         var {a = 1, b = 0, z:c = 3} = {b:2, z:undefined};
@@ -16067,6 +16091,31 @@ exports.tests = [
         hermes0_7_0: true,
         reactnative0_70_3: true,
         rhino1_7_13: false
+      }
+    },
+    {
+      name: 'rest with identical number of elements in RHS',
+      exec: function(){/*
+        var a,b,c;
+        [a, ...b] = [3, 4];
+        [...c] = [5];
+        return a === 3 && b instanceof Array && (b + "") === "4" &&
+           c instanceof Array && (c + "") === "5";
+      */},
+      res: {
+        tr: true,
+        babel6corejs2: babel.corejs,
+        typescript1corejs2: true,
+        firefox2: false,
+        firefox34: true,
+        opera10_50: false,
+        safari13_1: false,
+        safari14_1: true,
+        ie11: false,
+        edge13: edge.experimental,
+        edge14: true,
+        chrome49: true,
+        node6: true,
       }
     },
     {
