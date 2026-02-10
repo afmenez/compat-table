@@ -77,7 +77,7 @@ exports.runTests = function runTests(runner, key, family, options) {
         '    if (!jobQueue[runTime]) {\n' +
         '        jobQueue[runTime] = [];\n' +
         '    }\n' +
-        '    jobQueue[runTime].push(function() {\n' +
+        '    jobQueue[runTime].push(function () {\n' +
         '        cb(cbarg);\n' + 
         '    });\n' +
         '}\n';

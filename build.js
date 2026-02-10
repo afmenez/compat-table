@@ -41,8 +41,8 @@ var isOptional = function isOptional(category) {
   return (category || '').indexOf('annex b') > -1 || category === STAGE2;
 };
 
-var byTestSuite = function(suite) {
-  return function(browser) {
+var byTestSuite = function (suite) {
+  return function (browser) {
     return Array.isArray(browser.test_suites) ? browser.test_suites.indexOf(suite)>-1 : true;
   };
 };
@@ -112,7 +112,7 @@ process.nextTick(function () {
       polyfills: ['node_modules/es5-shim/es5-shim.js'],
       compiler: String,
     },
-  ].forEach(function(e){
+  ].forEach(function (e){
     Object.assign(es5, e);
     es5.browsers = {};
     es5.skeleton_file = 'es5/compiler-skeleton.html';
@@ -131,7 +131,7 @@ process.nextTick(function () {
       url: 'https://github.com/google/traceur-compiler/',
       target_file: 'es6/compilers/traceur.html',
       polyfills: ['node_modules/traceur/bin/traceur-runtime.js'],
-      compiler: function(code) {
+      compiler: function (code) {
         return traceur.compile(code);
       },
     },
@@ -140,7 +140,7 @@ process.nextTick(function () {
       url: 'https://babeljs.io/',
       target_file: 'es6/compilers/babel.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         return babel.transform(code, {presets: ['es2015'], sourceType: "script"}).code;
       },
     },
@@ -149,7 +149,7 @@ process.nextTick(function () {
       url: 'https://babeljs.io/',
       target_file: 'es6/compilers/babel-core-js.html',
       polyfills: ['node_modules/core-js-bundle/index.js', 'node_modules/regenerator-runtime/runtime.js'],
-      compiler: function(code) {
+      compiler: function (code) {
         return babel.transform(code, {presets: ['es2015'], sourceType: "script"}).code;
       },
     },
@@ -158,9 +158,9 @@ process.nextTick(function () {
       url: 'https://github.com/termi/es6-transpiler',
       target_file: 'es6/compilers/es6-transpiler.html',
       polyfills: [],
-      compiler: (function() {
+      compiler: (function () {
         var es6tr;
-        return function(code) {
+        return function (code) {
           // Known bug: running require('es6-transpiler') causes babel to break.
           // So, it's run here, as late as possible.
           es6tr = es6tr || require('es6-transpiler');
@@ -177,7 +177,7 @@ process.nextTick(function () {
       url: 'https://github.com/zenparsing/esdown',
       target_file: 'es6/compilers/esdown.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         return esdown.transform(code, { runtime: true, polyfill: true });
       },
     },
@@ -185,12 +185,12 @@ process.nextTick(function () {
       name: 'esprima',
       url: 'http://esprima.org/',
       target_file: 'es6/compilers/esprima.html',
-      compiler: function(code) {
+      compiler: function (code) {
         try {
           esprima.parse(code);
-          return "(function(){return true;})";
+          return "(function (){return true;})";
         } catch(e) {
-          return "/*\n" + e.message + "\n*/\n(function(){return false;})";
+          return "/*\n" + e.message + "\n*/\n(function (){return false;})";
         }
       },
     },
@@ -198,7 +198,7 @@ process.nextTick(function () {
       name: 'espree',
       url: 'http://espree.org/',
       target_file: 'es6/compilers/espree.html',
-      compiler: function(code) {
+      compiler: function (code) {
         try {
           espree.parse(code,{
             ecmaFeatures: {
@@ -224,9 +224,9 @@ process.nextTick(function () {
             modules: true,
             globalReturn: true
           }});
-          return "(function(){return true;})";
+          return "(function (){return true;})";
         } catch(e) {
-          return "/*\n" + e.message + "\n*/\n(function(){return false;})";
+          return "/*\n" + e.message + "\n*/\n(function (){return false;})";
         }
       },
     },
@@ -234,7 +234,7 @@ process.nextTick(function () {
       name: 'jshint',
       url: 'http://jshint.com/',
       target_file: 'es6/compilers/jshint.html',
-      compiler: function(code) {
+      compiler: function (code) {
         var result = jshint.JSHINT(code,{
           asi:true, boss:true, elision:true, eqnull:true, esnext:true,
           evil:true, expr:true, laxbreak:true, laxcomma:true, loopfunc:true,
@@ -243,10 +243,10 @@ process.nextTick(function () {
           "-W032":true,
         });
         if (result) {
-          return "(function(){return true;})";
+          return "(function (){return true;})";
         } else {
-          return "/*\n" + jshint.JSHINT.errors.map(function(e){ return (e && e.reason) || ""; }).join('\n')
-            + "\n*/\n(function(){return false;})";
+          return "/*\n" + jshint.JSHINT.errors.map(function (e){ return (e && e.reason) || ""; }).join('\n')
+            + "\n*/\n(function (){return false;})";
         }
       },
     },
@@ -255,7 +255,7 @@ process.nextTick(function () {
       url: 'https://github.com/facebook/react',
       target_file: 'es6/compilers/jsx.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         var ret = jstransform.transform(code, { harmony:true });
         return ret.code || ret;
       },
@@ -284,7 +284,7 @@ process.nextTick(function () {
       url: 'https://developers.google.com/closure/compiler/',
       target_file: 'es6/compilers/closure.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         var fpath = os.tmpDir() + path.sep + 'temp.js';
         fs.writeFileSync(fpath, code);
         var output;
@@ -300,7 +300,7 @@ process.nextTick(function () {
       },
     },
     */
-  ].forEach(function(e){
+  ].forEach(function (e){
     Object.assign(es6, e);
     es6.browsers = {};
     es6.skeleton_file = 'es6/compiler-skeleton.html';
@@ -312,7 +312,7 @@ process.nextTick(function () {
       url: 'https://babeljs.io/',
       target_file: 'esnext/compilers/babel-core-js.html',
       polyfills: ['node_modules/core-js-bundle/index.js', 'node_modules/regenerator-runtime/runtime.js'],
-      compiler: function(code) {
+      compiler: function (code) {
         return babel.transform(code, {presets: [['env', { forceAllTransforms: true }], ['stage-0', { decoratorsBeforeExport: true }]], sourceType: "script"}).code;
       },
     },
@@ -328,7 +328,7 @@ process.nextTick(function () {
       url: 'https://github.com/facebook/react',
       target_file: 'esnext/compilers/jsx.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         var ret = jstransform.transform(code, { harmony:true });
         return ret.code || ret;
       },
@@ -340,7 +340,7 @@ process.nextTick(function () {
       polyfills: ["node_modules/core-js-bundle/index.js"],
       compiler: ts.transpile
     },
-  ].forEach(function(e){
+  ].forEach(function (e){
     Object.assign(esnext, e);
     esnext.browsers = {};
     esnext.skeleton_file = 'esnext/compiler-skeleton.html';
@@ -352,7 +352,7 @@ process.nextTick(function () {
       url: 'https://babeljs.io/',
       target_file: 'es2016plus/compilers/babel-core-js.html',
       polyfills: ['node_modules/core-js-bundle/index.js', 'node_modules/regenerator-runtime/runtime.js'],
-      compiler: function(code) {
+      compiler: function (code) {
         return babel.transform(code, {presets: ['es2015', 'es2016', 'es2017']}).code;
       },
     },
@@ -368,7 +368,7 @@ process.nextTick(function () {
       url: 'https://github.com/facebook/react',
       target_file: 'es2016plus/compilers/jsx.html',
       polyfills: [],
-      compiler: function(code) {
+      compiler: function (code) {
         var ret = jstransform.transform(code, { harmony:true });
         return ret.code || ret;
       },
@@ -380,7 +380,7 @@ process.nextTick(function () {
       polyfills: ["node_modules/core-js-bundle/index.js"],
       compiler: ts.transpile
     },
-  ].forEach(function(e){
+  ].forEach(function (e){
     Object.assign(es2016plus, e);
     es2016plus.browsers = {};
     es2016plus.skeleton_file = 'es2016plus/compiler-skeleton.html';
@@ -396,7 +396,7 @@ function handle(options) {
   var result = replaceAndIndent(html, [
     ["<!-- NAME -->", [options.name]],
     ["<!-- URL -->", [options.name.link(options.url)]],
-    ["<!-- POLYFILLS -->", !options.polyfills ? [] : options.polyfills.map(function(e) {
+    ["<!-- POLYFILLS -->", !options.polyfills ? [] : options.polyfills.map(function (e) {
       return '<script>' + fs.readFileSync(__dirname + path.sep + e, 'utf-8').replace(/<(?=\/script>)/g,'\\u003c') + '</script>\n';
     })],
   ]).replace(/\t/g, '  ');
@@ -424,7 +424,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
   // rawBrowsers includes very obsolete browsers which mustn't be printed, but should
   // be used by interpolateResults(). All other uses should use this, which filters
   // the very obsolete ones out.
-  var browsers = Object.keys(rawBrowsers).reduce(function(obj,e) {
+  var browsers = Object.keys(rawBrowsers).reduce(function (obj,e) {
     var browser = rawBrowsers[e];
     if (browser.obsolete !== "very") {
       obj[e] = browser;
@@ -455,7 +455,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
 
   function allFootnotes() {
     var ret = $('<div>');
-    Object.keys(footnoteIndex).forEach(function(e,id) {
+    Object.keys(footnoteIndex).forEach(function (e,id) {
       if (!(e in footnoteIndex)) {
         console.error("There's no footnote with id '" + e + "'");
       }
@@ -483,7 +483,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
 
   // Write the browser headers
 
-  Object.keys(browsers).forEach(function(browserId) {
+  Object.keys(browsers).forEach(function (browserId) {
     var b = browsers[browserId];
     if (!b) {
       throw new Error('No browser with ID ' + browserId);
@@ -503,7 +503,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
   interpolateAllResults(tests, environments);
 
   // Now print the results.
-  tests.forEach(function(t, testNum) {
+  tests.forEach(function (t, testNum) {
     var id = escapeTestName(t.name);
     var name = t.name;
     if (t.spec) {
@@ -515,7 +515,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
     }
 
     if (t.links) {
-      t.links.forEach(function(link) {
+      t.links.forEach(function (link) {
         name += footnoteHTML(link);
         footnoteIndex[link.note_id] = link.note_html;
       });
@@ -601,7 +601,7 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
 
     // Print all the results for the subtests
     if ("subtests" in t) {
-      t.subtests.forEach(function(subtest) {
+      t.subtests.forEach(function (subtest) {
         var subtestName = subtest.name;
 
         if (subtest.spec) {
@@ -626,12 +626,12 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
         body.append(subtestRow);
 
         // Add all the result cells
-        Object.keys(subtest.res).forEach(function(browserId) {
+        Object.keys(subtest.res).forEach(function (browserId) {
           if (!environments[browserId]) {
             throw new Error(browserId + " is not found in \"environments.json\"\n- Did you mean \"" + closestString(Object.keys(browsers), browserId) + "\"?");
           }
         });
-        Object.keys(browsers).forEach(function(browserId) {
+        Object.keys(browsers).forEach(function (browserId) {
           var result = subtest.res[browserId];
 
           subtestRow.append(resultCell(
@@ -644,13 +644,13 @@ function dataToHtml(skeleton, rawBrowsers, tests, compiler) {
     }
 
     // Print all the results for the main test
-    Object.keys(browsers).forEach(function(browserId) {
+    Object.keys(browsers).forEach(function (browserId) {
       // For supertests, calculate the tally and total
       if ("subtests" in t) {
 
           var tally = 0, outOf = 0, flaggedTally = 0;
 
-          t.subtests.forEach(function(e) {
+          t.subtests.forEach(function (e) {
             var result = e.res[browserId];
 
             tally += testValue(result) === true;
@@ -752,7 +752,7 @@ function testScript(fn, transformFn, rowNum) {
           if (expr.search(/Function\s*\(|eval\s*\(/) > -1) {
             throw new Error("This test's code invokes eval() and cannot be compiled.");
           }
-          expr = transformFn("(function(){" + expr + "})");
+          expr = transformFn("(function (){" + expr + "})");
           transformed = true;
         } catch(e) {
           expr = "/* Error during compilation: " + e.message + "*/";
@@ -768,11 +768,11 @@ function testScript(fn, transformFn, rowNum) {
         transformed ? '' + asyncFn + ' && eval(' + codeString + ')()'
         : 'Function("asyncTestPassed",' + codeString + ')(asyncTestPassed)';
       var strictFuncString =
-        transformed ? '' + strictAsyncFn + ' && function(){"use strict";' + codeString + '}() && "Strict"'
+        transformed ? '' + strictAsyncFn + ' && function (){"use strict";' + codeString + '}() && "Strict"'
         : 'Function("asyncTestPassed","\'use strict\';"+' + codeString + ')(asyncTestPassed)';
 
       return cheerio.load('')('<script>' +
-         'test(function(){'
+         'test(function (){'
         +  'try{'
         +    'var asyncTestPassed=' + asyncFn + ';'
         +    'try{'
@@ -792,7 +792,7 @@ function testScript(fn, transformFn, rowNum) {
   } else {
     // it's an array of objects like the following:
     // { type: 'application/javascript;version=1.8', script: function () { ... } }
-    return fn.reduce(function(text, script) {
+    return fn.reduce(function (text, script) {
       var expr = deindentFunc(
           (script.script+'').replace(/^function \(\) \{\s*|\s*\}$/g, '')
         );

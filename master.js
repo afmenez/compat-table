@@ -10,7 +10,7 @@ if (!document.scripts) { // Create "live list" for all scripts if it doesn't exi
   document.scripts = document.getElementsByTagName("script");
 }
 
-(function() {
+(function () {
   var ga = document.createElement('script');
   ga.type = 'text/javascript';
   ga.async = true;
@@ -20,7 +20,7 @@ if (!document.scripts) { // Create "live list" for all scripts if it doesn't exi
   s.parentNode.insertBefore(ga, s);
 })();
 
-window.test = function(expression) {
+window.test = function (expression) {
   var result = (typeof expression === "string" ? expression : !!expression ? 'Yes' : 'No');
 
   // Last SCRIPT in the document is the one currently executing
@@ -45,8 +45,8 @@ window.test = function(expression) {
 // For async tests, this returned function is used to set results
 // instead of returning true/false.
 function makeAsyncPassedFn(className, textContent) {
-  return function(rowNum) {
-    return function() {
+  return function (rowNum) {
+    return function () {
       var elem = $("#table-wrapper tbody tr:not(.category)")
         .eq(+rowNum)
         .children(".current")
@@ -64,12 +64,12 @@ function makeAsyncPassedFn(className, textContent) {
 window.__asyncPassedFn = makeAsyncPassedFn('yes', "Yes");
 window.__strictAsyncPassedFn = makeAsyncPassedFn("no strict", "Strict");
 
-$(function() {
+$(function () {
   'use strict';
   var table = $('#table-wrapper');
   var currentBrowserSelector = ":nth-of-type(2)";
 
-  var setColSpans = function() {
+  var setColSpans = function () {
     $('#desktop-header' ).prop('colSpan', $('.platform.desktop:visible').length);
     $('#compiler-header').prop('colSpan', $('.platform.compiler:visible').length);
     $('#engine-header'  ).prop('colSpan', $('.platform.engine:visible').length);
@@ -91,16 +91,16 @@ $(function() {
   /** -- End Sticky header -- */
 
   // Set up the Show Obsolete checkbox
-  $('#show-obsolete, #show-unstable').on('click', function() {
+  $('#show-obsolete, #show-unstable').on('click', function () {
     $('body').toggleClass(this.id, this.checked);
-    setTimeout(function() {
+    setTimeout(function () {
       setColSpans();
     }, 100);
-  }).each(function() {
+  }).each(function () {
     if (this.checked) $(this).triggerHandler("click");
   });
 
-  window.__updateSupertest = function() {
+  window.__updateSupertest = function () {
     var tr = $(this);
     var isNonStandardTable = $('.non-standard table').length > 0;
     var subtests = tr.nextUntil('tr:not(.subtest)');
@@ -120,7 +120,7 @@ $(function() {
     );
   };
 
-  $('tr.supertest').each(function() {
+  $('tr.supertest').each(function () {
     var tr = $(this);
     var subtests = tr.nextUntil('tr:not(.subtest)');
     if (subtests.length === 0) {
@@ -130,7 +130,7 @@ $(function() {
     $('<span class="folddown">&#9658;</span>')
       .appendTo(tr.children()[0]);
 
-    tr.on('click', function(event) {
+    tr.on('click', function (event) {
       if (!$(event.target).is('a')) {
 
         // toggle manually for perf. reasons
@@ -139,7 +139,7 @@ $(function() {
         // already brings time from ~500ms to ~15ms
         // (mostly due to removal of recalc-heavy `css` for each element)
         // so this is probably sufficient for now
-        subtests.each(function(i, el) {
+        subtests.each(function (i, el) {
           el.style.display = el.style.display === 'table-row' ? 'none' : 'table-row';
         });
 
@@ -159,7 +159,7 @@ $(function() {
   }
   globalFoldDown.data('is-expanded', false);
 
-  globalFoldDown.on('click', function(e) {
+  globalFoldDown.on('click', function (e) {
     e.stopPropagation();
 
     // let's horribly cheat here for now
@@ -204,7 +204,7 @@ $(function() {
   };
 
   // Attach tooltip buttons to each feature <tr>
-  $('#table-wrapper td:first-child').each(function() {
+  $('#table-wrapper td:first-child').each(function () {
     var td = $(this);
     var scriptTag = td.parents('tr').find('script');
     if (scriptTag.length === 0) {
@@ -260,7 +260,7 @@ $(function() {
   // Since you can't add a :hover effect for columns,
   // these handlers must suffice.
   function addRemoveHover(name) {
-    return function() {
+    return function () {
       var c = platformOf(this);
       if (c) {
         $("[data-browser='" + c + "']")[name]('hover');
@@ -303,7 +303,7 @@ $(function() {
     table.removeClass('one-selected');
   });
 
-  window.onhashchange = function() {
+  window.onhashchange = function () {
     if (location.hash) {
       var elem = $('[href="' + location.hash + '"]');
 
@@ -365,7 +365,7 @@ $(function() {
   // The reason this is done at runtime instead of build time is because
   // the current browser's totals must be done at runtime, and to save on
   // duplicated code, we may as well do the predefined results too.
-  window.__updateHeaderTotal = function(i) {
+  window.__updateHeaderTotal = function (i) {
     var elem = $(this);
     var name;
     var id = 'current';
@@ -382,7 +382,7 @@ $(function() {
     var flaggedPoints = 0;
     var totalPoints = 0;
 
-    table.find('tbody tr:not(.subtest):not(.category):not(.not-applicable)').each(function() {
+    table.find('tbody tr:not(.subtest):not(.category):not(.not-applicable)').each(function () {
       var row = $(this);
       var points = +(row.attr('significance') || 1);
       var cell = row.find('td' + name);
@@ -454,7 +454,7 @@ $(function() {
     $('body').addClass('hide-platformtype');
   }
 
-  $('#sort').on('change', function() {
+  $('#sort').on('change', function () {
 
     var sortSpecMap = {
       'features':         {attr: 'data-features', order: 1, hidePlatformtype: true},
@@ -472,7 +472,7 @@ $(function() {
     if (!ordering[sortAttr]) {
       // Sort the platforms
 
-      var cells = $('th.platform').toArray().sort(function(a, b) {
+      var cells = $('th.platform').toArray().sort(function (a, b) {
         return sortSpec.order * (parseFloat(b.getAttribute(sortAttr)) - parseFloat(a.getAttribute(sortAttr)));
       });
       ordering[sortAttr] = $.map(cells, platformOf);
@@ -481,12 +481,12 @@ $(function() {
     var ord = ordering[sortAttr];
 
     // Define a comparison function using the orderings
-    var comparator = function(a, b) {
+    var comparator = function (a, b) {
       return ord.indexOf(platformOf(a)) - ord.indexOf(platformOf(b));
     };
 
     // Now sort the columns using the comparison function
-    table.detach().find('tr').each(function(i, row) {
+    table.detach().find('tr').each(function (i, row) {
 
       var cells = $(row.cells).slice(3).toArray().sort(comparator);
 

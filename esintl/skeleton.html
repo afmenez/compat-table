@@ -23,11 +23,11 @@
         if (typeof Symbol === "function" && Symbol.iterator) {
           var arr = [a, b, c, ,];
           var iterable = {
-            next: function() {
+            next: function () {
               return { value: arr.shift(), done: arr.length <= 0 };
             },
           };
-          iterable[Symbol.iterator] = function(){ return iterable; }
+          iterable[Symbol.iterator] = function (){ return iterable; }
           return iterable;
         }
         else {
@@ -36,7 +36,7 @@
       }
     </script>
     <script>
-      (function() {
+      (function () {
         var s = document.createElement('script'),
             t = document.getElementsByTagName('script')[0];
         s.type = 'text/javascript';

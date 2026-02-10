@@ -20,14 +20,14 @@
         }
         arr.length++;
         var iterator = {
-          next: function() {
+          next: function () {
             return { value: arr.shift(), done: arr.length <= 0 };
           },
           'return': methods['return'],
           'throw': methods['throw']
         };
         var iterable = {};
-        iterable[Symbol.iterator] = function(){ return iterator; }
+        iterable[Symbol.iterator] = function (){ return iterator; }
         return iterable;
       }
     </script>

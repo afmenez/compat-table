@@ -50,7 +50,7 @@ exports.tests = [
     {
       name: 'class decorators',
       spec: 'https://github.com/wycats/javascript-decorators',
-      exec: function(){/*
+      exec: function (){/*
         class A {
           @nonconf
           get B() {}
@@ -84,7 +84,7 @@ exports.tests = [
   spec: 'https://github.com/tc39/proposal-shadowrealm',
   exec: function () {/*
     return typeof ShadowRealm === "function"
-      && ["evaluate", "importValue"].every(function(key){
+      && ["evaluate", "importValue"].every(function (key){
         return key in ShadowRealm.prototype;
       });
   */},
@@ -115,7 +115,7 @@ exports.tests = [
   subtests: [
     {
       name: 'logical',
-      exec: function(){/*
+      exec: function (){/*
         var a, b;
         try {
           a = 19 || throw 77;
@@ -140,7 +140,7 @@ exports.tests = [
     },
     {
       name: 'parameter initializers',
-      exec: function(){/*
+      exec: function (){/*
         function fn (arg = throw 42) {
           return arg;
         }
@@ -169,7 +169,7 @@ exports.tests = [
     },
     {
       name: 'arrow function bodies',
-      exec: function(){/*
+      exec: function (){/*
         var fn = () => throw 42;
         try {
           fn();
@@ -193,7 +193,7 @@ exports.tests = [
     },
     {
       name: 'conditionals',
-      exec: function(){/*
+      exec: function (){/*
         true ? 42 : throw 21;
         try {
           false ? 42 : throw 21;
@@ -1383,13 +1383,13 @@ exports.tests = [
 
 
 // Shift annex B features to the bottom
-exports.tests = exports.tests.reduce(function(a,e) {
+exports.tests = exports.tests.reduce(function (a,e) {
   var index = [STAGE3, STAGE27, STAGE2].indexOf(e.category);
   if (index === -1) {
     console.log('"' + a.category + '" is not an ESnext category!');
   }
   (a[index] = a[index] || []).push(e);
   return a;
-},[]).reduce(function(a,e) {
+},[]).reduce(function (a,e) {
   return a.concat(e);
 },[]);

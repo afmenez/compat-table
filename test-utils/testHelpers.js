@@ -7,14 +7,14 @@ exports.createIterableHelper =
 '        return {};\n' +
 '    arr.length++;\n' +
 '    var iterator = {\n' +
-'        next: function() {\n' +
+'        next: function () {\n' +
 '            return { value: arr.shift(), done: arr.length <= 0 };\n' +
 '        },\n' +
 '        "return": methods["return"],\n' +
 '        "throw": methods["throw"]\n' +
 '    };\n' +
 '    var iterable = {};\n' +
-'    iterable[Symbol.iterator] = function(){ return iterator; };\n' +
+'    iterable[Symbol.iterator] = function (){ return iterator; };\n' +
 '    return iterable;\n' +
 '}\n' +
 'if (typeof global !== "undefined") {\n' +

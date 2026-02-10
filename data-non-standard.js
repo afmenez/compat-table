@@ -51,7 +51,7 @@ exports.tests = [
       name: 'Float32x4',
       spec: 'https://tc39.github.io/ecmascript_simd/#float32x4',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32x4',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Float32x4 === 'function';
       */},
       res: {
@@ -76,7 +76,7 @@ exports.tests = [
       name: 'Int32x4',
       spec: 'https://tc39.github.io/ecmascript_simd/#int32x4',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32x4',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Int32x4 === 'function';
       */},
       res: {
@@ -101,7 +101,7 @@ exports.tests = [
       name: 'Int16x8',
       spec: 'https://tc39.github.io/ecmascript_simd/#int16x8',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16x8',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Int16x8 === 'function';
       */},
       res: {
@@ -126,7 +126,7 @@ exports.tests = [
       name: 'Int8x16',
       spec: 'https://tc39.github.io/ecmascript_simd/#int8x16',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8x16',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Int8x16 === 'function';
       */},
       res: {
@@ -151,7 +151,7 @@ exports.tests = [
       name: 'Uint32x4',
       spec: 'https://tc39.github.io/ecmascript_simd/#uint32x4',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32x4',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Uint32x4 === 'function';
       */},
       res: {
@@ -176,7 +176,7 @@ exports.tests = [
       name: 'Uint16x8',
       spec: 'https://tc39.github.io/ecmascript_simd/#uint16x8',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16x8',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Uint16x8 === 'function';
       */},
       res: {
@@ -201,7 +201,7 @@ exports.tests = [
       name: 'Uint8x16',
       spec: 'https://tc39.github.io/ecmascript_simd/#uint8x16',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8x16',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Uint8x16 === 'function';
       */},
       res: {
@@ -226,7 +226,7 @@ exports.tests = [
       name: 'Bool32x4',
       spec: 'https://tc39.github.io/ecmascript_simd/#bool32x4',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Bool32x4',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Bool32x4 === 'function';
       */},
       res: {
@@ -251,7 +251,7 @@ exports.tests = [
       name: 'Bool16x8',
       spec: 'https://tc39.github.io/ecmascript_simd/#bool16x8',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Bool16x8',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Bool16x8 === 'function';
       */},
       res: {
@@ -276,7 +276,7 @@ exports.tests = [
       name: 'Bool8x16',
       spec: 'https://tc39.github.io/ecmascript_simd/#bool8x16',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Bool8x16',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Bool8x16 === 'function';
       */},
       res: {
@@ -301,8 +301,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.abs',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-abs',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/abs',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].abs === 'function';
         });
       */},
@@ -328,8 +328,8 @@ exports.tests = [
       name: 'SIMD.%type%.add',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-add',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/add',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].add === 'function';
         });
       */},
@@ -355,8 +355,8 @@ exports.tests = [
       name: 'SIMD.%integerType%.addSaturate',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-add-saturate',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/addSaturate',
-      exec: function(){/*
-        return simdSmallIntTypes.every(function(type){
+      exec: function (){/*
+        return simdSmallIntTypes.every(function (type){
           return typeof SIMD[type].addSaturate === 'function';
         });
       */},
@@ -382,8 +382,8 @@ exports.tests = [
       name: 'SIMD.%type%.and',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-and',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/and',
-      exec: function(){/*
-        return simdBoolIntTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolIntTypes.every(function (type){
           return typeof SIMD[type].and === 'function';
         });
       */},
@@ -409,8 +409,8 @@ exports.tests = [
       name: 'SIMD.%booleanType%.anyTrue',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-any-true',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/anyTrue',
-      exec: function(){/*
-        return simdBoolTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolTypes.every(function (type){
           return typeof SIMD[type].anyTrue === 'function';
         });
       */},
@@ -436,8 +436,8 @@ exports.tests = [
       name: 'SIMD.%booleanType%.allTrue',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-all-true',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/allTrue',
-      exec: function(){/*
-        return simdBoolTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolTypes.every(function (type){
           return typeof SIMD[type].allTrue === 'function';
         });
       */},
@@ -463,8 +463,8 @@ exports.tests = [
       name: 'SIMD.%type%.check',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-check',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/check',
-      exec: function(){/*
-        return simdAllTypes.every(function(type){
+      exec: function (){/*
+        return simdAllTypes.every(function (type){
           return typeof SIMD[type].check === 'function';
         });
       */},
@@ -490,8 +490,8 @@ exports.tests = [
       name: 'SIMD.%type%.equal',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-equal',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/equal',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].equal === 'function';
         });
       */},
@@ -517,8 +517,8 @@ exports.tests = [
       name: 'SIMD.%type%.extractLane',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-extract-lane',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/extractLane',
-      exec: function(){/*
-        return simdAllTypes.every(function(type){
+      exec: function (){/*
+        return simdAllTypes.every(function (type){
           return typeof SIMD[type].extractLane === 'function';
         });
       */},
@@ -544,8 +544,8 @@ exports.tests = [
       name: 'SIMD.%type%.greaterThan',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-greater-than',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/greaterThan',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].greaterThan === 'function';
         });
       */},
@@ -571,8 +571,8 @@ exports.tests = [
       name: 'SIMD.%type%.greaterThanOrEqual',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-greater-than-or-equal',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/greaterThanOrEqual',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].greaterThanOrEqual === 'function';
         });
       */},
@@ -598,8 +598,8 @@ exports.tests = [
       name: 'SIMD.%type%.lessThan',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-less-than',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/lessThan',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].lessThan === 'function';
         });
       */},
@@ -625,8 +625,8 @@ exports.tests = [
       name: 'SIMD.%type%.lessThanOrEqual',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-less-than-or-equal',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/lessThanOrEqual',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].lessThanOrEqual === 'function';
         });
       */},
@@ -652,8 +652,8 @@ exports.tests = [
       name: 'SIMD.%type%.mul',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-mul',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/mul',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].mul === 'function';
         });
       */},
@@ -679,8 +679,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.div',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-div',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/div',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].div === 'function';
         });
       */},
@@ -706,8 +706,8 @@ exports.tests = [
       name: 'SIMD.%type%.load',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-load-function',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/load',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].load === 'function';
         });
       */},
@@ -732,8 +732,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.load1',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/load',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].load1 === 'function';
         });
       */},
@@ -758,8 +758,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.load2',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/load',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].load2 === 'function';
         });
       */},
@@ -784,8 +784,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.load3',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/load',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].load3 === 'function';
         });
       */},
@@ -811,8 +811,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.max',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-max',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/max',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].max === 'function';
         });
       */},
@@ -838,8 +838,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.maxNum',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-max-num',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/maxNum',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].maxNum === 'function';
         });
       */},
@@ -866,8 +866,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.min',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-min',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/min',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].min === 'function';
         });
       */},
@@ -893,8 +893,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.minNum',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-min-num',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/minNum',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].minNum === 'function';
         });
       */},
@@ -921,8 +921,8 @@ exports.tests = [
       name: 'SIMD.%type%.neg',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-neg',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/neg',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].neg === 'function';
         });
       */},
@@ -948,8 +948,8 @@ exports.tests = [
       name: 'SIMD.%type%.not',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-not',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/not',
-      exec: function(){/*
-        return simdBoolTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolTypes.every(function (type){
           return typeof SIMD[type].not === 'function';
         });
       */},
@@ -975,8 +975,8 @@ exports.tests = [
       name: 'SIMD.%type%.notEqual',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-not-equal',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/notEqual',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].notEqual === 'function';
         });
       */},
@@ -1002,8 +1002,8 @@ exports.tests = [
       name: 'SIMD.%type%.or',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-or',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/or',
-      exec: function(){/*
-        return simdBoolIntTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolIntTypes.every(function (type){
           return typeof SIMD[type].or === 'function';
         });
       */},
@@ -1029,8 +1029,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.reciprocalApproximation',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-reciprocal-approximation',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/reciprocalApproximation',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].reciprocalApproximation === 'function';
         });
       */},
@@ -1056,8 +1056,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.reciprocalSqrtApproximation',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-reciprocal-sqrt-approximation',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/reciprocalSqrtApproximation',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].reciprocalSqrtApproximation === 'function';
         });
       */},
@@ -1083,8 +1083,8 @@ exports.tests = [
       name: 'SIMD.%type%.replaceLane',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-replace-lane',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/replaceLane',
-      exec: function(){/*
-        return simdAllTypes.every(function(type){
+      exec: function (){/*
+        return simdAllTypes.every(function (type){
           return typeof SIMD[type].replaceLane === 'function';
         });
       */},
@@ -1110,8 +1110,8 @@ exports.tests = [
       name: 'SIMD.%type%.select',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-select',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/select',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].select === 'function';
         });
       */},
@@ -1137,8 +1137,8 @@ exports.tests = [
       name: 'SIMD.%integerType%.shiftLeftByScalar',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-shift-left-by-scalar',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shiftLeftByScalar',
-      exec: function(){/*
-        return simdIntTypes.every(function(type){
+      exec: function (){/*
+        return simdIntTypes.every(function (type){
           return typeof SIMD[type].shiftLeftByScalar === 'function';
         });
       */},
@@ -1164,8 +1164,8 @@ exports.tests = [
       name: 'SIMD.%integerType%.shiftRightByScalar',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-shift-right-by-scalar',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shiftRightByScalar',
-      exec: function(){/*
-        return simdIntTypes.every(function(type){
+      exec: function (){/*
+        return simdIntTypes.every(function (type){
           return typeof SIMD[type].shiftRightByScalar === 'function';
         });
       */},
@@ -1191,8 +1191,8 @@ exports.tests = [
       name: 'SIMD.%type%.shuffle',
       spec: 'https://tc39.github.io/ecmascript_simd/#shuffle',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shuffle',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].shuffle === 'function';
         });
       */},
@@ -1218,8 +1218,8 @@ exports.tests = [
       name: 'SIMD.%type%.splat',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-splat',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/splat',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].splat === 'function';
         });
       */},
@@ -1245,8 +1245,8 @@ exports.tests = [
       name: 'SIMD.%floatType%.sqrt',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-sqrt',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/sqrt',
-      exec: function(){/*
-        return simdFloatTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatTypes.every(function (type){
           return typeof SIMD[type].sqrt === 'function';
         });
       */},
@@ -1272,8 +1272,8 @@ exports.tests = [
       name: 'SIMD.%type%.store',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-store-function',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/store',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].store === 'function';
         });
       */},
@@ -1298,8 +1298,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.store1',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/store',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].store1 === 'function';
         });
       */},
@@ -1324,8 +1324,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.store2',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/store',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].store2 === 'function';
         });
       */},
@@ -1350,8 +1350,8 @@ exports.tests = [
     {
       name: 'SIMD.%type%.store3',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/store',
-      exec: function(){/*
-        return simd32bitFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simd32bitFloatIntTypes.every(function (type){
           return typeof SIMD[type].store3 === 'function';
         });
       */},
@@ -1377,8 +1377,8 @@ exports.tests = [
       name: 'SIMD.%type%.sub',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-sub',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/sub',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].sub === 'function';
         });
       */},
@@ -1404,8 +1404,8 @@ exports.tests = [
       name: 'SIMD.%integerType%.subSaturate',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-sub-saturate',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/subSaturate',
-      exec: function(){/*
-        return simdSmallIntTypes.every(function(type){
+      exec: function (){/*
+        return simdSmallIntTypes.every(function (type){
           return typeof SIMD[type].subSaturate === 'function';
         });
       */},
@@ -1431,8 +1431,8 @@ exports.tests = [
       name: 'SIMD.%type%.swizzle',
       spec: 'https://tc39.github.io/ecmascript_simd/#swizzle',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/swizzle',
-      exec: function(){/*
-        return simdFloatIntTypes.every(function(type){
+      exec: function (){/*
+        return simdFloatIntTypes.every(function (type){
           return typeof SIMD[type].swizzle === 'function';
         });
       */},
@@ -1458,8 +1458,8 @@ exports.tests = [
       name: 'SIMD.%type%.xor',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-xor',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/xor',
-      exec: function(){/*
-        return simdBoolIntTypes.every(function(type){
+      exec: function (){/*
+        return simdBoolIntTypes.every(function (type){
           return typeof SIMD[type].xor === 'function';
         });
       */},
@@ -1485,8 +1485,8 @@ exports.tests = [
       name: 'SIMD.%type%.fromTIMDBits',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-to-timd',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/fromFloat32x4Bits',
-      exec: function(){/*
-        return ['Float32x4','Int32x4','Int8x16','Uint32x4','Uint16x8','Uint8x16'].every(function(type){
+      exec: function (){/*
+        return ['Float32x4','Int32x4','Int8x16','Uint32x4','Uint16x8','Uint8x16'].every(function (type){
           return typeof SIMD.Int16x8['from' + type + 'Bits'] === 'function';
         });
       */},
@@ -1512,7 +1512,7 @@ exports.tests = [
       name: 'SIMD.%type%.fromTIMD',
       spec: 'https://tc39.github.io/ecmascript_simd/#simd-to-timd-logical',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/fromFloat32x4',
-      exec: function(){/*
+      exec: function (){/*
         return typeof SIMD.Float32x4.fromInt32x4 === 'function' && typeof SIMD.Float32x4.fromUint32x4 === 'function' && typeof SIMD.Int32x4.fromFloat32x4 === 'function' && typeof SIMD.Uint32x4.fromFloat32x4 === 'function';
       */},
       res: {
@@ -1591,7 +1591,7 @@ exports.tests = [
     {
       name: '"toSource" method as hook for uneval',
       exec: function () {/*
-        return uneval({ toSource: function() { return "pwnd!" } }) === "pwnd!";
+        return uneval({ toSource: function () { return "pwnd!" } }) === "pwnd!";
       */} ,
       res: {
         ie11: false,
@@ -1685,7 +1685,7 @@ exports.tests = [
             new Error("message"),
             new EvalError("WTF"),
             /rx/gim,
-            [ 3, undefined, "%&@", null, function() {} ],
+            [ 3, undefined, "%&@", null, function () {} ],
             { foo: "x", bar: [ 42, new Date ] }
         ];
 
@@ -1740,7 +1740,7 @@ exports.tests = [
   name: 'function "caller" property',
   mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller',
   exec: function () {
-    return 'caller' in function(){};
+    return 'caller' in function (){};
   },
   res: {
     ie7: true,
@@ -1849,7 +1849,7 @@ exports.tests = [
 {
   name: 'class extends null',
   spec: 'https://github.com/tc39/ecma262/issues/543',
-  exec: function() {/*
+  exec: function () {/*
      class C extends null {}
      return new C instanceof C;
      */},
@@ -2070,7 +2070,7 @@ exports.tests = [
   name: 'Expression closures',
   mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Expression_closures',
   exec: function () {/*
-    return (function(x)x)(1) === 1;
+    return (function (x)x)(1) === 1;
   */},
   res: {
     ie7: false,
@@ -2232,7 +2232,7 @@ exports.tests = [
     try {
       var x = 5;
       var iter = {
-        next: function() {
+        next: function () {
           /* global StopIteration */
           if (x > 0) return { foo: --x };
           else throw StopIteration;
@@ -2240,7 +2240,7 @@ exports.tests = [
       };
       var total = 0;
       // jshint iterator: true
-      for (var item in { __iterator__: function() { return iter; }}) {
+      for (var item in { __iterator__: function () { return iter; }}) {
         total += item.foo;
       }
       // jshint iterator: false
@@ -2277,7 +2277,7 @@ exports.tests = [
       script: function () {
         global.test((function () {
           try {
-            var g = eval('(function() { var a = yield "foo"; yield a + "baz";})')();
+            var g = eval('(function () { var a = yield "foo"; yield a + "baz";})')();
             var passed = g.next() === "foo";
             return passed && (g.send("bar") === "barbaz");
           }
@@ -2292,7 +2292,7 @@ exports.tests = [
         if (!global.__script_executed["generators"]) {
           global.test((function () {
             try {
-              var g = eval('(function() { var a = yield "foo"; yield a + "baz";})')();
+              var g = eval('(function () { var a = yield "foo"; yield a + "baz";})')();
               var passed = g.next() === "foo";
               return passed && (g.send("bar") === "barbaz");
             }
@@ -2810,7 +2810,7 @@ exports.tests = [
     name: 'global',
     subtests: [{
       name: '"global" global property is global object',
-      exec: function(){/*
+      exec: function (){/*
       var actualGlobal = Function('return this')();
       actualGlobal.__system_global_test__ = 42;
       return typeof global === 'object' && global && global === actualGlobal && !global.lacksGlobal && global.__system_global_test__ === 42;
@@ -2845,7 +2845,7 @@ exports.tests = [
       }
     }, {
       name: '"global" global property has correct property descriptor',
-      exec: function(){/*
+      exec: function (){/*
       var actualGlobal = Function('return this')();
       if (typeof global !== 'object') { return false; }
       if (!('global' in actualGlobal)) { return false; }
@@ -2894,9 +2894,9 @@ exports.tests = [
       note_html: 'The behaviour of the Proxy “ownKeys” handler in presence of duplicate keys has been <a href="https://github.com/tc39/ecma262/issues/833">modified later</a>.'
     }
   ],
-  exec: function() {/*
+  exec: function () {/*
    var P = new Proxy(Object.preventExtensions(Object.defineProperty({a:1}, "b", {value:1})), {
-   ownKeys: function() {
+   ownKeys: function () {
    return ['a','a','b','b'];
    }
    });

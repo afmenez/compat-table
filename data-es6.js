@@ -30,7 +30,7 @@ exports.tests = [
   subtests: [
     {
       name: 'direct recursion',
-      exec: function() {/*
+      exec: function () {/*
         "use strict";
         return (function f(n){
           if (n <= 0) {
@@ -67,7 +67,7 @@ exports.tests = [
     },
     {
       name: 'mutual recursion',
-      exec: function() {/*
+      exec: function () {/*
         "use strict";
         function f(n){
           if (n <= 0) {
@@ -115,7 +115,7 @@ exports.tests = [
   subtests: [
     {
       name: '0 parameters',
-      exec: function(){/*
+      exec: function (){/*
         return (() => 5)() === 5;
       */},
       res: {
@@ -150,7 +150,7 @@ exports.tests = [
     },
     {
       name: '1 parameter, no brackets',
-      exec: function(){/*
+      exec: function (){/*
         var b = x => x + "foo";
         return (b("fee fie foe ") === "fee fie foe foo");
       */},
@@ -186,7 +186,7 @@ exports.tests = [
     },
     {
       name: 'multiple parameters',
-      exec: function(){/*
+      exec: function (){/*
         var c = (v, w, x, y, z) => "" + v + w + x + y + z;
         return (c(6, 5, 4, 3, 2) === "65432");
       */},
@@ -222,8 +222,8 @@ exports.tests = [
     },
     {
       name: 'lexical "this" binding',
-      exec: function(){/*
-        var d = { x : "bar", y : function() { return z => this.x + z; }}.y();
+      exec: function (){/*
+        var d = { x : "bar", y : function () { return z => this.x + z; }}.y();
         var e = { x : "baz", y : d };
         return d("ley") === "barley" && e.y("ley") === "barley";
       */},
@@ -254,8 +254,8 @@ exports.tests = [
     },
     {
       name: '"this" unchanged by call or apply',
-      exec: function(){/*
-        var d = { x : "foo", y : function() { return () => this.x; }};
+      exec: function (){/*
+        var d = { x : "foo", y : function () { return () => this.x; }};
         var e = { x : "bar" };
         return d.y().call(e) === "foo" && d.y().apply(e) === "foo";
       */},
@@ -286,8 +286,8 @@ exports.tests = [
     },
     {
       name: 'can\'t be bound, can be curried',
-      exec: function(){/*
-        var d = { x : "bar", y : function() { return z => this.x + z; }};
+      exec: function (){/*
+        var d = { x : "bar", y : function () { return z => this.x + z; }};
         var e = { x : "baz" };
         return d.y().bind(e, "ley")() === "barley";
       */},
@@ -318,8 +318,8 @@ exports.tests = [
     },
     {
       name: 'lexical "arguments" binding',
-      exec: function(){/*
-        var f = (function() { return z => arguments[0]; }(5));
+      exec: function (){/*
+        var f = (function () { return z => arguments[0]; }(5));
         return f(6) === 5;
       */},
       res: {
@@ -351,7 +351,7 @@ exports.tests = [
     },
     {
       name: 'no line break between params and <code>=></code>',
-      exec: function(){/*
+      exec: function (){/*
         return (() => {
           try { Function("x\n => 2")(); } catch(e) { return true; }
         })();
@@ -382,7 +382,7 @@ exports.tests = [
     },
     {
       name: 'correct precedence',
-      exec: function(){/*
+      exec: function (){/*
         return (() => {
           try { Function("0 || () => 2")(); } catch(e) { return true; }
         })();
@@ -413,7 +413,7 @@ exports.tests = [
     },
     {
       name: 'no "prototype" property',
-      exec: function(){/*
+      exec: function (){/*
         var a = () => 5;
         return !a.hasOwnProperty("prototype");
       */},
@@ -440,7 +440,7 @@ exports.tests = [
     },
     {
       name: 'lexical "super" binding in constructors',
-      exec: function(){/*
+      exec: function (){/*
         var received;
 
         class B {
@@ -485,7 +485,7 @@ exports.tests = [
     },
     {
       name: 'lexical "super" binding in methods',
-      exec: function(){/*
+      exec: function (){/*
         class B {
           qux() {
             return "quux";
@@ -527,7 +527,7 @@ exports.tests = [
     },
     {
       name: 'lexical "new.target" binding',
-      exec: function(){/*
+      exec: function (){/*
         function C() {
           return x => new.target;
         }
@@ -564,7 +564,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic support',
-      exec: function() {/*
+      exec: function () {/*
         const foo = 123;
         return (foo === 123);
       */},
@@ -602,7 +602,7 @@ exports.tests = [
     },
     {
       name: 'is block-scoped',
-      exec: function() {/*
+      exec: function () {/*
         const bar = 123;
         { const bar = 456; }
         return bar === 123;
@@ -639,7 +639,7 @@ exports.tests = [
     },
     {
       name: 'scope shadow resolution',
-      exec: function(){/*
+      exec: function (){/*
         try {
             { const bar = 456; }
             const bar = 123;
@@ -678,7 +678,7 @@ exports.tests = [
     },
     {
       name: 'cannot be in statements',
-      exec: function() {/*
+      exec: function () {/*
         const bar = 1;
         try {
           Function("if(true) const baz = 1;")();
@@ -718,7 +718,7 @@ exports.tests = [
     },
     {
       name: 'redefining a const is an error',
-      exec: function() {/*
+      exec: function () {/*
         const baz = 1;
         try {
           Function("const foo = 1; foo = 2;")();
@@ -757,7 +757,7 @@ exports.tests = [
     },
     {
       name: 'for loop statement scope',
-      exec: function(){/*
+      exec: function (){/*
        const baz = 1;
        for(const baz = 0; false;) {}
        return baz === 1;
@@ -794,10 +794,10 @@ exports.tests = [
     },
     {
       name: 'for-in loop iteration scope',
-      exec: function(){/*
+      exec: function (){/*
         var scopes = [];
         for(const i in { a:1, b:1 }) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         return (scopes[0]() === "a" && scopes[1]() === "b");
       */},
@@ -830,10 +830,10 @@ exports.tests = [
     },
     {
       name: 'for-of loop iteration scope',
-      exec: function(){/*
+      exec: function (){/*
         var scopes = [];
         for(const i of ['a','b']) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         return (scopes[0]() === "a" && scopes[1]() === "b");
       */},
@@ -866,8 +866,8 @@ exports.tests = [
     },
     {
       name: 'temporal dead zone',
-      exec: function(){/*
-        var passed = (function(){ try { qux; } catch(e) { return true; }}());
+      exec: function (){/*
+        var passed = (function (){ try { qux; } catch(e) { return true; }}());
         function fn() { passed &= qux === 456; }
         const qux = 456;
         fn();
@@ -901,7 +901,7 @@ exports.tests = [
     },
     {
       name: 'basic support (strict mode)',
-      exec: function() {/*
+      exec: function () {/*
         "use strict";
         const foo = 123;
         return (foo === 123);
@@ -941,7 +941,7 @@ exports.tests = [
     },
     {
       name: 'is block-scoped (strict mode)',
-      exec: function() {/*
+      exec: function () {/*
         'use strict';
         const bar = 123;
         { const bar = 456; }
@@ -979,7 +979,7 @@ exports.tests = [
     },
     {
       name: 'scope shadow resolution (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         try {
             { const bar = 456; }
@@ -1019,7 +1019,7 @@ exports.tests = [
     },
     {
       name: 'cannot be in statements (strict mode)',
-      exec: function() {/*
+      exec: function () {/*
         'use strict';
         const bar = 1;
         try {
@@ -1060,7 +1060,7 @@ exports.tests = [
     },
     {
       name: 'redefining a const (strict mode)',
-      exec: function() {/*
+      exec: function () {/*
         'use strict';
         const baz = 1;
         try {
@@ -1101,7 +1101,7 @@ exports.tests = [
     },
     {
       name: 'for loop statement scope (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         const baz = 1;
         for(const baz = 0; false;) {}
@@ -1139,11 +1139,11 @@ exports.tests = [
     },
     {
       name: 'for-in loop iteration scope (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         var scopes = [];
         for(const i in { a:1, b:1 }) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         return (scopes[0]() === "a" && scopes[1]() === "b");
       */},
@@ -1176,11 +1176,11 @@ exports.tests = [
     },
     {
       name: 'for-of loop iteration scope (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         var scopes = [];
         for(const i of ['a','b']) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         return (scopes[0]() === "a" && scopes[1]() === "b");
       */},
@@ -1213,9 +1213,9 @@ exports.tests = [
     },
     {
       name: 'temporal dead zone (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
-        var passed = (function(){ try { qux; } catch(e) { return true; }}());
+        var passed = (function (){ try { qux; } catch(e) { return true; }}());
         function fn() { passed &= qux === 456; }
         const qux = 456;
         fn();
@@ -1258,7 +1258,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic support',
-      exec: function(){/*
+      exec: function (){/*
         let foo = 123;
         return (foo === 123);
       */},
@@ -1298,7 +1298,7 @@ exports.tests = [
     },
     {
       name: 'is block-scoped',
-      exec: function(){/*
+      exec: function (){/*
         let bar = 123;
         { let bar = 456; }
         return bar === 123;
@@ -1335,7 +1335,7 @@ exports.tests = [
     },
     {
       name: 'scope shadow resolution',
-      exec: function(){/*
+      exec: function (){/*
         try {
             { let bar = 456; }
             let bar = 123;
@@ -1374,7 +1374,7 @@ exports.tests = [
     },
     {
       name: 'cannot be in statements',
-      exec: function(){/*
+      exec: function (){/*
         let bar = 1;
         try {
           Function("if(true) let baz = 1;")();
@@ -1414,7 +1414,7 @@ exports.tests = [
     },
     {
       name: 'for loop statement scope',
-      exec: function(){/*
+      exec: function (){/*
         let baz = 1;
         for(let baz = 0; false;) {}
         return baz === 1;
@@ -1451,8 +1451,8 @@ exports.tests = [
     },
     {
       name: 'temporal dead zone',
-      exec: function(){/*
-        var passed = (function(){ try {  qux; } catch(e) { return true; }}());
+      exec: function (){/*
+        var passed = (function (){ try {  qux; } catch(e) { return true; }}());
         function fn() { passed &= qux === 456; }
         let qux = 456;
         fn();
@@ -1486,16 +1486,16 @@ exports.tests = [
     },
     {
       name: 'for/for-in loop iteration scope',
-      exec: function(){/*
+      exec: function (){/*
         let scopes = [];
         for(let i = 0; i < 2; i++) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         let passed = (scopes[0]() === 0 && scopes[1]() === 1);
 
         scopes = [];
         for(let i in { a:1, b:1 }) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         passed &= (scopes[0]() === "a" && scopes[1]() === "b");
         return passed;
@@ -1529,7 +1529,7 @@ exports.tests = [
     },
     {
       name: 'for-in loop binding shadowing parameter',
-      exec: function(){/*
+      exec: function (){/*
         try {
           Function("function f(e) { for (let e in {}) e }");
           return true;
@@ -1567,7 +1567,7 @@ exports.tests = [
     },
     {
       name: 'basic support (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         let foo = 123;
         return (foo === 123);
@@ -1604,7 +1604,7 @@ exports.tests = [
     },
     {
       name: 'is block-scoped (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         let bar = 123;
         { let bar = 456; }
@@ -1642,7 +1642,7 @@ exports.tests = [
     },
     {
       name: 'scope shadow resolution (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         try {
             { let bar = 456; }
@@ -1682,7 +1682,7 @@ exports.tests = [
     },
     {
       name: 'cannot be in statements (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         let bar = 1;
         try {
@@ -1723,7 +1723,7 @@ exports.tests = [
     },
     {
       name: 'for loop statement scope (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         let baz = 1;
         for(let baz = 0; false;) {}
@@ -1761,9 +1761,9 @@ exports.tests = [
     },
     {
       name: 'temporal dead zone (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
-        var passed = (function(){ try {  qux; } catch(e) { return true; }}());
+        var passed = (function (){ try {  qux; } catch(e) { return true; }}());
         function fn() { passed &= qux === 456; }
         let qux = 456;
         fn();
@@ -1797,17 +1797,17 @@ exports.tests = [
     },
     {
       name: 'for/for-in loop iteration scope (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         let scopes = [];
         for(let i = 0; i < 2; i++) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         let passed = (scopes[0]() === 0 && scopes[1]() === 1);
 
         scopes = [];
         for(let i in { a:1, b:1 }) {
-          scopes.push(function(){ return i; });
+          scopes.push(function (){ return i; });
         }
         passed &= (scopes[0]() === "a" && scopes[1]() === "b");
         return passed;
@@ -1841,7 +1841,7 @@ exports.tests = [
     },
     {
       name: 'for-in loop binding shadowing parameter (strict mode)',
-      exec: function(){/*
+      exec: function (){/*
         try {
           Function("'use strict'; function f(e) { for (let e in {}) e }");
           return true;
@@ -1888,7 +1888,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic functionality',
-      exec: function(){/*
+      exec: function (){/*
         return (function (a = 1, b = 2) { return a === 3 && b === 2; }(3));
       */},
       res: {
@@ -1923,7 +1923,7 @@ exports.tests = [
     },
     {
       name: 'explicit undefined defers to the default',
-      exec: function(){/*
+      exec: function (){/*
         return (function (a = 1, b = 2) { return a === 1 && b === 3; }(undefined, 3));
       */},
       res: {
@@ -1958,7 +1958,7 @@ exports.tests = [
     },
     {
       name: 'defaults can refer to previous params',
-      exec: function(){/*
+      exec: function (){/*
         return (function (a, b = a) { return b === 5; }(5));
       */},
       res: {
@@ -1993,7 +1993,7 @@ exports.tests = [
     },
     {
       name: 'arguments object interaction',
-      exec: function(){/*
+      exec: function (){/*
         return (function (a = "baz", b = "qux", c = "quux") {
           a = "corge";
           // The arguments object is not mapped to the
@@ -2033,14 +2033,14 @@ exports.tests = [
     },
     {
       name: 'temporal dead zone',
-      exec: function(){/*
-        return (function(x = 1) {
+      exec: function (){/*
+        return (function (x = 1) {
           try {
-            eval("(function(a=a){}())");
+            eval("(function (a=a){}())");
             return false;
           } catch(e) {}
           try {
-            eval("(function(a=b,b){}())");
+            eval("(function (a=b,b){}())");
             return false;
           } catch(e) {}
           return true;
@@ -2072,8 +2072,8 @@ exports.tests = [
     },
     {
       name: 'separate scope',
-      exec: function(){/*
-        return (function(a=function(){
+      exec: function (){/*
+        return (function (a=function (){
           return typeof b === 'undefined';
         }){
           var b = 1;
@@ -2106,7 +2106,7 @@ exports.tests = [
     },
     {
       name: 'new Function() support',
-      exec: function() {/*
+      exec: function () {/*
         return new Function("a = 1", "b = 2",
           "return a === 3 && b === 2;"
         )(3);
@@ -2149,7 +2149,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic functionality',
-      exec: function() {/*
+      exec: function () {/*
         return (function (foo, ...args) {
           return args instanceof Array && args + "" === "bar,baz";
         }("foo", "bar", "baz"));
@@ -2185,8 +2185,8 @@ exports.tests = [
     },
     {
       name: 'function \'length\' property',
-      exec: function() {/*
-        return function(a, ...b){}.length === 1 && function(...c){}.length === 0;
+      exec: function () {/*
+        return function (a, ...b){}.length === 1 && function (...c){}.length === 0;
       */},
       res: {
         tr: true,
@@ -2218,7 +2218,7 @@ exports.tests = [
     },
     {
       name: 'arguments object interaction',
-      exec: function() {/*
+      exec: function () {/*
         return (function (foo, ...args) {
           foo = "qux";
           // The arguments object is not mapped to the
@@ -2257,7 +2257,7 @@ exports.tests = [
     },
     {
       name: 'can\'t be used in setters',
-      exec: function() {/*
+      exec: function () {/*
         return (function (...args) {
           try {
             eval("({set e(...args){}})");
@@ -2295,7 +2295,7 @@ exports.tests = [
     },
     {
       name: 'new Function() support',
-      exec: function() {/*
+      exec: function () {/*
         return new Function("a", "...b",
           "return b instanceof Array && a+b === 'foobar,baz';"
         )('foo','bar','baz');
@@ -2368,7 +2368,7 @@ exports.tests = [
     },
     {
       name: 'with arrays, in array literals',
-      exec: function() {/*
+      exec: function () {/*
        return [...[1, 2, 3]][2] === 3;
       */},
       res: {
@@ -2436,7 +2436,7 @@ exports.tests = [
     },
     {
       name: 'with sparse arrays, in array literals',
-      exec: function() {/*
+      exec: function () {/*
         var a = [...[,,]];
         return "0" in a && "1" in a && '' + a[0] + a[1] === "undefinedundefined";
       */},
@@ -2466,7 +2466,7 @@ exports.tests = [
     },
     {
       name: 'with strings, in function calls',
-      exec: function() {/*
+      exec: function () {/*
        return Math.max(..."1234") === 4;
       */},
       res: {
@@ -2497,7 +2497,7 @@ exports.tests = [
     },
     {
       name: 'with strings, in array literals',
-      exec: function() {/*
+      exec: function () {/*
        return ["a", ..."bcd", "e"][3] === "d";
       */},
       res: {
@@ -2528,7 +2528,7 @@ exports.tests = [
     },
     {
       name: 'with astral plane strings, in function calls',
-      exec: function() {/*
+      exec: function () {/*
        return Array(..."𠮷𠮶")[0] === "𠮷";
       */},
       res: {
@@ -2558,7 +2558,7 @@ exports.tests = [
     },
     {
       name: 'with astral plane strings, in array literals',
-      exec: function() {/*
+      exec: function () {/*
        return [..."𠮷𠮶"][0] === "𠮷";
       */},
       res: {
@@ -3734,7 +3734,7 @@ exports.tests = [
   subtests: [
     {
       name: 'statement in constructors',
-      exec: function() {/*
+      exec: function () {/*
         var passed = false;
         class B {
           constructor(a) { passed = (a === "barbaz"); }
@@ -3774,7 +3774,7 @@ exports.tests = [
     },
     {
       name: 'expression in constructors',
-      exec: function() {/*
+      exec: function () {/*
         class B {
           constructor(a) { return ["foo" + a]; }
         }
@@ -3813,7 +3813,7 @@ exports.tests = [
     },
     {
       name: 'in methods, property access',
-      exec: function() {/*
+      exec: function () {/*
         class B {}
         B.prototype.qux = "foo";
         B.prototype.corge = "baz";
@@ -3853,7 +3853,7 @@ exports.tests = [
     },
     {
       name: 'in methods, method calls',
-      exec: function() {/*
+      exec: function () {/*
         class B {
           qux(a) { return "foo" + a; }
         }
@@ -3892,7 +3892,7 @@ exports.tests = [
     },
     {
       name: 'method calls use correct "this" binding',
-      exec: function() {/*
+      exec: function () {/*
         class B {
           qux(a) { return this.foo + a; }
         }
@@ -3933,7 +3933,7 @@ exports.tests = [
     },
     {
       name: 'constructor calls use correct "new.target" binding',
-      exec: function() {/*
+      exec: function () {/*
         var passed;
         class B {
           constructor() { passed = (new.target === C); }
@@ -3967,7 +3967,7 @@ exports.tests = [
     },
     {
       name: 'is statically bound',
-      exec: function() {/*
+      exec: function () {/*
         class B {
           qux() { return "bar"; }
         }
@@ -4010,7 +4010,7 @@ exports.tests = [
     },
     {
       name: 'super() invokes the correct constructor',
-      exec: function() {/*
+      exec: function () {/*
         // checks that super() is *not* a synonym of super.constructor()
         var passed;
         class B {
@@ -4062,7 +4062,7 @@ exports.tests = [
   subtests: [
     {
       name: 'computed properties',
-      exec: function() {/*
+      exec: function () {/*
         var x = 'y';
         return ({ [x]: 1 }).y === 1;
       */},
@@ -4131,7 +4131,7 @@ exports.tests = [
     },
     {
       name: 'shorthand methods',
-      exec: function() {/*
+      exec: function () {/*
         return ({ y() { return 2; } }).y() === 2;
       */},
       res: {
@@ -4165,7 +4165,7 @@ exports.tests = [
     },
     {
       name: 'string-keyed shorthand methods',
-      exec: function() {/*
+      exec: function () {/*
         return ({ "foo bar"() { return 4; } })["foo bar"]() === 4;
       */},
       res: {
@@ -4197,7 +4197,7 @@ exports.tests = [
     },
     {
       name: 'computed shorthand methods',
-      exec: function() {/*
+      exec: function () {/*
         var x = 'y';
         return ({ [x](){ return 1 } }).y() === 1;
       */},
@@ -4230,7 +4230,7 @@ exports.tests = [
     },
     {
       name: 'computed accessors',
-      exec: function() {/*
+      exec: function () {/*
         var x = 'y',
             valueSet,
             obj = {
@@ -4311,7 +4311,7 @@ exports.tests = [
     },
     {
       name: 'labeled function statements',
-      exec: function() {/*
+      exec: function () {/*
         // Note: only available outside of strict mode.
         if (!this) return false;
 
@@ -4343,7 +4343,7 @@ exports.tests = [
     },
     {
       name: 'function statements in if-statement clauses',
-      exec: function() {/*
+      exec: function () {/*
         // Note: only available outside of strict mode.
         if (!this) return false;
 
@@ -4387,7 +4387,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic support',
-      exec: function() {/*
+      exec: function () {/*
         return { __proto__ : [] } instanceof Array
           && !({ __proto__ : null } instanceof Object);
       */},
@@ -4417,7 +4417,7 @@ exports.tests = [
     },
     {
       name: 'multiple __proto__ is an error',
-      exec: function() {/*
+      exec: function () {/*
         try {
           eval("({ __proto__ : [], __proto__: {} })");
         }
@@ -4449,7 +4449,7 @@ exports.tests = [
     },
     {
       name: 'not a computed property',
-      exec: function() {/*
+      exec: function () {/*
         if (!({ __proto__ : [] } instanceof Array)) {
           return false;
         }
@@ -4480,7 +4480,7 @@ exports.tests = [
     },
     {
       name: 'not a shorthand property',
-      exec: function() {/*
+      exec: function () {/*
         if (!({ __proto__ : [] } instanceof Array)) {
           return false;
         }
@@ -4510,7 +4510,7 @@ exports.tests = [
     },
     {
       name: 'not a shorthand method',
-      exec: function() {/*
+      exec: function () {/*
         if (!({ __proto__ : [] } instanceof Array)) {
           return false;
         }
@@ -4802,7 +4802,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = __createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         for (var it of iter) break;
         return closed;
@@ -4835,7 +4835,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = __createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         try {
           for (var it of iter) throw 0;
@@ -4876,7 +4876,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic functionality',
-      exec: function() {/*
+      exec: function () {/*
         function * generator(){
           yield 5; yield 6;
         };
@@ -4918,7 +4918,7 @@ exports.tests = [
     },
     {
       name: 'generator function expressions',
-      exec: function() {/*
+      exec: function () {/*
         var generator = function * (){
           yield 5; yield 6;
         };
@@ -4960,7 +4960,7 @@ exports.tests = [
     },
     {
       name: 'correct "this" binding',
-      exec: function() {/*
+      exec: function () {/*
         function * generator(){
           yield this.x; yield this.y;
         };
@@ -5004,7 +5004,7 @@ exports.tests = [
     },
     {
       name: 'can\'t use "this" with new',
-      exec: function() {/*
+      exec: function () {/*
         function * generator(){
           yield this.x; yield this.y;
         };
@@ -5038,7 +5038,7 @@ exports.tests = [
     },
     {
       name: 'sending',
-      exec: function() {/*
+      exec: function () {/*
         var sent;
         function * generator(){
           sent = [yield 5, yield 6];
@@ -5078,7 +5078,7 @@ exports.tests = [
     },
     {
       name: '%GeneratorPrototype%',
-      exec: function() {/*
+      exec: function () {/*
         function * generatorFn(){}
         var ownProto = Object.getPrototypeOf(generatorFn());
         var passed = ownProto === generatorFn.prototype;
@@ -5197,7 +5197,7 @@ exports.tests = [
     },
     {
       name: '%GeneratorPrototype%.throw',
-      exec: function() {/*
+      exec: function () {/*
         var passed = false;
         function * generator(){
           try {
@@ -5240,7 +5240,7 @@ exports.tests = [
     },
     {
       name: '%GeneratorPrototype%.return',
-      exec: function() {/*
+      exec: function () {/*
         function * generator(){
           yield 5; yield 6;
         };
@@ -5281,7 +5281,7 @@ exports.tests = [
     },
     {
       name: 'yield operator precedence',
-      exec: function() {/*
+      exec: function () {/*
         var passed;
         function * generator(){
           passed = yield 0 ? true : false;
@@ -5660,7 +5660,7 @@ exports.tests = [
       exec: function () {/*
         var closed = '';
         var iter = __createIterableObject([1, 2, 3], {
-          'return': function(){
+          'return': function (){
             closed += 'a';
             return {done: true};
           }
@@ -5708,7 +5708,7 @@ exports.tests = [
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
           'throw': undefined,
-          'return': function() {
+          'return': function () {
             closed = true;
             return {done: true};
           }
@@ -5748,7 +5748,7 @@ exports.tests = [
     },
     {
       name: 'shorthand generator methods',
-      exec: function() {/*
+      exec: function () {/*
         var o = {
           * generator() {
             yield 5; yield 6;
@@ -5792,7 +5792,7 @@ exports.tests = [
     },
     {
       name: 'string-keyed shorthand generator methods',
-      exec: function() {/*
+      exec: function () {/*
         var o = {
           * "foo bar"() {
             yield 5; yield 6;
@@ -5836,7 +5836,7 @@ exports.tests = [
     },
     {
       name: 'computed shorthand generators',
-      exec: function() {/*
+      exec: function () {/*
         var garply = "generator";
         var o = {
           * [garply] () {
@@ -5880,7 +5880,7 @@ exports.tests = [
     },
     {
       name: 'shorthand generator methods, classes',
-      exec: function() {/*
+      exec: function () {/*
         class C {
           * generator() {
             yield 5; yield 6;
@@ -5922,7 +5922,7 @@ exports.tests = [
     },
     {
       name: 'computed shorthand generators, classes',
-      exec: function() {/*
+      exec: function () {/*
         var garply = "generator";
         class C {
           * [garply] () {
@@ -5965,7 +5965,7 @@ exports.tests = [
     },
     {
       name: 'shorthand generators can\'t be constructors',
-      exec: function() {/*
+      exec: function () {/*
         class C {
           * generator() {
             yield 5; yield 6;
@@ -6012,7 +6012,7 @@ exports.tests = [
       name: 'basic functions',
       exec: function () {/*
           function correctProtoBound(proto) {
-            var f = function(){};
+            var f = function (){};
             if (Object.setPrototypeOf) {
               Object.setPrototypeOf(f, proto);
             } else {
@@ -6049,7 +6049,7 @@ exports.tests = [
     },
     {
       name: 'generator functions',
-      exec: function() {/*
+      exec: function () {/*
           function correctProtoBound(proto) {
             var f = function*(){};
             if (Object.setPrototypeOf) {
@@ -6086,7 +6086,7 @@ exports.tests = [
     },
     {
       name: 'arrow functions',
-      exec: function() {/*
+      exec: function () {/*
           function correctProtoBound(proto) {
             var f = ()=>5;
             if (Object.setPrototypeOf) {
@@ -6123,7 +6123,7 @@ exports.tests = [
     },
     {
       name: 'classes',
-      exec: function() {/*
+      exec: function () {/*
           function correctProtoBound(proto) {
             class C {}
             if (Object.setPrototypeOf) {
@@ -6162,7 +6162,7 @@ exports.tests = [
     },
     {
       name: 'subclasses',
-      exec: function() {/*
+      exec: function () {/*
           function correctProtoBound(superclass) {
             class C extends superclass {
               constructor() {
@@ -6172,7 +6172,7 @@ exports.tests = [
             var boundF = Function.prototype.bind.call(C, null);
             return Object.getPrototypeOf(boundF) === Object.getPrototypeOf(C);
           }
-          return correctProtoBound(function(){})
+          return correctProtoBound(function (){})
             && correctProtoBound(Array)
             && correctProtoBound(null);
       */},
@@ -6382,8 +6382,8 @@ exports.tests = [
       name: 'toString conversion',
       exec: function () {/*
         var a = {
-          toString: function() { return "foo"; },
-          valueOf: function() { return "bar"; }
+          toString: function () { return "foo"; },
+          valueOf: function () { return "bar"; }
         };
         return `${a}` === "foo";
       */},
@@ -6462,7 +6462,7 @@ exports.tests = [
     {
       name: 'passed array is frozen',
       exec: function () {/*
-        return (function(parts) {
+        return (function (parts) {
           return Object.isFrozen(parts) && Object.isFrozen(parts.raw);
         }) `foo${0}bar${0}baz`;
       */},
@@ -6632,7 +6632,7 @@ exports.tests = [
     },
     {
       name: 'arbitrary escape sequences in tagged template literals',
-      exec: function() {/*
+      exec: function () {/*
         function strings(array) {
           return array;
         }
@@ -6734,7 +6734,7 @@ exports.tests = [
     },
     {
       name: '"u" flag',
-      exec: function() {/*
+      exec: function () {/*
         return "𠮷".match(/^.$/u)[0].length === 2;
       */},
       res: {
@@ -6763,7 +6763,7 @@ exports.tests = [
     },
     {
       name: '"u" flag, non-BMP Unicode characters',
-      exec: function() {/*
+      exec: function () {/*
         return "𠮷x".match(/^.x$/u)[0].length === 3;
       */},
       res: {
@@ -6793,7 +6793,7 @@ exports.tests = [
     },
     {
       name: '"u" flag, Unicode code point escapes',
-      exec: function() {/*
+      exec: function () {/*
         return "𝌆".match(/\u{1d306}/u)[0].length === 2;
       */},
       res: {
@@ -6822,7 +6822,7 @@ exports.tests = [
     },
     {
       name: '"u" flag, case folding',
-      exec: function() {/*
+      exec: function () {/*
         return "ſ".match(/S/iu) && "S".match(/ſ/iu);
       */},
       res: {
@@ -6859,7 +6859,7 @@ exports.tests = [
     {
       name: 'Int8Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Int8Array(buffer);         view[0] = 0x80;
         return view[0] === -0x80;
@@ -6895,7 +6895,7 @@ exports.tests = [
     {
       name: 'Uint8Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Uint8Array(buffer);        view[0] = 0x100;
         return view[0] === 0;
@@ -6931,7 +6931,7 @@ exports.tests = [
     {
       name: 'Uint8ClampedArray',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Uint8ClampedArray(buffer); view[0] = 0x100;
         return view[0] === 0xFF;
@@ -6969,7 +6969,7 @@ exports.tests = [
     {
       name: 'Int16Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Int16Array(buffer);        view[0] = 0x8000;
         return view[0] === -0x8000;
@@ -7005,7 +7005,7 @@ exports.tests = [
     {
       name: 'Uint16Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Uint16Array(buffer);       view[0] = 0x10000;
         return view[0] === 0;
@@ -7041,7 +7041,7 @@ exports.tests = [
     {
       name: 'Int32Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Int32Array(buffer);        view[0] = 0x80000000;
         return view[0] === -0x80000000;
@@ -7077,7 +7077,7 @@ exports.tests = [
     {
       name: 'Uint32Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Uint32Array(buffer);       view[0] = 0x100000000;
         return view[0] === 0;
@@ -7113,7 +7113,7 @@ exports.tests = [
     {
       name: 'Float32Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Float32Array(buffer);       view[0] = 0.1;
         return view[0] === 0.10000000149011612;
@@ -7149,7 +7149,7 @@ exports.tests = [
     {
       name: 'Float64Array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new Float64Array(buffer);       view[0] = 0.1;
         return view[0] === 0.1;
@@ -7186,7 +7186,7 @@ exports.tests = [
     {
       name: 'DataView (Int8)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setInt8 (0, 0x80);
@@ -7222,7 +7222,7 @@ exports.tests = [
     {
       name: 'DataView (Uint8)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setUint8(0, 0x100);
@@ -7258,7 +7258,7 @@ exports.tests = [
     {
       name: 'DataView (Int16)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setInt16(0, 0x8000);
@@ -7294,7 +7294,7 @@ exports.tests = [
     {
       name: 'DataView (Uint16)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setUint16(0, 0x10000);
@@ -7330,7 +7330,7 @@ exports.tests = [
     {
       name: 'DataView (Int32)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setInt32(0, 0x80000000);
@@ -7366,7 +7366,7 @@ exports.tests = [
     {
       name: 'DataView (Uint32)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setUint32(0, 0x100000000);
@@ -7402,7 +7402,7 @@ exports.tests = [
     {
       name: 'DataView (Float32)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setFloat32(0, 0.1);
@@ -7438,7 +7438,7 @@ exports.tests = [
     {
       name: 'DataView (Float64)',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var view = new DataView(buffer);
         view.setFloat64(0, 0.1);
@@ -7474,7 +7474,7 @@ exports.tests = [
     {
       name: 'ArrayBuffer[Symbol.species]',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/@@species',
-      exec: function(){/*
+      exec: function (){/*
         return typeof ArrayBuffer[Symbol.species] === 'function';
       */},
       res: {
@@ -7502,7 +7502,7 @@ exports.tests = [
     },
     {
       name: 'constructors require new',
-      exec: function(){/*
+      exec: function (){/*
         var buffer = new ArrayBuffer(64);
         var constructors = [
           'ArrayBuffer',
@@ -7556,7 +7556,7 @@ exports.tests = [
     },
     {
       name: 'constructors accept generic iterables',
-      exec: function(){/*
+      exec: function (){/*
         var constructors = [
           'Int8Array',
           'Uint8Array',
@@ -7598,7 +7598,7 @@ exports.tests = [
     },
     {
       name: 'correct prototype chains',
-      exec: function(){/*
+      exec: function (){/*
         var constructors = [
           'Int8Array',
           'Uint8Array',
@@ -8283,11 +8283,11 @@ exports.tests = [
       rhino1_7_13: false,
       rhino1_7_15: true,
     }}
-    ].map(function(m) {
+    ].map(function (m) {
       var eqFn = ' === "function"';
       var name = m.name;
       m.name = '%TypedArray%' + name;
-      m.exec = eval('0,function(){/*\nreturn typeof '
+      m.exec = eval('0,function (){/*\nreturn typeof '
         + [
           'Int8Array',
           'Uint8Array',
@@ -8460,7 +8460,7 @@ exports.tests = [
         var passed = false;
         var _set = Map.prototype.set;
 
-        Map.prototype.set = function(k, v) {
+        Map.prototype.set = function (k, v) {
           passed = true;
         };
 
@@ -8499,7 +8499,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         try {
           new Map(iter);
@@ -9139,7 +9139,7 @@ exports.tests = [
         var passed = false;
         var _add = Set.prototype.add;
 
-        Set.prototype.add = function(v) {
+        Set.prototype.add = function (v) {
           passed = true;
         };
 
@@ -9178,10 +9178,10 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         var add = Set.prototype.add;
-        Set.prototype.add = function(){ throw 0 };
+        Set.prototype.add = function (){ throw 0 };
         try {
           new Set(iter);
         } catch(e){}
@@ -9824,7 +9824,7 @@ exports.tests = [
         var passed = false;
         var _set = WeakMap.prototype.set;
 
-        WeakMap.prototype.set = function(k, v) {
+        WeakMap.prototype.set = function (k, v) {
           passed = true;
         };
 
@@ -9897,7 +9897,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         try {
           new WeakMap(iter);
@@ -10263,7 +10263,7 @@ exports.tests = [
         var passed = false;
         var _add = WeakSet.prototype.add;
 
-        WeakSet.prototype.add = function(v) {
+        WeakSet.prototype.add = function (v) {
           passed = true;
         };
 
@@ -10301,7 +10301,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         try {
           new WeakSet(iter);
@@ -10671,7 +10671,7 @@ exports.tests = [
         // object property is a non-configurable own accessor property that has undefined
         // as its [[Get]] attribute.
         Object.defineProperty(proxied, "bar",
-          { set: function(){}, enumerable: true });
+          { set: function (){}, enumerable: true });
         try {
           proxy.bar;
           return false;
@@ -10791,7 +10791,7 @@ exports.tests = [
         // object property is a non-configurable own accessor property
         // that has undefined as its [[Set]] attribute.
         Object.defineProperty(proxied, "bar",
-          { get: function(){}, enumerable: true });
+          { get: function (){}, enumerable: true });
         try {
           proxy.bar = 2;
           return false;
@@ -11087,7 +11087,7 @@ exports.tests = [
         // of the target object and the target object is not extensible.
         try {
           Object.getOwnPropertyDescriptor(new Proxy(proxied, {
-            getOwnPropertyDescriptor: function() {
+            getOwnPropertyDescriptor: function () {
               return { value: 2, configurable: true, writable: true, enumerable: true };
             }}), "baz");
           return false;
@@ -11097,14 +11097,14 @@ exports.tests = [
         // the target object.
         try {
           Object.getOwnPropertyDescriptor(new Proxy({}, {
-            getOwnPropertyDescriptor: function() {
+            getOwnPropertyDescriptor: function () {
               return { value: 2, configurable: false, writable: true, enumerable: true };
             }}), "baz");
           return false;
         } catch(e) {}
         try {
           Object.getOwnPropertyDescriptor(new Proxy({baz:1}, {
-            getOwnPropertyDescriptor: function() {
+            getOwnPropertyDescriptor: function () {
               return { value: 1, configurable: false, writable: true, enumerable: true };
             }}), "baz");
           return false;
@@ -11177,7 +11177,7 @@ exports.tests = [
         // A property cannot be added, if the target object is not extensible.
         var proxied = Object.preventExtensions({});
         var proxy = new Proxy(proxied, {
-          defineProperty: function() {
+          defineProperty: function () {
             passed = true;
             return true;
           }
@@ -11638,7 +11638,7 @@ exports.tests = [
       name: '"apply" handler',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply',
       exec: function () {/*
-        var proxied = function(){};
+        var proxied = function (){};
         var passed = false;
         var host = {
           method: new Proxy(proxied, {
@@ -11675,7 +11675,7 @@ exports.tests = [
       name: '"apply" handler invariant',
       exec: function () {/*
         var passed = false;
-        new Proxy(function(){}, {
+        new Proxy(function (){}, {
             apply: function () { passed = true; }
         })();
         // A Proxy exotic object only has a [[Call]] internal method if the
@@ -11714,7 +11714,7 @@ exports.tests = [
       name: '"construct" handler',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/construct',
       exec: function () {/*
-        var proxied = function(){};
+        var proxied = function (){};
         var passed = false;
         new new Proxy(proxied, {
           construct: function (t, args) {
@@ -11762,7 +11762,7 @@ exports.tests = [
         } catch(e) {}
         // The result of [[Construct]] must be an Object.
         try {
-          new new Proxy(function(){}, {
+          new new Proxy(function (){}, {
             construct: function (t, args) {
               passed = true;
               return 5;
@@ -11797,7 +11797,7 @@ exports.tests = [
       name: 'Proxy.revocable',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/revocable',
       exec: function () {/*
-        var obj = Proxy.revocable({}, { get: function() { return 5; } });
+        var obj = Proxy.revocable({}, { get: function () { return 5; } });
         var passed = (obj.proxy.foo === 5);
         obj.revoke();
         try {
@@ -11893,10 +11893,10 @@ exports.tests = [
   subtests: [
     {
       name: 'ToPrimitive',
-      exec: function() {/*
+      exec: function () {/*
         // ToPrimitive -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({toString:Function()}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({toString:Function()}, { get: function (o, k) { get.push(k); return o[k]; }});
         p + 3;
         return get[0] === Symbol.toPrimitive && get.slice(1) + '' === "valueOf,toString";
       */},
@@ -11924,10 +11924,10 @@ exports.tests = [
     },
     {
       name: 'CreateListFromArrayLike',
-      exec: function() {/*
+      exec: function () {/*
         // CreateListFromArrayLike -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({length:2, 0:0, 1:0}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({length:2, 0:0, 1:0}, { get: function (o, k) { get.push(k); return o[k]; }});
         Function.prototype.apply({}, p);
         return get + '' === "length,0,1";
       */},
@@ -11954,11 +11954,11 @@ exports.tests = [
     },
     {
       name: 'instanceof operator',
-      exec: function() {/*
+      exec: function () {/*
         // InstanceofOperator -> GetMethod -> GetV -> [[Get]]
         // InstanceofOperator -> OrdinaryHasInstance -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy(Function(), { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(Function(), { get: function (o, k) { get.push(k); return o[k]; }});
         ({}) instanceof p;
         return get[0] === Symbol.hasInstance && get.slice(1) + '' === "prototype";
       */},
@@ -11985,10 +11985,10 @@ exports.tests = [
     },
     {
       name: 'HasBinding',
-      exec: function() {/*
+      exec: function () {/*
         // HasBinding -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({foo:1}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({foo:1}, { get: function (o, k) { get.push(k); return o[k]; }});
         p[Symbol.unscopables] = p;
         with(p) {
           typeof foo;
@@ -12016,10 +12016,10 @@ exports.tests = [
     },
     {
       name: 'CreateDynamicFunction',
-      exec: function() {/*
+      exec: function () {/*
         // CreateDynamicFunction -> GetPrototypeFromConstructor -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy(Function, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(Function, { get: function (o, k) { get.push(k); return o[k]; }});
         new p;
         return get + '' === "prototype";
       */},
@@ -12044,10 +12044,10 @@ exports.tests = [
     },
     {
       name: 'ClassDefinitionEvaluation',
-      exec: function() {/*
+      exec: function () {/*
         // ClassDefinitionEvaluation -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy(Function(), { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(Function(), { get: function (o, k) { get.push(k); return o[k]; }});
         class C extends p {}
         return get + '' === "prototype";
       */},
@@ -12073,15 +12073,15 @@ exports.tests = [
     },
     {
       name: 'IteratorComplete, IteratorValue',
-      exec: function() {/*
+      exec: function () {/*
         // IteratorComplete -> Get -> [[Get]]
         // IteratorValue -> Get -> [[Get]]
         var get = [];
         var iterable = {};
-        iterable[Symbol.iterator] = function() {
+        iterable[Symbol.iterator] = function () {
           return {
-            next: function() {
-              return new Proxy({ value: 2, done: false }, { get: function(o, k) { get.push(k); return o[k]; }});
+            next: function () {
+              return new Proxy({ value: 2, done: false }, { get: function (o, k) { get.push(k); return o[k]; }});
             }
           };
         }
@@ -12113,13 +12113,13 @@ exports.tests = [
     },
     {
       name: 'ToPropertyDescriptor',
-      exec: function() {/*
+      exec: function () {/*
         // ToPropertyDescriptor -> Get -> [[Get]]
         var get = [];
         var p = new Proxy({
             enumerable: true, configurable: true, value: true,
             writable: true, get: Function(), set: Function()
-          }, { get: function(o, k) { get.push(k); return o[k]; }});
+          }, { get: function (o, k) { get.push(k); return o[k]; }});
         try {
           // This will throw, since it will have true for both "get" and "value",
           // but not before performing a Get on every property.
@@ -12149,10 +12149,10 @@ exports.tests = [
     },
     {
       name: 'Object.assign',
-      exec: function() {/*
+      exec: function () {/*
         // Object.assign -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({foo:1, bar:2}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({foo:1, bar:2}, { get: function (o, k) { get.push(k); return o[k]; }});
         Object.assign({}, p);
         return get + '' === "foo,bar";
       */},
@@ -12177,10 +12177,10 @@ exports.tests = [
     },
     {
       name: 'Object.defineProperties',
-      exec: function() {/*
+      exec: function () {/*
         // Object.defineProperties -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({foo:{}, bar:{}}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({foo:{}, bar:{}}, { get: function (o, k) { get.push(k); return o[k]; }});
         Object.defineProperties({}, p);
         return get + '' === "foo,bar";
       */},
@@ -12205,10 +12205,10 @@ exports.tests = [
     },
     {
       name: 'Function.prototype.bind',
-      exec: function() {/*
+      exec: function () {/*
         // Function.prototype.bind -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy(Function(), { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(Function(), { get: function (o, k) { get.push(k); return o[k]; }});
         Function.prototype.bind.call(p);
         return get + '' === "length,name";
       */},
@@ -12232,10 +12232,10 @@ exports.tests = [
     },
     {
       name: 'Error.prototype.toString',
-      exec: function() {/*
+      exec: function () {/*
         // Error.prototype.toString -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({}, { get: function (o, k) { get.push(k); return o[k]; }});
         Error.prototype.toString.call(p);
         return get + '' === "name,message";
       */},
@@ -12260,11 +12260,11 @@ exports.tests = [
     },
     {
       name: 'String.raw',
-      exec: function() {/*
+      exec: function () {/*
         // String.raw -> Get -> [[Get]]
         var get = [];
-        var raw = new Proxy({length: 2, 0: '', 1: ''}, { get: function(o, k) { get.push(k); return o[k]; }});
-        var p = new Proxy({raw: raw}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var raw = new Proxy({length: 2, 0: '', 1: ''}, { get: function (o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({raw: raw}, { get: function (o, k) { get.push(k); return o[k]; }});
         String.raw(p);
         return get + '' === "raw,length,0,1";
       */},
@@ -12290,12 +12290,12 @@ exports.tests = [
     },
     {
       name: 'RegExp constructor',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp -> Get -> [[Get]]
         var get = [];
         var re = { constructor: null };
         re[Symbol.match] = true;
-        var p = new Proxy(re, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(re, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp(p);
         return get[0] === Symbol.match && get.slice(1) + '' === "constructor,source,flags";
       */},
@@ -12320,7 +12320,7 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype.flags',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype.flags -> Get -> [[Get]]
         var expected = [];
         // Sorted alphabetically by shortname – "gimsuy".
@@ -12334,7 +12334,7 @@ exports.tests = [
         if ('sticky' in RegExp.prototype) expected.push('sticky');
 
         var actual = [];
-        var p = new Proxy({}, { get: function(o, k) { actual.push(k); return o[k]; }});
+        var p = new Proxy({}, { get: function (o, k) { actual.push(k); return o[k]; }});
         Object.getOwnPropertyDescriptor(RegExp.prototype, 'flags').get.call(p);
         if (expected.length !== actual.length) return false;
         for (var i = 0; i < expected.length; i++) {
@@ -12365,10 +12365,10 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype.test',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype.test -> RegExpExec -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({ exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype.test.call(p);
         return get + '' === "exec";
       */},
@@ -12392,10 +12392,10 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype.toString',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype.toString -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({}, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype.toString.call(p);
         return get + '' === "source,flags";
       */},
@@ -12420,10 +12420,10 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype[Symbol.match]',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype[Symbol.match] -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({ exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype[Symbol.match].call(p);
         p.global = true;
         p.unicode = true;
@@ -12452,10 +12452,10 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype[Symbol.replace]',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype[Symbol.replace] -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({ exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype[Symbol.replace].call(p);
         p.global = true;
         RegExp.prototype[Symbol.replace].call(p);
@@ -12483,10 +12483,10 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype[Symbol.search]',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype[Symbol.search] -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({ exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype[Symbol.search].call(p);
         return get + '' === "lastIndex,exec,lastIndex";
       */},
@@ -12517,12 +12517,12 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype[Symbol.split]',
-      exec: function() {/*
+      exec: function () {/*
         // RegExp.prototype[Symbol.split] -> Get -> [[Get]]
         var get = [];
         var constructor = Function();
         constructor[Symbol.species] = Object;
-        var p = new Proxy({ constructor: constructor, flags: '', exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ constructor: constructor, flags: '', exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
         RegExp.prototype[Symbol.split].call(p, "");
         return get + '' === "constructor,flags,exec";
       */},
@@ -12548,10 +12548,10 @@ exports.tests = [
     },
     {
       name: 'Array.from',
-      exec: function() {/*
+      exec: function () {/*
         // Array.from -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function (o, k) { get.push(k); return o[k]; }});
         Array.from(p);
         return get[0] === Symbol.iterator && get.slice(1) + '' === "length,0,1";
       */},
@@ -12577,12 +12577,12 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.concat',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.concat -> Get -> [[Get]]
         var get = [];
         var arr = [1];
         arr.constructor = void undefined;
-        var p = new Proxy(arr, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(arr, { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.concat.call(p,p);
         return get[0] === "constructor"
           && get[1] === Symbol.isConcatSpreadable
@@ -12613,12 +12613,12 @@ exports.tests = [
     },
     {
       name: 'Array.prototype iteration methods',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype methods -> Get -> [[Get]]
         var methods = ['copyWithin', 'every', 'fill', 'filter', 'find', 'findIndex', 'forEach',
           'indexOf', 'join', 'lastIndexOf', 'map', 'reduce', 'reduceRight', 'some'];
         var get;
-        var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function (o, k) { get.push(k); return o[k]; }});
         for(var i = 0; i < methods.length; i+=1) {
           get = [];
           Array.prototype[methods[i]].call(p, Function());
@@ -12654,10 +12654,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.pop',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.pop -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy([0,1,2,3], { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy([0,1,2,3], { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.pop.call(p);
         return get + '' === "length,3";
       */},
@@ -12683,10 +12683,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.reverse',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.reverse -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy([0,,2,,4,,], { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy([0,,2,,4,,], { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.reverse.call(p);
         return get + '' === "length,0,4,2";
       */},
@@ -12710,10 +12710,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.shift',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.shift -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy([0,1,2,3], { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy([0,1,2,3], { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.shift.call(p);
         return get + '' === "length,0,1,2,3";
       */},
@@ -12739,10 +12739,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.splice',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.splice -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy([0,1,2,3], { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy([0,1,2,3], { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.splice.call(p,1,1);
         Array.prototype.splice.call(p,1,0,1);
         return get + '' === "length,constructor,1,2,3,length,constructor,2,1";
@@ -12770,10 +12770,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.toString',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.toString -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({ join:Function() }, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({ join:Function() }, { get: function (o, k) { get.push(k); return o[k]; }});
         Array.prototype.toString.call(p);
         return get + '' === "join";
       */},
@@ -12798,10 +12798,10 @@ exports.tests = [
     },
     {
       name: 'JSON.stringify',
-      exec: function() {/*
+      exec: function () {/*
         // JSON.stringify -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({}, { get: function (o, k) { get.push(k); return o[k]; }});
         JSON.stringify(p);
         return get + '' === "toJSON";
       */},
@@ -12826,11 +12826,11 @@ exports.tests = [
     },
     {
       name: 'Promise resolve functions',
-      exec: function() {/*
+      exec: function () {/*
         // Promise resolve functions -> Get -> [[Get]]
         var get = [];
-        var p = new Proxy({}, { get: function(o, k) { get.push(k); return o[k]; }});
-        new Promise(function(resolve){ resolve(p); });
+        var p = new Proxy({}, { get: function (o, k) { get.push(k); return o[k]; }});
+        new Promise(function (resolve){ resolve(p); });
         return get + '' === "then";
       */},
       res: {
@@ -12856,12 +12856,12 @@ exports.tests = [
     },
     {
       name: 'String.prototype.match',
-      exec: function() {/*
+      exec: function () {/*
         // String.prototype.match -> Get -> [[Get]]
         var get = [];
         var proxied = {};
         proxied[Symbol.toPrimitive] = Function();
-        var p = new Proxy(proxied, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(proxied, { get: function (o, k) { get.push(k); return o[k]; }});
         "".match(p);
         return get[0] === Symbol.match && get[1] === Symbol.toPrimitive && get.length === 2;
       */},
@@ -12886,12 +12886,12 @@ exports.tests = [
     },
     {
       name: 'String.prototype.replace',
-      exec: function() {/*
+      exec: function () {/*
         // String.prototype.replace functions -> Get -> [[Get]]
         var get = [];
         var proxied = {};
         proxied[Symbol.toPrimitive] = Function();
-        var p = new Proxy(proxied, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(proxied, { get: function (o, k) { get.push(k); return o[k]; }});
         "".replace(p);
         return get[0] === Symbol.replace && get[1] === Symbol.toPrimitive && get.length === 2;
       */},
@@ -12917,12 +12917,12 @@ exports.tests = [
     },
     {
       name: 'String.prototype.search',
-      exec: function() {/*
+      exec: function () {/*
         // String.prototype.search functions -> Get -> [[Get]]
         var get = [];
         var proxied = {};
         proxied[Symbol.toPrimitive] = Function();
-        var p = new Proxy(proxied, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(proxied, { get: function (o, k) { get.push(k); return o[k]; }});
         "".search(p);
         return get[0] === Symbol.search && get[1] === Symbol.toPrimitive && get.length === 2;
       */},
@@ -12947,12 +12947,12 @@ exports.tests = [
     },
     {
       name: 'String.prototype.split',
-      exec: function() {/*
+      exec: function () {/*
         // String.prototype.split functions -> Get -> [[Get]]
         var get = [];
         var proxied = {};
         proxied[Symbol.toPrimitive] = Function();
-        var p = new Proxy(proxied, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy(proxied, { get: function (o, k) { get.push(k); return o[k]; }});
         "".split(p);
         return get[0] === Symbol.split && get[1] === Symbol.toPrimitive && get.length === 2;
       */},
@@ -12978,11 +12978,11 @@ exports.tests = [
     },
     {
       name: 'Date.prototype.toJSON',
-      exec: function() {/*
+      exec: function () {/*
         // Date.prototype.toJSON -> ToPrimitive -> Get -> [[Get]]
         // Date.prototype.toJSON -> Invoke -> GetMethod -> GetV -> [[Get]]
         var get = [];
-        var p = new Proxy({toString:Function(),toISOString:Function()}, { get: function(o, k) { get.push(k); return o[k]; }});
+        var p = new Proxy({toString:Function(),toISOString:Function()}, { get: function (o, k) { get.push(k); return o[k]; }});
         Date.prototype.toJSON.call(p);
         return get[0] === Symbol.toPrimitive && get.slice(1) + '' === "valueOf,toString,toISOString";
       */},
@@ -13017,10 +13017,10 @@ exports.tests = [
   subtests: [
     {
       name: 'Object.assign',
-      exec: function() {/*
+      exec: function () {/*
         // Object.assign -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy({}, { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy({}, { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         Object.assign(p, { foo: 1, bar: 2 });
         return set + '' === "foo,bar";
       */},
@@ -13045,11 +13045,11 @@ exports.tests = [
     },
     {
       name: 'Array.from',
-      exec: function() {/*
+      exec: function () {/*
         // Array.from -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy({}, { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
-        Array.from.call(function(){ return p; }, {length:2, 0:1, 1:2});
+        var p = new Proxy({}, { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
+        Array.from.call(function (){ return p; }, {length:2, 0:1, 1:2});
         return set + '' === "length";
       */},
       res: {
@@ -13074,11 +13074,11 @@ exports.tests = [
     },
     {
       name: 'Array.of',
-      exec: function() {/*
+      exec: function () {/*
         // Array.from -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy({}, { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
-        Array.of.call(function(){ return p; }, 1, 2, 3);
+        var p = new Proxy({}, { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
+        Array.of.call(function (){ return p; }, 1, 2, 3);
         return set + '' === "length";
       */},
       res: {
@@ -13103,10 +13103,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.copyWithin',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.copyWithin -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([1,2,3,4,5,6], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([1,2,3,4,5,6], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.copyWithin(0, 3);
         return set + '' === "0,1,2";
       */},
@@ -13131,10 +13131,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.fill',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.fill -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([1,2,3,4,5,6], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([1,2,3,4,5,6], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.fill(0, 3);
         return set + '' === "3,4,5";
       */},
@@ -13159,10 +13159,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.pop',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.pop -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.pop();
         return set + '' === "length";
       */},
@@ -13187,10 +13187,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.push',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.push -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.push(0,0,0);
         return set + '' === "0,1,2,length";
       */},
@@ -13215,10 +13215,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.reverse',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.reverse -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([0,0,0,,], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([0,0,0,,], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.reverse();
         return set + '' === "3,1,2";
       */},
@@ -13243,10 +13243,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.shift',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.shift -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([0,0,,0], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([0,0,,0], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.shift();
         return set + '' === "0,2,length";
       */},
@@ -13273,10 +13273,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.splice',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.splice -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([1,2,3], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([1,2,3], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.splice(1,0,0);
         return set + '' === "3,2,1,length";
       */},
@@ -13303,10 +13303,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.unshift',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.unshift -> Set -> [[Set]]
         var set = [];
-        var p = new Proxy([0,0,,0], { set: function(o, k, v) { set.push(k); o[k] = v; return true; }});
+        var p = new Proxy([0,0,,0], { set: function (o, k, v) { set.push(k); o[k] = v; return true; }});
         p.unshift(0,1);
         return set + '' === "5,3,2,0,1,length";
       */},
@@ -13342,10 +13342,10 @@ exports.tests = [
   subtests: [
     {
       name: '[[Set]]',
-      exec: function() {/*
+      exec: function () {/*
         // [[Set]] -> [[DefineOwnProperty]]
         var def = [];
-        var p = new Proxy({foo:1, bar:2}, { defineProperty: function(o, v, desc) { def.push(v); Object.defineProperty(o, v, desc); return true; }});
+        var p = new Proxy({foo:1, bar:2}, { defineProperty: function (o, v, desc) { def.push(v); Object.defineProperty(o, v, desc); return true; }});
         p.foo = 2; p.bar = 4;
         return def + '' === "foo,bar";
       */},
@@ -13370,10 +13370,10 @@ exports.tests = [
     },
     {
       name: 'SetIntegrityLevel',
-      exec: function() {/*
+      exec: function () {/*
         // SetIntegrityLevel -> DefinePropertyOrThrow -> [[DefineOwnProperty]]
         var def = [];
-        var p = new Proxy({foo:1, bar:2}, { defineProperty: function(o, v, desc) { def.push(v); Object.defineProperty(o, v, desc); return true; }});
+        var p = new Proxy({foo:1, bar:2}, { defineProperty: function (o, v, desc) { def.push(v); Object.defineProperty(o, v, desc); return true; }});
         Object.freeze(p);
         return def + '' === "foo,bar";
       */},
@@ -13406,10 +13406,10 @@ exports.tests = [
   subtests: [
     {
       name: 'Array.prototype.copyWithin',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.copyWithin -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,0,0,,,,], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,0,0,,,,], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.copyWithin(0,3);
         return del + '' === "0,1,2";
       */},
@@ -13434,10 +13434,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.pop',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.pop -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,0,0], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.pop();
         return del + '' === "2";
       */},
@@ -13465,10 +13465,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.reverse',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.reverse -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,,2,,4,,], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,,2,,4,,], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.reverse();
         return del + '' === "0,4,2";
       */},
@@ -13495,10 +13495,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.shift',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.shift -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,,0,,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,,0,,0,0], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.shift();
         return del + '' === "0,2,5";
       */},
@@ -13525,10 +13525,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.splice',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.splice -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,0,0,0,,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,0,0,0,,0], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.splice(2,2,0);
         return del + '' === "3,5";
       */},
@@ -13555,10 +13555,10 @@ exports.tests = [
     },
     {
       name: 'Array.prototype.unshift',
-      exec: function() {/*
+      exec: function () {/*
         // Array.prototype.unshift -> DeletePropertyOrThrow -> [[Delete]]
         var del = [];
-        var p = new Proxy([0,0,,0,,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
+        var p = new Proxy([0,0,,0,,0], { deleteProperty: function (o, v) { del.push(v); return delete o[v]; }});
         p.unshift(0);
         return del + '' === "5,3";
       */},
@@ -13594,11 +13594,11 @@ exports.tests = [
   subtests: [
     {
       name: '[[Set]]',
-      exec: function() {/*
+      exec: function () {/*
         // [[Set]] -> [[GetOwnProperty]]
         var gopd = [];
         var p = new Proxy({},
-          { getOwnPropertyDescriptor: function(o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
+          { getOwnPropertyDescriptor: function (o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
         p.foo = 1; p.bar = 1;
         return gopd + '' === "foo,bar";
       */},
@@ -13624,11 +13624,11 @@ exports.tests = [
     },
     {
       name: 'Object.assign',
-      exec: function() {/*
+      exec: function () {/*
         // Object.assign -> [[GetOwnProperty]]
         var gopd = [];
         var p = new Proxy({foo:1, bar:2},
-          { getOwnPropertyDescriptor: function(o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
+          { getOwnPropertyDescriptor: function (o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
         Object.assign({}, p);
         return gopd + '' === "foo,bar";
       */},
@@ -13652,11 +13652,11 @@ exports.tests = [
     },
     {
       name: 'Object.prototype.hasOwnProperty',
-      exec: function() {/*
+      exec: function () {/*
         // Object.prototype.hasOwnProperty -> HasOwnProperty -> [[GetOwnProperty]]
         var gopd = [];
         var p = new Proxy({foo:1, bar:2},
-          { getOwnPropertyDescriptor: function(o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
+          { getOwnPropertyDescriptor: function (o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
         p.hasOwnProperty('garply');
         return gopd + '' === "garply";
       */},
@@ -13681,11 +13681,11 @@ exports.tests = [
     },
     {
       name: 'Function.prototype.bind',
-      exec: function() {/*
+      exec: function () {/*
         // Function.prototype.bind -> HasOwnProperty -> [[GetOwnProperty]]
         var gopd = [];
         var p = new Proxy(Function(),
-          { getOwnPropertyDescriptor: function(o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
+          { getOwnPropertyDescriptor: function (o, v) { gopd.push(v); return Object.getOwnPropertyDescriptor(o, v); }});
         p.bind();
         return gopd + '' === "length";
       */},
@@ -13718,10 +13718,10 @@ exports.tests = [
   subtests: [
     {
       name: 'SetIntegrityLevel',
-      exec: function() {/*
+      exec: function () {/*
         // SetIntegrityLevel -> [[OwnPropertyKeys]]
         var ownKeysCalled = 0;
-        var p = new Proxy({}, { ownKeys: function(o) { ownKeysCalled++; return Object.keys(o); }});
+        var p = new Proxy({}, { ownKeys: function (o) { ownKeysCalled++; return Object.keys(o); }});
         Object.freeze(p);
         return ownKeysCalled === 1;
       */},
@@ -13747,10 +13747,10 @@ exports.tests = [
     },
     {
       name: 'TestIntegrityLevel',
-      exec: function() {/*
+      exec: function () {/*
         // TestIntegrityLevel -> [[OwnPropertyKeys]]
         var ownKeysCalled = 0;
-        var p = new Proxy(Object.preventExtensions({}), { ownKeys: function(o) { ownKeysCalled++; return Object.keys(o); }});
+        var p = new Proxy(Object.preventExtensions({}), { ownKeys: function (o) { ownKeysCalled++; return Object.keys(o); }});
         Object.isFrozen(p);
         return ownKeysCalled === 1;
       */},
@@ -13776,10 +13776,10 @@ exports.tests = [
     },
     {
       name: 'SerializeJSONObject',
-      exec: function() {/*
+      exec: function () {/*
         // SerializeJSONObject -> EnumerableOwnNames -> [[OwnPropertyKeys]]
         var ownKeysCalled = 0;
-        var p = new Proxy({}, { ownKeys: function(o) { ownKeysCalled++; return Object.keys(o); }});
+        var p = new Proxy({}, { ownKeys: function (o) { ownKeysCalled++; return Object.keys(o); }});
         JSON.stringify({a:p,b:p});
         return ownKeysCalled === 2;
       */},
@@ -13817,7 +13817,7 @@ exports.tests = [
     {
       name: 'Reflect.get',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get',
-      exec: function() {/*
+      exec: function () {/*
         return Reflect.get({ qux: 987 }, "qux") === 987;
       */},
       res: {
@@ -13848,7 +13848,7 @@ exports.tests = [
     {
       name: 'Reflect.set',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set',
-      exec: function() {/*
+      exec: function () {/*
         var obj = {};
         Reflect.set(obj, "quux", 654);
         return obj.quux === 654;
@@ -13881,7 +13881,7 @@ exports.tests = [
     {
       name: 'Reflect.has',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has',
-      exec: function() {/*
+      exec: function () {/*
         return Reflect.has({ qux: 987 }, "qux");
       */},
       res: {
@@ -13912,7 +13912,7 @@ exports.tests = [
     {
       name: 'Reflect.deleteProperty',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty',
-      exec: function() {/*
+      exec: function () {/*
         var obj = { bar: 456 };
         Reflect.deleteProperty(obj, "bar");
         return !("bar" in obj);
@@ -13944,7 +13944,7 @@ exports.tests = [
     {
       name: 'Reflect.getOwnPropertyDescriptor',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getOwnPropertyDescriptor',
-      exec: function() {/*
+      exec: function () {/*
         var obj = { baz: 789 };
         var desc = Reflect.getOwnPropertyDescriptor(obj, "baz");
         return desc.value === 789 &&
@@ -13977,7 +13977,7 @@ exports.tests = [
     {
       name: 'Reflect.defineProperty',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty',
-      exec: function() {/*
+      exec: function () {/*
         var obj = {};
         Reflect.defineProperty(obj, "foo", { value: 123 });
         return obj.foo === 123 &&
@@ -14009,7 +14009,7 @@ exports.tests = [
     {
       name: 'Reflect.getPrototypeOf',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getPrototypeOf',
-      exec: function() {/*
+      exec: function () {/*
         return Reflect.getPrototypeOf([]) === Array.prototype;
       */},
       res: {
@@ -14039,7 +14039,7 @@ exports.tests = [
     {
       name: 'Reflect.setPrototypeOf',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/setPrototypeOf',
-      exec: function() {/*
+      exec: function () {/*
         var obj = {};
         Reflect.setPrototypeOf(obj, Array.prototype);
         return obj instanceof Array;
@@ -14071,7 +14071,7 @@ exports.tests = [
     {
       name: 'Reflect.isExtensible',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/isExtensible',
-      exec: function() {/*
+      exec: function () {/*
         return Reflect.isExtensible({}) &&
           !Reflect.isExtensible(Object.preventExtensions({}));
       */},
@@ -14102,7 +14102,7 @@ exports.tests = [
     {
       name: 'Reflect.preventExtensions',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/preventExtensions',
-      exec: function() {/*
+      exec: function () {/*
         var obj = {};
         Reflect.preventExtensions(obj);
         return !Object.isExtensible(obj);
@@ -14134,7 +14134,7 @@ exports.tests = [
     {
       name: 'Reflect.ownKeys, string keys',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys',
-      exec: function() {/*
+      exec: function () {/*
         var obj = Object.create({ C: true });
         obj.A = true;
         Object.defineProperty(obj, 'B', { value: true, enumerable: false });
@@ -14169,7 +14169,7 @@ exports.tests = [
     {
       name: 'Reflect.ownKeys, symbol keys',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys',
-      exec: function() {/*
+      exec: function () {/*
         var s1 = Symbol(), s2 = Symbol(), s3 = Symbol();
         var proto = {};
         proto[s1] = true;
@@ -14209,7 +14209,7 @@ exports.tests = [
     {
       name: 'Reflect.apply',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/apply',
-      exec: function() {/*
+      exec: function () {/*
         return Reflect.apply(Array.prototype.push, [1,2], [3,4,5]) === 5;
       */},
       res: {
@@ -14239,8 +14239,8 @@ exports.tests = [
     {
       name: 'Reflect.construct',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/construct',
-      exec: function() {/*
-        return Reflect.construct(function(a, b, c) {
+      exec: function () {/*
+        return Reflect.construct(function (a, b, c) {
           this.qux = a + b + c;
         }, ["foo", "bar", "baz"]).qux === "foobarbaz";
       */},
@@ -14270,8 +14270,8 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct sets new.target meta-property',
-      exec: function() {/*
-        return Reflect.construct(function(a, b, c) {
+      exec: function () {/*
+        return Reflect.construct(function (a, b, c) {
           if (new.target === Object) {
             this.qux = a + b + c;
           }
@@ -14299,9 +14299,9 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct creates instances from third argument',
-      exec: function() {/*
+      exec: function () {/*
         function F(){}
-        var obj = Reflect.construct(function(){ this.y = 1; }, [], F);
+        var obj = Reflect.construct(function (){ this.y = 1; }, [], F);
         return obj.y === 1 && obj instanceof F;
       */},
       res: {
@@ -14330,7 +14330,7 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct, Array subclassing',
-      exec: function() {/*
+      exec: function () {/*
         function F(){}
         var obj = Reflect.construct(Array, [], F);
         obj[2] = 'foo';
@@ -14360,7 +14360,7 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct, RegExp subclassing',
-      exec: function() {/*
+      exec: function () {/*
         function F(){}
         var obj = Reflect.construct(RegExp, ["baz","g"], F);
         return RegExp.prototype.exec.call(obj, "foobarbaz")[0] === "baz"
@@ -14390,7 +14390,7 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct, Function subclassing',
-      exec: function() {/*
+      exec: function () {/*
         function F(){}
         var obj = Reflect.construct(Function, ["return 2"], F);
         return obj() === 2 && obj instanceof F;
@@ -14419,10 +14419,10 @@ exports.tests = [
     },
     {
       name: 'Reflect.construct, Promise subclassing',
-      exec: function() {/*
+      exec: function () {/*
         function F(){}
-        var p1 = Reflect.construct(Promise,[function(resolve, reject) { resolve("foo"); }], F);
-        var p2 = Reflect.construct(Promise,[function(resolve, reject) { reject("quux"); }], F);
+        var p1 = Reflect.construct(Promise,[function (resolve, reject) { resolve("foo"); }], F);
+        var p2 = Reflect.construct(Promise,[function (resolve, reject) { reject("quux"); }], F);
         var score = +(p1 instanceof F && p2 instanceof F);
 
         function thenFn(result)  { score += (result === "foo");  check(); }
@@ -14518,7 +14518,7 @@ exports.tests = [
   subtests: [
     {
       name: 'with arrays',
-      exec: function(){/*
+      exec: function (){/*
         var [a, , [b], c] = [5, null, [6]];
         return a === 5 && b === 6 && c === void undefined;
       */},
@@ -14552,7 +14552,7 @@ exports.tests = [
     },
     {
       name: 'with sparse arrays',
-      exec: function(){/*
+      exec: function (){/*
         var [a, , b] = [,,,];
         return a === void undefined && b === void undefined;
       */},
@@ -14586,7 +14586,7 @@ exports.tests = [
     },
     {
       name: 'with strings',
-      exec: function(){/*
+      exec: function (){/*
         var [a, b, c] = "ab";
         return a === "a" && b === "b" && c === void undefined;
       */},
@@ -14620,7 +14620,7 @@ exports.tests = [
     },
     {
       name: 'with astral plane strings',
-      exec: function(){/*
+      exec: function (){/*
         var [c] = "𠮷𠮶";
         return c === "𠮷";
       */},
@@ -14652,7 +14652,7 @@ exports.tests = [
     },
     {
       name: 'with generator instances',
-      exec: function(){/*
+      exec: function (){/*
         var [a, b, c] = (function*(){ yield 1; yield 2; }());
         return a === 1 && b === 2 && c === void undefined;
       */},
@@ -14684,7 +14684,7 @@ exports.tests = [
     },
     {
       name: 'with generic iterables',
-      exec: function(){/*
+      exec: function (){/*
         var [a, b, c] = global.__createIterableObject([1, 2]);
         return a === 1 && b === 2 && c === void undefined;
       */},
@@ -14717,7 +14717,7 @@ exports.tests = [
     },
     {
       name: 'with instances of generic iterables',
-      exec: function(){/*
+      exec: function (){/*
         var [a, b, c] = Object.create(global.__createIterableObject([1, 2]));
         return a === 1 && b === 2 && c === void undefined;
       */},
@@ -14753,7 +14753,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         var [a, b] = iter;
         return closed;
@@ -14783,7 +14783,7 @@ exports.tests = [
     },
     {
       name: 'trailing commas in iterable patterns',
-      exec: function(){/*
+      exec: function (){/*
         var [a,] = [1];
         return a === 1;
       */},
@@ -14816,7 +14816,7 @@ exports.tests = [
     },
     {
       name: 'with objects',
-      exec: function(){/*
+      exec: function (){/*
         var {c, x:d, e} = {c:7, x:8};
         return c === 7 && d === 8 && e === void undefined;
       */},
@@ -14855,7 +14855,7 @@ exports.tests = [
     },
     {
       name: 'object destructuring with primitives',
-      exec: function(){/*
+      exec: function (){/*
         var {toFixed} = 2;
         var {slice} = '';
         return toFixed === Number.prototype.toFixed
@@ -14892,7 +14892,7 @@ exports.tests = [
     },
     {
       name: 'trailing commas in object patterns',
-      exec: function(){/*
+      exec: function (){/*
         var {a,} = {a:1};
         return a === 1;
       */},
@@ -14927,7 +14927,7 @@ exports.tests = [
     },
     {
       name: 'throws on null and undefined',
-      exec: function(){/*
+      exec: function (){/*
         try {
           var {a} = null;
           return false;
@@ -14975,7 +14975,7 @@ exports.tests = [
     },
     {
       name: 'computed properties',
-      exec: function(){/*
+      exec: function (){/*
         var qux = "corge";
         var { [qux]: grault } = { corge: "garply" };
         return grault === "garply";
@@ -15008,7 +15008,7 @@ exports.tests = [
     },
     {
       name: 'multiples in a single var statement',
-      exec: function() {/*
+      exec: function () {/*
         var [a,b] = [5,6], {c,d} = {c:7,d:8};
         return a === 5 && b === 6 && c === 7 && d === 8;
       */},
@@ -15043,7 +15043,7 @@ exports.tests = [
     },
     {
       name: 'nested',
-      exec: function(){/*
+      exec: function (){/*
         var [e, {x:f, g}] = [9, {x:10}];
         var {h, x:[i]} = {h:11, x:[12]};
         return e === 9 && f === 10 && g === void undefined
@@ -15079,7 +15079,7 @@ exports.tests = [
     },
     {
       name: 'in for-in loop heads',
-      exec: function(){/*
+      exec: function (){/*
         for(var [i, j, k] in { qux: 1 }) {
           return i === "q" && j === "u" && k === "x";
         }
@@ -15111,7 +15111,7 @@ exports.tests = [
     },
     {
       name: 'in for-of loop heads',
-      exec: function(){/*
+      exec: function (){/*
         for(var [i, j, k] of [[1,2,3]]) {
           return i === 1 && j === 2 && k === 3;
         }
@@ -15145,7 +15145,7 @@ exports.tests = [
     },
     {
       name: 'in catch heads',
-      exec: function(){/*
+      exec: function (){/*
         try {
           throw [1,2];
         } catch([i,j]) {
@@ -15183,7 +15183,7 @@ exports.tests = [
     },
     {
       name: 'rest',
-      exec: function(){/*
+      exec: function (){/*
         var [a, ...b] = [3, 4, 5];
         var [c, ...d] = [6];
         return a === 3 && b instanceof Array && (b + "") === "4,5" &&
@@ -15219,7 +15219,7 @@ exports.tests = [
     },
     {
       name: 'rest with identical number of elements in RHS',
-      exec: function(){/*
+      exec: function (){/*
         var [a, ...b] = [3, 4];
         var [...c] = [5];
         return a === 3 && b instanceof Array && (b + "") === "4" &&
@@ -15243,7 +15243,7 @@ exports.tests = [
     },
     {
       name: 'defaults',
-      exec: function(){/*
+      exec: function (){/*
         var {a = 1, b = 0, z:c = 3} = {b:2, z:undefined};
         var [d = 0, e = 5, f = 6] = [4,,undefined];
         return a === 1 && b === 2 && c === 3
@@ -15280,7 +15280,7 @@ exports.tests = [
     },
     {
       name: 'defaults, let temporal dead zone',
-      exec: function(){/*
+      exec: function (){/*
         var {a, b = 2} = {a:1};
         try {
           eval("let {c = c} = {};");
@@ -15329,7 +15329,7 @@ exports.tests = [
   subtests: [
     {
       name: 'with arrays',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, , [b], c] = [5, null, [6]];
         return a === 5 && b === 6 && c === void undefined;
@@ -15364,7 +15364,7 @@ exports.tests = [
     },
     {
       name: 'with sparse arrays',
-      exec: function(){/*
+      exec: function (){/*
         var a, b;
         [a, , b] = [,,,];
         return a === void undefined && b === void undefined;
@@ -15399,7 +15399,7 @@ exports.tests = [
     },
     {
       name: 'with strings',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, b, c] = "ab";
         return a === "a" && b === "b" && c === void undefined;
@@ -15434,7 +15434,7 @@ exports.tests = [
     },
     {
       name: 'with astral plane strings',
-      exec: function(){/*
+      exec: function (){/*
         var c;
         [c] = "𠮷𠮶";
         return c === "𠮷";
@@ -15467,7 +15467,7 @@ exports.tests = [
     },
     {
       name: 'with generator instances',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, b, c] = (function*(){ yield 1; yield 2; }());
         return a === 1 && b === 2 && c === void undefined;
@@ -15500,7 +15500,7 @@ exports.tests = [
     },
     {
       name: 'with generic iterables',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, b, c] = global.__createIterableObject([1, 2]);
         return a === 1 && b === 2 && c === void undefined;
@@ -15534,7 +15534,7 @@ exports.tests = [
     },
     {
       name: 'with instances of generic iterables',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, b, c] = Object.create(global.__createIterableObject([1, 2]));
         return a === 1 && b === 2 && c === void undefined;
@@ -15571,7 +15571,7 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         var a,b;
         [a, b] = iter;
@@ -15601,7 +15601,7 @@ exports.tests = [
     },
     {
       name: 'iterable destructuring expression',
-      exec: function() {/*
+      exec: function () {/*
         var a, b, iterable = [1,2];
         return ([a, b] = iterable) === iterable;
       */},
@@ -15634,7 +15634,7 @@ exports.tests = [
     },
     {
       name: 'chained iterable destructuring',
-      exec: function() {/*
+      exec: function () {/*
         var a,b,c,d;
         [a,b] = [c,d] = [1,2];
         return a === 1 && b === 2 && c === 1 && d === 2;
@@ -15668,7 +15668,7 @@ exports.tests = [
     },
     {
       name: 'trailing commas in iterable patterns',
-      exec: function(){/*
+      exec: function (){/*
         var a;
         [a,] = [1];
         return a === 1;
@@ -15703,7 +15703,7 @@ exports.tests = [
     },
     {
       name: 'with objects',
-      exec: function(){/*
+      exec: function (){/*
         var c,d,e;
         ({c, x:d, e} = {c:7, x:8});
         return c === 7 && d === 8 && e === void undefined;
@@ -15744,7 +15744,7 @@ exports.tests = [
     },
     {
       name: 'object destructuring with primitives',
-      exec: function(){/*
+      exec: function (){/*
         var toFixed, slice;
         ({toFixed} = 2);
         ({slice} = '');
@@ -15785,7 +15785,7 @@ exports.tests = [
     },
     {
       name: 'trailing commas in object patterns',
-      exec: function(){/*
+      exec: function (){/*
         var a;
         ({a,} = {a:1});
         return a === 1;
@@ -15824,7 +15824,7 @@ exports.tests = [
     },
     {
       name: 'object destructuring expression',
-      exec: function() {/*
+      exec: function () {/*
         var a, b, obj = { a:1, b:2 };
         return ({a,b} = obj) === obj;
       */},
@@ -15858,7 +15858,7 @@ exports.tests = [
     },
     {
       name: 'parenthesised left-hand-side is a syntax error',
-      exec: function() {/*
+      exec: function () {/*
         var a, b;
         ({a,b} = {a:1,b:2});
         try {
@@ -15896,7 +15896,7 @@ exports.tests = [
     },
     {
       name: 'chained object destructuring',
-      exec: function() {/*
+      exec: function () {/*
         var a,b,c,d;
         ({a,b} = {c,d} = {a:1,b:2,c:3,d:4});
         return a === 1 && b === 2 && c === 3 && d === 4;
@@ -15934,7 +15934,7 @@ exports.tests = [
     },
     {
       name: 'throws on null and undefined',
-      exec: function(){/*
+      exec: function (){/*
         var a,b;
         try {
           ({a} = null);
@@ -15984,7 +15984,7 @@ exports.tests = [
     },
     {
       name: 'computed properties',
-      exec: function(){/*
+      exec: function (){/*
         var grault, qux = "corge";
         ({ [qux]: grault } = { corge: "garply" });
         return grault === "garply";
@@ -16017,7 +16017,7 @@ exports.tests = [
     },
     {
       name: 'nested',
-      exec: function(){/*
+      exec: function (){/*
         var e,f,g,h,i;
         [e, {x:f, g}] = [9, {x:10}];
         ({h, x:[i]} = {h:11, x:[12]});
@@ -16058,7 +16058,7 @@ exports.tests = [
     },
     {
       name: 'rest',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c,d;
         [a, ...b] = [3, 4, 5];
         [c, ...d] = [6];
@@ -16095,7 +16095,7 @@ exports.tests = [
     },
     {
       name: 'rest with identical number of elements in RHS',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c;
         [a, ...b] = [3, 4];
         [...c] = [5];
@@ -16120,7 +16120,7 @@ exports.tests = [
     },
     {
       name: 'nested rest',
-      exec: function(){/*
+      exec: function (){/*
         var a = [1, 2, 3], first, last;
         [first, ...[a[2], last]] = a;
         return first === 1 && last === 3 && (a + "") === "1,2,2";
@@ -16152,7 +16152,7 @@ exports.tests = [
     },
     {
       name: 'empty patterns',
-      exec: function(){/*
+      exec: function (){/*
         [] = [1,2];
         ({} = {a:1,b:2});
         return true;
@@ -16187,7 +16187,7 @@ exports.tests = [
     },
     {
       name: 'defaults',
-      exec: function(){/*
+      exec: function (){/*
         var a,b,c,d,e,f;
         ({a = 1, b = 0, z:c = 3} = {b:2, z:undefined});
         [d = 0, e = 5, f = 6] = [4,,undefined];
@@ -16233,8 +16233,8 @@ exports.tests = [
   subtests: [
     {
       name: 'with arrays',
-      exec: function(){/*
-        return function([a, , [b], c]) {
+      exec: function (){/*
+        return function ([a, , [b], c]) {
           return a === 5 && b === 6 && c === void undefined;
         }([5, null, [6]]);
       */},
@@ -16269,8 +16269,8 @@ exports.tests = [
     },
     {
       name: 'with sparse arrays',
-      exec: function(){/*
-        return function([a, , b]) {
+      exec: function (){/*
+        return function ([a, , b]) {
           return a === void undefined && b === void undefined;
         }([,,,]);
       */},
@@ -16304,8 +16304,8 @@ exports.tests = [
     },
     {
       name: 'with strings',
-      exec: function(){/*
-        return function([a, b, c]) {
+      exec: function (){/*
+        return function ([a, b, c]) {
           return a === "a" && b === "b" && c === void undefined;
         }("ab");
       */},
@@ -16339,8 +16339,8 @@ exports.tests = [
     },
     {
       name: 'with astral plane strings',
-      exec: function(){/*
-        return function([c]) {
+      exec: function (){/*
+        return function ([c]) {
           return c === "𠮷";
         }("𠮷𠮶");
       */},
@@ -16373,8 +16373,8 @@ exports.tests = [
     },
     {
       name: 'with generator instances',
-      exec: function(){/*
-        return function([a, b, c]) {
+      exec: function (){/*
+        return function ([a, b, c]) {
           return a === 1 && b === 2 && c === void undefined;
         }(function*(){ yield 1; yield 2; }());
       */},
@@ -16408,8 +16408,8 @@ exports.tests = [
     },
     {
       name: 'with generic iterables',
-      exec: function(){/*
-        return function([a, b, c]) {
+      exec: function (){/*
+        return function ([a, b, c]) {
           return a === 1 && b === 2 && c === void undefined;
         }(global.__createIterableObject([1, 2]));
       */},
@@ -16443,8 +16443,8 @@ exports.tests = [
     },
     {
       name: 'with instances of generic iterables',
-      exec: function(){/*
-        return function([a, b, c]) {
+      exec: function (){/*
+        return function ([a, b, c]) {
           return a === 1 && b === 2 && c === void undefined;
         }(Object.create(global.__createIterableObject([1, 2])));
       */},
@@ -16481,9 +16481,9 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
-        (function([a,b]) {}(iter));
+        (function ([a,b]) {}(iter));
         return closed;
       */},
       res: {
@@ -16511,8 +16511,8 @@ exports.tests = [
     },
     {
       name: 'trailing commas in iterable patterns',
-      exec: function(){/*
-        return function([a,]) {
+      exec: function (){/*
+        return function ([a,]) {
           return a === 1;
         }([1]);
       */},
@@ -16546,8 +16546,8 @@ exports.tests = [
     },
     {
       name: 'with objects',
-      exec: function(){/*
-        return function({c, x:d, e}) {
+      exec: function (){/*
+        return function ({c, x:d, e}) {
           return c === 7 && d === 8 && e === void undefined;
         }({c:7, x:8});
       */},
@@ -16586,8 +16586,8 @@ exports.tests = [
     },
     {
       name: 'object destructuring with primitives',
-      exec: function(){/*
-        return function({toFixed}, {slice}) {
+      exec: function (){/*
+        return function ({toFixed}, {slice}) {
           return toFixed === Number.prototype.toFixed
             && slice === String.prototype.slice;
         }(2,'');
@@ -16623,8 +16623,8 @@ exports.tests = [
     },
     {
       name: 'trailing commas in object patterns',
-      exec: function(){/*
-        return function({a,}) {
+      exec: function (){/*
+        return function ({a,}) {
           return a === 1;
         }({a:1});
       */},
@@ -16659,13 +16659,13 @@ exports.tests = [
     },
     {
       name: 'throws on null and undefined',
-      exec: function(){/*
+      exec: function (){/*
         try {
-          (function({a}){}(null));
+          (function ({a}){}(null));
           return false;
         } catch(e) {}
         try {
-          (function({b}){}(undefined));
+          (function ({b}){}(undefined));
           return false;
         } catch(e) {}
         return true;
@@ -16701,9 +16701,9 @@ exports.tests = [
     },
     {
       name: 'computed properties',
-      exec: function(){/*
+      exec: function (){/*
         var qux = "corge";
-        return function({ [qux]: grault }) {
+        return function ({ [qux]: grault }) {
           return grault === "garply";
         }({ corge: "garply" });
       */},
@@ -16735,8 +16735,8 @@ exports.tests = [
     },
     {
       name: 'nested',
-      exec: function(){/*
-        return function([e, {x:f, g}], {h, x:[i]}) {
+      exec: function (){/*
+        return function ([e, {x:f, g}], {h, x:[i]}) {
           return e === 9 && f === 10 && g === void undefined
             && h === 11 && i === 12;
         }([9, {x:10}],{h:11, x:[12]});
@@ -16771,8 +16771,8 @@ exports.tests = [
     },
     {
       name: '\'arguments\' interaction',
-      exec: function(){/*
-        return (function({a, x:b, y:e}, [c, d]) {
+      exec: function (){/*
+        return (function ({a, x:b, y:e}, [c, d]) {
           return arguments[0].a === 1 && arguments[0].x === 2
             && !("y" in arguments[0]) && arguments[1] + '' === "3,4";
         }({a:1, x:2}, [3, 4]));
@@ -16807,7 +16807,7 @@ exports.tests = [
     },
     {
       name: 'new Function() support',
-      exec: function(){/*
+      exec: function (){/*
         return new Function("{a, x:b, y:e}","[c, d]",
           "return a === 1 && b === 2 && c === 3 && "
           + "d === 4 && e === void undefined;"
@@ -16837,8 +16837,8 @@ exports.tests = [
       }
     },{
       name: 'in parameters, function \'length\' property',
-      exec: function(){/*
-        return function({a, b}, [c, d]){}.length === 2;
+      exec: function (){/*
+        return function ({a, b}, [c, d]){}.length === 2;
       */},
       res: {
         tr: true,
@@ -16870,8 +16870,8 @@ exports.tests = [
     },
     {
       name: 'rest',
-      exec: function(){/*
-        return function([a, ...b], [c, ...d]) {
+      exec: function (){/*
+        return function ([a, ...b], [c, ...d]) {
           return a === 3 && b instanceof Array && (b + "") === "4,5" &&
              c === 6 && d instanceof Array && d.length === 0;
         }([3, 4, 5], [6]);
@@ -16906,7 +16906,7 @@ exports.tests = [
     },
     {
       name: 'empty patterns',
-      exec: function(){/*
+      exec: function (){/*
         return function ([],{}){
           return arguments[0] + '' === "3,4" && arguments[1].x === "foo";
         }([3,4],{x:"foo"});
@@ -16940,8 +16940,8 @@ exports.tests = [
     },
     {
       name: 'defaults',
-      exec: function(){/*
-        return (function({a = 1, b = 0, c = 3, x:d = 0, y:e = 5},
+      exec: function (){/*
+        return (function ({a = 1, b = 0, c = 3, x:d = 0, y:e = 5},
             [f = 6, g = 0, h = 8]) {
           return a === 1 && b === 2 && c === 3 && d === 4 &&
             e === 5 && f === 6 && g === 7 && h === 8;
@@ -16976,8 +16976,8 @@ exports.tests = [
     },
     {
       name: 'defaults, separate scope',
-      exec: function(){/*
-        return (function({a=function(){
+      exec: function (){/*
+        return (function ({a=function (){
           return typeof b === 'undefined';
         }}){
           var b = 1;
@@ -17009,7 +17009,7 @@ exports.tests = [
     },
     {
       name: 'defaults, new Function() support',
-      exec: function(){/*
+      exec: function (){/*
         return new Function("{a = 1, b = 0, c = 3, x:d = 0, y:e = 5}",
           "return a === 1 && b === 2 && c === 3 && d === 4 && e === 5;"
         )({b:2, c:undefined, x:4});
@@ -17040,7 +17040,7 @@ exports.tests = [
     },
     {
       name: 'aliased defaults, arrow function',
-      exec: function(){/*
+      exec: function (){/*
         return ((a, {b: x = 0, c: y = 3}) => {
           return a === 1 && x === 2 && y === 3;
         })(1, {b: 2});
@@ -17075,7 +17075,7 @@ exports.tests = [
     },
     {
       name: 'shorthand defaults, arrow function',
-      exec: function(){/*
+      exec: function (){/*
         return ((a, {b = 0, c = 3}) => {
           return a === 1 && b === 2 && c === 3;
         })(1, {b: 2});
@@ -17109,7 +17109,7 @@ exports.tests = [
     },
     {
       name: 'duplicate identifier',
-      exec: function(){/*
+      exec: function (){/*
         try {
           eval('var d = function d([d]) { return d };');
           if (d([true]) !== true) return false;
@@ -17164,8 +17164,8 @@ exports.tests = [
       name: 'basic functionality',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise',
       exec: function () {/*
-        var p1 = new Promise(function(resolve, reject) { resolve("foo"); });
-        var p2 = new Promise(function(resolve, reject) { reject("quux"); });
+        var p1 = new Promise(function (resolve, reject) { resolve("foo"); });
+        var p2 = new Promise(function (resolve, reject) { reject("quux"); });
         var score = 0;
 
         function thenFn(result)  { score += (result === "foo");  check(); }
@@ -17177,7 +17177,7 @@ exports.tests = [
         p1.catch(shouldNotRun);
         p2.catch(catchFn);
 
-        p1.then(function() {
+        p1.then(function () {
           // Promise.prototype.then() should return a new Promise
           score += p1.then() !== p1;
           check();
@@ -17217,9 +17217,9 @@ exports.tests = [
     {
       name: 'constructor requires new',
       exec: function () {/*
-        new Promise(function(){});
+        new Promise(function (){});
         try {
-          Promise(function(){});
+          Promise(function (){});
           return false;
         } catch(e) {
           return true;
@@ -17253,9 +17253,9 @@ exports.tests = [
     {
       name: 'Promise.prototype isn\'t an instance',
       exec: function () {/*
-        new Promise(function(){});
+        new Promise(function (){});
         try {
-          Promise.prototype.then(function(){});
+          Promise.prototype.then(function (){});
         } catch (e) {
           return true;
         }
@@ -17291,16 +17291,16 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all',
       exec: function () {/*
         var fulfills = Promise.all([
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"foo"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"foo"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"bar"); })
         ]);
         var rejects = Promise.all([
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"baz"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"baz"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"qux"); })
         ]);
         var score = 0;
-        fulfills.then(function(result) { score += (result + "" === "foo,bar"); check(); });
-        rejects.catch(function(result) { score += (result === "qux"); check(); });
+        fulfills.then(function (result) { score += (result + "" === "foo,bar"); check(); });
+        rejects.catch(function (result) { score += (result === "qux"); check(); });
 
         function check() {
           if (score === 2) asyncTestPassed();
@@ -17336,16 +17336,16 @@ exports.tests = [
       name: 'Promise.all, generic iterables',
       exec: function () {/*
         var fulfills = Promise.all(global.__createIterableObject([
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"foo"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"foo"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"bar"); })
         ]));
         var rejects = Promise.all(global.__createIterableObject([
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"baz"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"baz"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"qux"); })
         ]));
         var score = 0;
-        fulfills.then(function(result) { score += (result + "" === "foo,bar"); check(); });
-        rejects.catch(function(result) { score += (result === "qux"); check(); });
+        fulfills.then(function (result) { score += (result + "" === "foo,bar"); check(); });
+        rejects.catch(function (result) { score += (result === "qux"); check(); });
 
         function check() {
           if (score === 2) asyncTestPassed();
@@ -17380,16 +17380,16 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race',
       exec: function () {/*
         var fulfills = Promise.race([
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"foo"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"foo"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"bar"); })
         ]);
         var rejects = Promise.race([
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"baz"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"baz"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"qux"); })
         ]);
         var score = 0;
-        fulfills.then(function(result) { score += (result === "foo"); check(); });
-        rejects.catch(function(result) { score += (result === "baz"); check(); });
+        fulfills.then(function (result) { score += (result === "foo"); check(); });
+        rejects.catch(function (result) { score += (result === "baz"); check(); });
 
         function check() {
           if (score === 2) asyncTestPassed();
@@ -17426,16 +17426,16 @@ exports.tests = [
       name: 'Promise.race, generic iterables',
       exec: function () {/*
         var fulfills = Promise.race(global.__createIterableObject([
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"foo"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"foo"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"bar"); })
         ]));
         var rejects = Promise.race(global.__createIterableObject([
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"baz"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"baz"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"qux"); })
         ]));
         var score = 0;
-        fulfills.then(function(result) { score += (result === "foo"); check(); });
-        rejects.catch(function(result) { score += (result === "baz"); check(); });
+        fulfills.then(function (result) { score += (result === "foo"); check(); });
+        rejects.catch(function (result) { score += (result === "baz"); check(); });
 
         function check() {
           if (score === 2) asyncTestPassed();
@@ -17966,8 +17966,8 @@ exports.tests = [
   subtests: [
     {
       name: 'get prototype',
-      exec: function() {/*
-        var A = function(){};
+      exec: function () {/*
+        var A = function (){};
         return (new A()).__proto__ === A.prototype;
       */},
       res: {
@@ -17999,7 +17999,7 @@ exports.tests = [
     },
     {
       name: 'set prototype',
-      exec: function() {/*
+      exec: function () {/*
         var o = {};
         o.__proto__ = Array.prototype;
         return o instanceof Array;
@@ -18096,7 +18096,7 @@ exports.tests = [
       name: 'correct property descriptor',
       exec: function () {/*
         var desc = Object.getOwnPropertyDescriptor(Object.prototype,"__proto__");
-        var A = function(){};
+        var A = function (){};
 
         return (desc
           && "get" in desc
@@ -18175,7 +18175,7 @@ exports.tests = [
       exec: function () {/*
         function foo(){};
         return foo.name === 'foo' &&
-          (function(){}).name === '';
+          (function (){}).name === '';
       */},
       res: {
         babel6corejs2: babel.corejs,
@@ -18211,7 +18211,7 @@ exports.tests = [
       name: 'function expressions',
       exec: function () {/*
         return (function foo(){}).name === 'foo' &&
-          (function(){}).name === '';
+          (function (){}).name === '';
       */},
       res: {
         babel6corejs2: babel.corejs,
@@ -18274,10 +18274,10 @@ exports.tests = [
     },
     {
       name: 'bound functions',
-      exec: function() {/*
+      exec: function () {/*
         function foo() {};
         return foo.bind({}).name === "bound foo" &&
-          (function(){}).bind({}).name === "bound ";
+          (function (){}).bind({}).name === "bound ";
       */},
       res: {
         ejs: true,
@@ -18303,8 +18303,8 @@ exports.tests = [
     },
     {
       name: 'variables (function)',
-      exec: function() {/*
-        var foo = function() {};
+      exec: function () {/*
+        var foo = function () {};
         var bar = function baz() {};
         return foo.name === "foo" && bar.name === "baz";
       */},
@@ -18333,9 +18333,9 @@ exports.tests = [
     },
     {
       name: 'object methods (function)',
-      exec: function() {/*
-        var o = { foo: function(){}, bar: function baz(){}};
-        o.qux = function(){};
+      exec: function () {/*
+        var o = { foo: function (){}, bar: function baz(){}};
+        o.qux = function (){};
         return o.foo.name === "foo" &&
                o.bar.name === "baz" &&
                o.qux.name === "";
@@ -18366,7 +18366,7 @@ exports.tests = [
     },
     {
       name: 'accessor properties',
-      exec: function() {/*
+      exec: function () {/*
         var o = { get foo(){}, set foo(x){} };
         var descriptor = Object.getOwnPropertyDescriptor(o, "foo");
         return descriptor.get.name === "get foo" &&
@@ -18396,7 +18396,7 @@ exports.tests = [
     },
     {
       name: 'shorthand methods',
-      exec: function() {/*
+      exec: function () {/*
         var o = { foo(){} };
         return o.foo.name === "foo";
       */},
@@ -18428,7 +18428,7 @@ exports.tests = [
     },
     {
       name: 'shorthand methods (no lexical binding)',
-      exec: function() {/*
+      exec: function () {/*
         var f = "foo";
         return ({f() { return f; }}).f() === "foo";
       */},
@@ -18457,12 +18457,12 @@ exports.tests = [
     },
     {
       name: 'symbol-keyed methods',
-      exec: function() {/*
+      exec: function () {/*
         var sym1 = Symbol("foo");
         var sym2 = Symbol();
         var o = {
-          [sym1]: function(){},
-          [sym2]: function(){}
+          [sym1]: function (){},
+          [sym2]: function (){}
         };
 
         return o[sym1].name === "[foo]" &&
@@ -18492,7 +18492,7 @@ exports.tests = [
     },
     {
       name: 'class statements',
-      exec: function() {/*
+      exec: function () {/*
         class foo {};
         class bar { static name() {} };
         return foo.name === "foo" &&
@@ -18526,7 +18526,7 @@ exports.tests = [
     },
     {
       name: 'class expressions',
-      exec: function() {/*
+      exec: function () {/*
         return class foo {}.name === "foo" &&
           typeof class bar { static name() {} }.name === "function";
       */},
@@ -18554,7 +18554,7 @@ exports.tests = [
     },
     {
       name: 'variables (class)',
-      exec: function() {/*
+      exec: function () {/*
         var foo = class {};
         var bar = class baz {};
         var qux = class { static name() {} };
@@ -18586,7 +18586,7 @@ exports.tests = [
     },
     {
       name: 'object methods (class)',
-      exec: function() {/*
+      exec: function () {/*
         var o = { foo: class {}, bar: class baz {}};
         o.qux = class {};
         return o.foo.name === "foo" &&
@@ -18618,7 +18618,7 @@ exports.tests = [
     },
     {
       name: 'class prototype methods',
-      exec: function() {/*
+      exec: function () {/*
         class C { foo(){} };
         return (new C).foo.name === "foo";
       */},
@@ -18648,7 +18648,7 @@ exports.tests = [
     },
     {
       name: 'class static methods',
-      exec: function() {/*
+      exec: function () {/*
         class C { static foo(){} };
         return C.foo.name === "foo";
       */},
@@ -18716,7 +18716,7 @@ exports.tests = [
     {
       name: 'String.raw',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw',
-      exec: function() {/*
+      exec: function () {/*
         return typeof String.raw === 'function';
       */},
       res: {
@@ -18749,7 +18749,7 @@ exports.tests = [
     {
       name: 'String.fromCodePoint',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint',
-      exec: function() {/*
+      exec: function () {/*
         return typeof String.fromCodePoint === 'function';
       */},
       res: {
@@ -19300,7 +19300,7 @@ exports.tests = [
     },
     {
       name: 'in identifiers',
-      exec: function(){/*
+      exec: function (){/*
         var \u{102C0} = 2;
         return \u{102C0} === 2;
       */},
@@ -19329,7 +19329,7 @@ exports.tests = [
     },
     {
       name: 'in property key definitions',
-      exec: function(){/*
+      exec: function (){/*
         var o = { \u{102C0} : 2 };
         return o['\ud800\udec0'] === 2;
       */},
@@ -19357,7 +19357,7 @@ exports.tests = [
     },
     {
       name: 'in property key accesses',
-      exec: function(){/*
+      exec: function (){/*
         var o = { '\ud800\udec0' : 2 };
         return o.\u{102C0} === 2;
       */},
@@ -19396,7 +19396,7 @@ exports.tests = [
         new function f() {
           passed = (new.target === f);
         }();
-        (function() {
+        (function () {
           passed &= (new.target === void undefined);
         }());
         return passed;
@@ -19426,14 +19426,14 @@ exports.tests = [
     },
     {
       name: 'assignment is an early error',
-      exec: function(){/*
+      exec: function (){/*
         var passed = false;
         new function f() {
           passed = (new.target === f);
         }();
 
         try {
-          Function("new.target = function(){};");
+          Function("new.target = function (){};");
         } catch(e) {
           return passed;
         }
@@ -19472,7 +19472,7 @@ exports.tests = [
   subtests: [
     {
       name: 'basic functionality',
-      exec: function(){/*
+      exec: function (){/*
         var object = {};
         var symbol = Symbol();
         var value = {};
@@ -19508,7 +19508,7 @@ exports.tests = [
     },
     {
       name: 'typeof support',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Symbol() === "symbol";
       */},
       res: {
@@ -19539,7 +19539,7 @@ exports.tests = [
     },
     {
       name: 'symbol keys are hidden to pre-ES6 code',
-      exec: function(){/*
+      exec: function (){/*
         var object = {};
         var symbol = Symbol();
         object[symbol] = 1;
@@ -19580,7 +19580,7 @@ exports.tests = [
     },
     {
       name: 'Object.defineProperty support',
-      exec: function(){/*
+      exec: function (){/*
         var object = {};
         var symbol = Symbol();
         var value = {};
@@ -19621,7 +19621,7 @@ exports.tests = [
     },
     {
       name: 'symbols inherit from Symbol.prototype',
-      exec: function(){/*
+      exec: function (){/*
         var symbol = Symbol();
         var passed = symbol.foo === void undefined;
         Symbol.prototype.foo = 2;
@@ -19656,7 +19656,7 @@ exports.tests = [
     },
     {
       name: 'cannot coerce to string or number',
-      exec: function(){/*
+      exec: function (){/*
         var symbol = Symbol();
 
         try {
@@ -19696,7 +19696,7 @@ exports.tests = [
     },
     {
       name: 'can convert with String()',
-      exec: function(){/*
+      exec: function (){/*
         return String(Symbol("foo")) === "Symbol(foo)";
       */},
       res: {
@@ -19721,7 +19721,7 @@ exports.tests = [
     },
     {
       name: 'new Symbol() throws',
-      exec: function(){/*
+      exec: function (){/*
         var symbol = Symbol();
         try {
           new Symbol();
@@ -19757,7 +19757,7 @@ exports.tests = [
     },
     {
       name: 'Object(symbol)',
-      exec: function(){/*
+      exec: function (){/*
         var symbol = Symbol();
         var symbolObject = Object(symbol);
 
@@ -19794,7 +19794,7 @@ exports.tests = [
     },
     {
       name: 'JSON.stringify ignores symbol primitives',
-      exec: function() {/*
+      exec: function () {/*
         var object = { foo: Symbol() };
         object[Symbol()] = 1;
         var array = [Symbol()];
@@ -19836,7 +19836,7 @@ exports.tests = [
     },
     {
       name: 'JSON.stringify ignores symbol objects',
-      exec: function() {/*
+      exec: function () {/*
         var testSymbolObject = function (sym) {
           var object = { foo: sym };
           try {
@@ -19885,7 +19885,7 @@ exports.tests = [
     },
     {
       name: 'global symbol registry',
-      exec: function() {/*
+      exec: function () {/*
         var symbol = Symbol.for('foo');
         return Symbol.for('foo') === symbol &&
            Symbol.keyFor(symbol) === 'foo';
@@ -19930,12 +19930,12 @@ exports.tests = [
     {
       name: 'Symbol.hasInstance',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance',
-      exec: function() {/*
+      exec: function () {/*
         var passed = false;
         var obj = { foo: true };
-        var C = function(){};
+        var C = function (){};
         Object.defineProperty(C, Symbol.hasInstance, {
-          value: function(inst) { passed = inst.foo; return false; }
+          value: function (inst) { passed = inst.foo; return false; }
         });
         obj instanceof C;
         return passed;
@@ -19967,7 +19967,7 @@ exports.tests = [
     {
       name: 'Symbol.isConcatSpreadable, non-spreadable array',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/isConcatSpreadable',
-      exec: function() {/*
+      exec: function () {/*
         var a = [], b = [];
         b[Symbol.isConcatSpreadable] = false;
         a = a.concat(b);
@@ -20001,7 +20001,7 @@ exports.tests = [
     {
       name: 'Symbol.isConcatSpreadable, spreadable object with poisoned getter',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/isConcatSpreadable',
-      exec: function() {/*
+      exec: function () {/*
         if (typeof Symbol !== 'function' || !Symbol.isConcatSpreadable) {
           return null;
         }
@@ -20041,7 +20041,7 @@ exports.tests = [
     {
       name: 'Symbol.iterator, existence',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator',
-      exec: function() {/*
+      exec: function () {/*
         return "iterator" in Symbol;
       */},
       res: {
@@ -20074,8 +20074,8 @@ exports.tests = [
     },
     {
       name: 'Symbol.iterator, arguments object',
-      exec: function() {/*
-        return (function() {
+      exec: function () {/*
+        return (function () {
           return typeof arguments[Symbol.iterator] === 'function'
             && Object.hasOwnProperty.call(arguments, Symbol.iterator);
         }());
@@ -20107,7 +20107,7 @@ exports.tests = [
     {
       name: 'Symbol.species, existence',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species',
-      exec: function() {/*
+      exec: function () {/*
         return "species" in Symbol;
       */},
       res: {
@@ -20137,7 +20137,7 @@ exports.tests = [
       exec: function () {/*
         var obj = [];
         obj.constructor = {};
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
             return { foo: 1 };
         };
         return Array.prototype.concat.call(obj, []).foo === 1;
@@ -20173,7 +20173,7 @@ exports.tests = [
       exec: function () {/*
         var obj = [];
         obj.constructor = {};
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
             return { foo: 1 };
         };
         return Array.prototype.filter.call(obj, Boolean).foo === 1;
@@ -20209,7 +20209,7 @@ exports.tests = [
       exec: function () {/*
         var obj = [];
         obj.constructor = {};
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
             return { foo: 1 };
         };
         return Array.prototype.map.call(obj, Boolean).foo === 1;
@@ -20245,7 +20245,7 @@ exports.tests = [
       exec: function () {/*
         var obj = [];
         obj.constructor = {};
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
             return { foo: 1 };
         };
         return Array.prototype.slice.call(obj, 0).foo === 1;
@@ -20281,7 +20281,7 @@ exports.tests = [
       exec: function () {/*
         var obj = [];
         obj.constructor = {};
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
             return { foo: 1 };
         };
         return Array.prototype.splice.call(obj, 0).foo === 1;
@@ -20318,7 +20318,7 @@ exports.tests = [
         var passed = false;
         var obj = { constructor: {} };
         obj[Symbol.split] = RegExp.prototype[Symbol.split];
-        obj.constructor[Symbol.species] = function() {
+        obj.constructor[Symbol.species] = function () {
           passed = true;
           return /./;
         };
@@ -20353,11 +20353,11 @@ exports.tests = [
     {
       name: 'Symbol.species, Promise.prototype.then',
       exec: function () {/*
-        var promise      = new Promise(function(resolve){ resolve(42); });
-        var FakePromise1 = promise.constructor = function(exec){ exec(function(){}, function(){}); };
-        var FakePromise2 = function(exec){ exec(function(){}, function(){}); };
+        var promise      = new Promise(function (resolve){ resolve(42); });
+        var FakePromise1 = promise.constructor = function (exec){ exec(function (){}, function (){}); };
+        var FakePromise2 = function (exec){ exec(function (){}, function (){}); };
         Object.defineProperty(FakePromise1, Symbol.species, {value: FakePromise2});
-        return promise.then(function(){}) instanceof FakePromise2;
+        return promise.then(function (){}) instanceof FakePromise2;
       */},
       res: {
         babel6corejs2: babel.corejs,
@@ -20388,7 +20388,7 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace',
       exec: function () {/*
         var O = {};
-        O[Symbol.replace] = function(){
+        O[Symbol.replace] = function (){
           return 42;
         };
         return ''.replace(O) === 42;
@@ -20421,7 +20421,7 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/search',
       exec: function () {/*
         var O = {};
-        O[Symbol.search] = function(){
+        O[Symbol.search] = function (){
           return 42;
         };
         return ''.search(O) === 42;
@@ -20454,7 +20454,7 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split',
       exec: function () {/*
         var O = {};
-        O[Symbol.split] = function(){
+        O[Symbol.split] = function (){
           return 42;
         };
         return ''.split(O) === 42;
@@ -20487,7 +20487,7 @@ exports.tests = [
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/match',
       exec: function () {/*
         var O = {};
-        O[Symbol.match] = function(){
+        O[Symbol.match] = function (){
           return 42;
         };
         return ''.match(O) === 42;
@@ -20648,12 +20648,12 @@ exports.tests = [
     {
       name: 'Symbol.toPrimitive',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive',
-      exec: function() {/*
+      exec: function () {/*
         var a = {}, b = {}, c = {};
         var passed = 0;
-        a[Symbol.toPrimitive] = function(hint) { passed += hint === "number";  return 0; };
-        b[Symbol.toPrimitive] = function(hint) { passed += hint === "string";  return 0; };
-        c[Symbol.toPrimitive] = function(hint) { passed += hint === "default"; return 0; };
+        a[Symbol.toPrimitive] = function (hint) { passed += hint === "number";  return 0; };
+        b[Symbol.toPrimitive] = function (hint) { passed += hint === "string";  return 0; };
+        c[Symbol.toPrimitive] = function (hint) { passed += hint === "default"; return 0; };
 
         a >= 0;
         b in {};
@@ -20686,7 +20686,7 @@ exports.tests = [
     {
       name: 'Symbol.toStringTag',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag',
-      exec: function() {/*
+      exec: function () {/*
         var a = {};
         a[Symbol.toStringTag] = "foo";
         return (a + "") === "[object foo]";
@@ -20718,20 +20718,20 @@ exports.tests = [
     },
     {
       name: 'Symbol.toStringTag affects existing built-ins',
-      exec: function() {/*
+      exec: function () {/*
         var s = Symbol.toStringTag;
         var passed = true;
         [
           [Array.prototype, []],
           [String.prototype, ''],
           [arguments, arguments],
-          [Function.prototype, function(){}],
+          [Function.prototype, function (){}],
           [Error.prototype, new Error()],
           [Boolean.prototype, true],
           [Number.prototype, 2],
           [Date.prototype, new Date()],
           [RegExp.prototype, /./]
-        ].forEach(function(pair){
+        ].forEach(function (pair){
           pair[0][s] = "foo";
           passed &= (Object.prototype.toString.call(pair[1]) === "[object foo]");
           delete pair[0][s];
@@ -20769,7 +20769,7 @@ exports.tests = [
     },
     {
       name: 'Symbol.toStringTag, new built-ins',
-      exec: function() {/*
+      exec: function () {/*
         var passed = true;
         var s = Symbol.toStringTag;
         [
@@ -20777,7 +20777,7 @@ exports.tests = [
           [Array, "Array Iterator"],
           [Map, "Map Iterator"],
           [Set, "Set Iterator"]
-        ].forEach(function(pair){
+        ].forEach(function (pair){
           var iterProto = Object.getPrototypeOf(new pair[0]()[Symbol.iterator]());
           passed = passed
             && iterProto.hasOwnProperty(s)
@@ -20820,7 +20820,7 @@ exports.tests = [
     },
     {
       name: 'Symbol.toStringTag, misc. built-ins',
-      exec: function() {/*
+      exec: function () {/*
         var s = Symbol.toStringTag;
         return Math[s] === "Math"
           && JSON[s] === "JSON";
@@ -20852,7 +20852,7 @@ exports.tests = [
     {
       name: 'Symbol.unscopables',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/unscopables',
-      exec: function() {/*
+      exec: function () {/*
         var a = { foo: 1, bar: 2 };
         a[Symbol.unscopables] = { bar: true };
         with (a) {
@@ -21149,7 +21149,7 @@ exports.tests = [
   subtests: [
     {
       name: 'hyphens in character sets',
-      exec: function() {/*
+      exec: function () {/*
         return /[\w-_]/.exec("-")[0] === "-";
       */},
       res: {
@@ -21178,7 +21178,7 @@ exports.tests = [
     },
     {
       name: 'invalid character escapes',
-      exec: function() {/*
+      exec: function () {/*
         return /\z/.exec("\\z")[0] === "z"
           && /[\z]/.exec("[\\z]")[0] === "z";
       */},
@@ -21206,7 +21206,7 @@ exports.tests = [
     },
     {
       name: 'invalid control-character escapes',
-      exec: function() {/*
+      exec: function () {/*
         return /\c2/.exec("\\c2")[0] === "\\c2";
       */},
       res: {
@@ -21233,7 +21233,7 @@ exports.tests = [
     },
     {
       name: 'invalid Unicode escapes',
-      exec: function() {/*
+      exec: function () {/*
         return /\u1/.exec("u1")[0] === "u1"
           && /[\u1]/.exec("u")[0] === "u";
       */},
@@ -21262,7 +21262,7 @@ exports.tests = [
     },
     {
       name: 'invalid hexadecimal escapes',
-      exec: function() {/*
+      exec: function () {/*
         return /\x1/.exec("x1")[0] === "x1"
           && /[\x1]/.exec("x")[0] === "x";
       */},
@@ -21290,7 +21290,7 @@ exports.tests = [
     },
     {
       name: 'incomplete patterns and quantifiers',
-      exec: function() {/*
+      exec: function () {/*
         return /x{1/.exec("x{1")[0] === "x{1"
           && /x]1/.exec("x]1")[0] === "x]1";
       */},
@@ -21321,7 +21321,7 @@ exports.tests = [
     },
     {
       name: 'octal escape sequences',
-      exec: function() {/*
+      exec: function () {/*
         return /\041/.exec("!")[0] === "!"
           && /[\041]/.exec("!")[0] === "!";
       */},
@@ -21349,7 +21349,7 @@ exports.tests = [
     },
     {
       name: 'invalid backreferences become octal escapes',
-      exec: function() {/*
+      exec: function () {/*
         return /\41/.exec("!")[0] === "!"
           && /[\41]/.exec("!")[0] === "!";
       */},
@@ -21517,7 +21517,7 @@ exports.tests = [
     {
       name: 'Array.from map function, array-like objects',
       exec: function () {/*
-        return Array.from({ 0: "foo", 1: "bar", length: 2 }, function(e, i) {
+        return Array.from({ 0: "foo", 1: "bar", length: 2 }, function (e, i) {
           return e + this.baz + i;
         }, { baz: "d" }) + '' === "food0,bard1";
       */},
@@ -21550,7 +21550,7 @@ exports.tests = [
       name: 'Array.from map function, generator instances',
       exec: function () {/*
         var iterable = (function*(){ yield "foo"; yield "bar"; yield "bal"; }());
-        return Array.from(iterable, function(e, i) {
+        return Array.from(iterable, function (e, i) {
           return e + this.baz + i;
         }, { baz: "d" }) + '' === "food0,bard1,bald2";
       */},
@@ -21583,7 +21583,7 @@ exports.tests = [
       name: 'Array.from map function, generic iterables',
       exec: function () {/*
         var iterable = global.__createIterableObject(["foo", "bar", "bal"]);
-        return Array.from(iterable, function(e, i) {
+        return Array.from(iterable, function (e, i) {
           return e + this.baz + i;
         }, { baz: "d" }) + '' === "food0,bard1,bald2";
       */},
@@ -21617,7 +21617,7 @@ exports.tests = [
       name: 'Array.from map function, instances of iterables',
       exec: function () {/*
         var iterable = global.__createIterableObject(["foo", "bar", "bal"]);
-        return Array.from(Object.create(iterable), function(e, i) {
+        return Array.from(Object.create(iterable), function (e, i) {
           return e + this.baz + i;
         }, { baz: "d" }) + '' === "food0,bard1,bald2";
       */},
@@ -21651,10 +21651,10 @@ exports.tests = [
       exec: function () {/*
         var closed = false;
         var iter = global.__createIterableObject([1, 2, 3], {
-          'return': function(){ closed = true; return {}; }
+          'return': function (){ closed = true; return {}; }
         });
         try {
-          Array.from(iter, function() { throw 42 });
+          Array.from(iter, function () { throw 42 });
         } catch(e){}
         return closed;
       */},
@@ -22526,7 +22526,7 @@ exports.tests = [
   category: 'built-in extensions',
   significance: 'small',
   spec: 'http://www.ecma-international.org/ecma-262/6.0/#sec-math',
-  subtests: (function(){
+  subtests: (function (){
     var methods = {
       'clz32': {
         ejs: true,
@@ -22968,18 +22968,18 @@ exports.tests = [
       }
     };
     var eqFn = ' === "function"';
-    return Object.keys(methods).map(function(m) {
+    return Object.keys(methods).map(function (m) {
       return {
         name: 'Math.' + m,
         mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/' + m,
-        exec: eval('0,function(){/*\n  return typeof Math.' +
+        exec: eval('0,function (){/*\n  return typeof Math.' +
           m + eqFn + ';\n*/}'),
         res: methods[m]
       };
     }).concat({
       name: 'Math.hypot',
       mdn: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot',
-      exec: function(){/*
+      exec: function (){/*
         return Math.hypot() === 0 &&
           Math.hypot(1) === 1 &&
           Math.hypot(9, 12, 20) === 25 &&
@@ -23718,8 +23718,8 @@ exports.tests = [
       name: 'basic functionality',
       exec: function () {/*
         class P extends Promise {}
-        var p1 = new P(function(resolve, reject) { resolve("foo"); });
-        var p2 = new P(function(resolve, reject) { reject("quux"); });
+        var p1 = new P(function (resolve, reject) { resolve("foo"); });
+        var p2 = new P(function (resolve, reject) { reject("quux"); });
         var score = +(p1 instanceof P);
 
         function thenFn(result)  { score += (result === "foo");  check(); }
@@ -23731,7 +23731,7 @@ exports.tests = [
         p1.catch(shouldNotRun);
         p2.catch(catchFn);
 
-        p1.then(function() {
+        p1.then(function () {
           // P.prototype.then() should return a new P
           score += p1.then() instanceof P && p1.then() !== p1;
           check();
@@ -23768,7 +23768,7 @@ exports.tests = [
       name: 'correct prototype chain',
       exec: function () {/*
         class C extends Promise {}
-        var c = new C(function(resolve, reject) { resolve("foo"); });
+        var c = new C(function (resolve, reject) { resolve("foo"); });
         return c instanceof C && c instanceof Promise && Object.getPrototypeOf(C) === Promise;
       */},
       res: {
@@ -23800,16 +23800,16 @@ exports.tests = [
       exec: function () {/*
         class P extends Promise {}
         var fulfills = P.all([
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"foo"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"foo"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"bar"); })
         ]);
         var rejects = P.all([
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"baz"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"baz"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"qux"); })
         ]);
         var score = +(fulfills instanceof P);
-        fulfills.then(function(result) { score += (result + "" === "foo,bar"); check(); });
-        rejects.catch(function(result) { score += (result === "qux"); check(); });
+        fulfills.then(function (result) { score += (result + "" === "foo,bar"); check(); });
+        rejects.catch(function (result) { score += (result === "qux"); check(); });
 
         function check() {
           if (score === 3) asyncTestPassed();
@@ -23842,16 +23842,16 @@ exports.tests = [
       exec: function () {/*
         class P extends Promise {}
         var fulfills = P.race([
-          new Promise(function(resolve)   { setTimeout(resolve,1000,"foo"); }),
-          new Promise(function(_, reject) { setTimeout(reject, 2000,"bar"); })
+          new Promise(function (resolve)   { setTimeout(resolve,1000,"foo"); }),
+          new Promise(function (_, reject) { setTimeout(reject, 2000,"bar"); })
         ]);
         var rejects = P.race([
-          new Promise(function(_, reject) { setTimeout(reject, 1000,"baz"); }),
-          new Promise(function(resolve)   { setTimeout(resolve,2000,"qux"); })
+          new Promise(function (_, reject) { setTimeout(reject, 1000,"baz"); }),
+          new Promise(function (resolve)   { setTimeout(resolve,2000,"qux"); })
         ]);
         var score = +(fulfills instanceof P);
-        fulfills.then(function(result) { score += (result === "foo"); check(); });
-        rejects.catch(function(result) { score += (result === "baz"); check(); });
+        fulfills.then(function (result) { score += (result === "foo"); check(); });
+        rejects.catch(function (result) { score += (result === "baz"); check(); });
 
         function check() {
           if (score === 3) asyncTestPassed();
@@ -24112,7 +24112,7 @@ exports.tests = [
         // Non-negative integer names, conversely, ignore order of creation
         obj[3] = true;
         // Having a total of 20+ properties doesn't affect property order
-        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
           obj[key] = true;
         });
         // Object.defineProperty doesn't affect the above rules
@@ -24168,7 +24168,7 @@ exports.tests = [
         };
         obj.A = true;
         obj[3] = true;
-        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
           obj[key] = true;
         });
         Object.defineProperty(obj, 'C', { value: true, enumerable: true });
@@ -24203,9 +24203,9 @@ exports.tests = [
         var result = '';
         var target = {};
 
-        "012349 DBACEFGHIJKLMNOPQRST".split('').concat(-1).forEach(function(key){
+        "012349 DBACEFGHIJKLMNOPQRST".split('').concat(-1).forEach(function (key){
           Object.defineProperty(target, key, {
-            set: function(){
+            set: function (){
               result += key;
             }
           })
@@ -24219,7 +24219,7 @@ exports.tests = [
         delete obj[2];
         obj[2] = true;
 
-        "EFGHIJKLMNOPQRST".split('').forEach(function(key){
+        "EFGHIJKLMNOPQRST".split('').forEach(function (key){
           obj[key] = key;
         });
 
@@ -24261,7 +24261,7 @@ exports.tests = [
         };
         obj.A = true;
         obj[3] = true;
-        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
           obj[key] = true;
         });
         Object.defineProperty(obj, 'C', { value: true, enumerable: true });
@@ -24339,7 +24339,7 @@ exports.tests = [
     },
     {
       name: 'Reflect.ownKeys, string key order',
-      exec: function() {/*
+      exec: function () {/*
         var obj = {
           2: true,
           0: true,
@@ -24352,7 +24352,7 @@ exports.tests = [
         };
         obj.A = true;
         obj[3] = true;
-        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+        "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
           obj[key] = true;
         });
         Object.defineProperty(obj, 'C', { value: true, enumerable: true });
@@ -24388,7 +24388,7 @@ exports.tests = [
     },
     {
       name: 'Reflect.ownKeys, symbol key order',
-      exec: function() {/*
+      exec: function () {/*
         var sym1 = Symbol(), sym2 = Symbol(), sym3 = Symbol();
         var obj = {
           1: true,
@@ -24442,7 +24442,7 @@ exports.tests = [
   subtests: [
     {
       name: 'var ⸯ;',
-      exec: function() {/*
+      exec: function () {/*
         try {
           eval('var ⸯ');
         } catch(e) {
@@ -24488,7 +24488,7 @@ exports.tests = [
     },
     {
       name: 'var 𐋀;',
-      exec: function() {/*
+      exec: function () {/*
         var 𐋀;
         return true;
       */},
@@ -24531,7 +24531,7 @@ exports.tests = [
     },
     {
       name: 'no escaped reserved words as identifiers',
-      exec: function() {/*
+      exec: function () {/*
         var \u0061;
         try {
           eval('var v\\u0061r');
@@ -24586,7 +24586,7 @@ exports.tests = [
   subtests: [
     {
       name: 'duplicate property names in strict mode',
-      exec: function(){/*
+      exec: function (){/*
         'use strict';
         return this === void undefined && ({ a:1, a:1 }).a === 1;
       */},
@@ -24614,7 +24614,7 @@ exports.tests = [
     },
     {
       name: 'no semicolon needed after do-while',
-      exec: function(){/*
+      exec: function (){/*
         do {} while (false) return true;
       */},
       res: {
@@ -24645,7 +24645,7 @@ exports.tests = [
     },
     {
       name: 'no assignments allowed in for-in head in strict mode',
-      exec: function(){/*
+      exec: function (){/*
        'use strict';
        try {
          eval('for (var i = 0 in {}) {}');
@@ -24681,7 +24681,7 @@ exports.tests = [
     },
     {
       name: 'accessors aren\'t constructors',
-      exec: function(){/*
+      exec: function (){/*
         var f = (Object.getOwnPropertyDescriptor({get a(){}}, 'a')).get;
         try {
           new f;
@@ -24712,7 +24712,7 @@ exports.tests = [
     },
     {
       name: 'Invalid Date',
-      exec: function(){/*
+      exec: function (){/*
         return new Date(NaN) + "" === "Invalid Date";
       */},
       res: {
@@ -24744,7 +24744,7 @@ exports.tests = [
     },
     {
       name: 'RegExp constructor can alter flags',
-      exec: function(){/*
+      exec: function (){/*
         return new RegExp(/./im, "g").global === true;
       */},
       res: {
@@ -24772,7 +24772,7 @@ exports.tests = [
     },
     {
       name: 'RegExp.prototype.toString generic and uses "flags" property',
-      exec: function(){/*
+      exec: function (){/*
         return RegExp.prototype.toString.call({source: 'foo', flags: 'bar'}) === '/foo/bar';
       */},
       res: {
@@ -24800,7 +24800,7 @@ exports.tests = [
     },
     {
       name: 'built-in prototypes are not instances',
-      exec: function(){/*
+      exec: function (){/*
         try {
           RegExp.prototype.exec(); return false;
         } catch(e) {}
@@ -24838,8 +24838,8 @@ exports.tests = [
     },
     {
       name: 'function \'length\' is configurable',
-      exec: function(){/*
-        var fn = function(a, b) {};
+      exec: function (){/*
+        var fn = function (a, b) {};
 
         var desc = Object.getOwnPropertyDescriptor(fn, "length");
         if (desc.configurable) {
@@ -24908,7 +24908,7 @@ exports.tests = [
 ];
 
 //Shift annex B features to the bottom
-exports.tests = exports.tests.reduce(function(a,e) {
+exports.tests = exports.tests.reduce(function (a,e) {
   var index = ['optimisation','syntax','bindings','functions',
     'built-ins','built-in extensions','subclassing','misc','annex b'].indexOf(e.category);
   if (index === -1) {
@@ -24916,6 +24916,6 @@ exports.tests = exports.tests.reduce(function(a,e) {
   }
   (a[index] = a[index] || []).push(e);
   return a;
-},[]).reduce(function(a,e) {
+},[]).reduce(function (a,e) {
   return a.concat(e);
 },[]);

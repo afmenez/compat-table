@@ -14,7 +14,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on global',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl === 'object';
       */},
       res: {
@@ -36,7 +36,7 @@ exports.tests = [
     },
     {
       name: 'has prototype of Object',
-      exec: function(){/*
+      exec: function (){/*
         return Intl.constructor === Object;
       */},
       res: {
@@ -65,7 +65,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on intl object',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.Collator === 'function';
       */},
       res: {
@@ -88,7 +88,7 @@ exports.tests = [
     {
       name: 'creates new Collator instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.3.1',
-      exec: function(){/*
+      exec: function (){/*
         return new Intl.Collator() instanceof Intl.Collator;
       */},
       res: {
@@ -111,7 +111,7 @@ exports.tests = [
     {
       name: 'constructor called without new creates instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.2.1',
-      exec: function(){/*
+      exec: function (){/*
         return Intl.Collator() instanceof Intl.Collator;
       */},
       res: {
@@ -135,7 +135,7 @@ exports.tests = [
 //    {
 //      name: 'calling Collator with Collator instance throws error',
 //      spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.1.1',
-//      exec: function(){/*
+//      exec: function (){/*
 //        try {
 //          Intl.Collator.call(Intl.Collator());
 //          return false;
@@ -154,7 +154,7 @@ exports.tests = [
 //    },
     {
       name: 'accepts valid language tags',
-      exec: function(){/*
+      exec: function (){/*
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
           var validLanguageTags = [
@@ -199,7 +199,7 @@ exports.tests = [
     {
       name: 'rejects invalid language tags',
       spec: 'https://github.com/tc39/ecma402/pull/289',
-      exec: function(){/*
+      exec: function (){/*
         if (typeof Intl.Collator !== 'function') return false;
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
@@ -242,7 +242,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Collator prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.Collator().compare === 'function';
       */},
       res: {
@@ -271,7 +271,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Collator prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.Collator().resolvedOptions === 'function';
       */},
       res: {
@@ -300,7 +300,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on intl object',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.NumberFormat === 'function';
       */},
       res: {
@@ -322,7 +322,7 @@ exports.tests = [
     },
     {
       name: 'exists on intl object',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.NumberFormat === 'function';
       */},
       res: {
@@ -345,7 +345,7 @@ exports.tests = [
     {
       name: 'creates new NumberFormat instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.3.1',
-      exec: function(){/*
+      exec: function (){/*
         return new Intl.NumberFormat() instanceof Intl.NumberFormat;
       */},
       res: {
@@ -368,7 +368,7 @@ exports.tests = [
     {
       name: 'constructor called without new creates instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.2.1',
-      exec: function(){/*
+      exec: function (){/*
         return Intl.NumberFormat() instanceof Intl.NumberFormat;
       */},
       res: {
@@ -392,7 +392,7 @@ exports.tests = [
 //    {
 //      name: 'calling NumberFormat with NumberFormat instance throws error',
 //      spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.1.1',
-//      exec: function(){/*
+//      exec: function (){/*
 //        try {
 //          Intl.NumberFormat.call(Intl.NumberFormat());
 //          return false;
@@ -411,7 +411,7 @@ exports.tests = [
 //    },
     {
       name: 'accepts valid language tags',
-      exec: function(){/*
+      exec: function (){/*
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
           var validLanguageTags = [
@@ -456,7 +456,7 @@ exports.tests = [
     {
       name: 'rejects invalid language tags',
       spec: 'https://github.com/tc39/ecma402/pull/289',
-      exec: function(){/*
+      exec: function (){/*
         if (typeof Intl.NumberFormat !== 'function') return false;
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
@@ -498,7 +498,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on intl object',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Intl.DateTimeFormat === 'function';
       */},
       res: {
@@ -521,7 +521,7 @@ exports.tests = [
     {
       name: 'creates new DateTimeFormat instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.3.1',
-      exec: function(){/*
+      exec: function (){/*
         return new Intl.DateTimeFormat() instanceof Intl.DateTimeFormat;
       */},
       res: {
@@ -544,7 +544,7 @@ exports.tests = [
     {
       name: 'constructor called without new creates instances',
       spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.2.1',
-      exec: function(){/*
+      exec: function (){/*
         return Intl.DateTimeFormat() instanceof Intl.DateTimeFormat;
       */},
       res: {
@@ -568,7 +568,7 @@ exports.tests = [
 //    {
 //      name: 'calling DateTimeFormat with DateTimeFormat instance throws error',
 //      spec: 'http://www.ecma-international.org/ecma-402/1.0/#sec-10.1.1.1',
-//      exec: function(){/*
+//      exec: function (){/*
 //        try {
 //          Intl.DateTimeFormat.call(Intl.DateTimeFormat());
 //          return false;
@@ -587,7 +587,7 @@ exports.tests = [
 //    },
     {
       name: 'accepts valid language tags',
-      exec: function(){/*
+      exec: function (){/*
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
           var validLanguageTags = [
@@ -632,7 +632,7 @@ exports.tests = [
     {
       name: 'rejects invalid language tags',
       spec: 'https://github.com/tc39/ecma402/pull/289',
-      exec: function(){/*
+      exec: function (){/*
         if (typeof Intl.DateTimeFormat !== 'function') return false;
         try {
           // Taken from https://github.com/tc39/test262/blob/83b07ff15eadb141c3d6f4d236a8733b720041d2/test/intl402/6.2.2_a.js
@@ -697,7 +697,7 @@ exports.tests = [
     },
     {
       name: 'accepts IANA timezone names',
-      exec: function() {/*
+      exec: function () {/*
         try {
           new Intl.DateTimeFormat('en-US', {
             timeZone: 'Australia/Sydney',
@@ -734,7 +734,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on String prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof String.prototype.localeCompare === 'function';
       */},
       res: {
@@ -767,7 +767,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Number prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Number.prototype.toLocaleString === 'function';
       */},
       res: {
@@ -800,7 +800,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Array prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Array.prototype.toLocaleString === 'function';
       */},
       res: {
@@ -833,7 +833,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Object prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Object.prototype.toLocaleString === 'function';
       */},
       res: {
@@ -866,7 +866,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Date prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Date.prototype.toLocaleString === 'function';
       */},
       res: {
@@ -899,7 +899,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Date prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Date.prototype.toLocaleDateString === 'function';
       */},
       res: {
@@ -932,7 +932,7 @@ exports.tests = [
   subtests: [
     {
       name: 'exists on Date prototype',
-      exec: function(){/*
+      exec: function (){/*
         return typeof Date.prototype.toLocaleTimeString === 'function';
       */},
       res: {

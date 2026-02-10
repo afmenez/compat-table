@@ -40,8 +40,8 @@ $('#body tbody tr').each(function (index) {
   }
 });
 
-process.on('exit', function(){
-  Object.keys(results).forEach(function(test) {
+process.on('exit', function (){
+  Object.keys(results).forEach(function (test) {
     var result = results[test];
     var name = desc[test];
     if (result === null) {

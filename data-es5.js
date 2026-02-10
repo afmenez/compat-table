@@ -1511,7 +1511,7 @@ exports.tests = [
     name: 'Function.prototype.apply permits array-likes',
     exec: function () {
       try {
-        return (function(a,b) { return a === 1 && b === 2; }).apply({}, {0:1, 1:2, length:2});
+        return (function (a,b) { return a === 1 && b === 2; }).apply({}, {0:1, 1:2, length:2});
       } catch (e) {
         return false;
       }
@@ -1607,7 +1607,7 @@ exports.tests = [
   {
     name: 'Arguments toStringTag is "Arguments"',
     exec: function () {/*
-      return (function(){ return Object.prototype.toString.call(arguments) === '[object Arguments]'; }());
+      return (function (){ return Object.prototype.toString.call(arguments) === '[object Arguments]'; }());
     */},
     res: {
       ie7: null,
@@ -1749,7 +1749,7 @@ exports.tests = [
     name: 'Thrown functions have proper "this" values',
     exec: function () {/*
       try {
-        throw function() { return !('a' in this); };
+        throw function () { return !('a' in this); };
       }
       catch(e) {
         var a = true;
@@ -1787,7 +1787,7 @@ exports.tests = [
   subtests: [
   {
     name: 'reserved words',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       var words = 'implements,interface,let,package,private,protected,public,static,yield'.split(',');
       for (var i = 0; i < 9; i+=1) {
@@ -1820,9 +1820,9 @@ exports.tests = [
   },
   {
     name: '"this" is undefined in functions',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
-      return this === void undefined && (function(){ return this === void undefined; }).call();
+      return this === void undefined && (function (){ return this === void undefined; }).call();
     */},
     res: {
       ie10: {
@@ -1853,11 +1853,11 @@ exports.tests = [
   },
   {
     name: '"this" is not coerced to object in primitive methods',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
-      return (function(){ return typeof this === 'string' }).call('')
-        && (function(){ return typeof this === 'number' }).call(1)
-        && (function(){ return typeof this === 'boolean' }).call(true);
+      return (function (){ return typeof this === 'string' }).call('')
+        && (function (){ return typeof this === 'number' }).call(1)
+        && (function (){ return typeof this === 'boolean' }).call(true);
     */},
     res: {
       ie10: true,
@@ -1884,7 +1884,7 @@ exports.tests = [
   },
   {
     name: '"this" is not coerced to object in primitive accessors',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
 
       function test(Class, instance) {
@@ -1928,7 +1928,7 @@ exports.tests = [
   },
   {
     name: 'legacy octal is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('010');     return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       try { eval('"\\010"'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
@@ -1960,7 +1960,7 @@ exports.tests = [
   },
   {
     name: 'assignment to unresolvable identifiers is a ReferenceError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('__i_dont_exist = 1'); } catch (err) { return err instanceof ReferenceError; }
     */},
@@ -1990,7 +1990,7 @@ exports.tests = [
   },
   {
     name: 'assignment to eval or arguments is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('eval = 1');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       try { eval('arguments = 1'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
@@ -2024,7 +2024,7 @@ exports.tests = [
   },
   {
     name: 'assignment to non-writable properties is a TypeError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { Object.defineProperty({},"x",{ writable: false }).x = 1; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
       try { Object.preventExtensions({}).x = 1;                      return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
@@ -2056,12 +2056,12 @@ exports.tests = [
   },
   {
     name: 'eval or arguments bindings is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('var eval');                return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       try { eval('var arguments');           return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
-      try { eval('(function(eval){})');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
-      try { eval('(function(arguments){})'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+      try { eval('(function (eval){})');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+      try { eval('(function (arguments){})'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       try { eval('try{}catch(eval){}');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       try { eval('try{}catch(arguments){}'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
       return true;
@@ -2092,7 +2092,7 @@ exports.tests = [
   },
   {
     name: 'arguments.caller removed or is a TypeError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       if ('caller' in arguments) {
         try { arguments.caller; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
@@ -2125,7 +2125,7 @@ exports.tests = [
   },
   {
     name: 'arguments.callee is a TypeError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { arguments.callee; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
       return true;
@@ -2155,11 +2155,11 @@ exports.tests = [
     }
   },
   {
-    name: '(function(){}).caller and (function(){}).arguments is a TypeError',
-    exec: function() {/*
+    name: '(function (){}).caller and (function (){}).arguments is a TypeError',
+    exec: function () {/*
       'use strict';
-      try { (function(){}).caller;    return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
-      try { (function(){}).arguments; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
+      try { (function (){}).caller;    return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
+      try { (function (){}).arguments; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
       return true;
     */},
     res: {
@@ -2188,12 +2188,12 @@ exports.tests = [
   },
   {
     name: 'arguments is unmapped',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
-      return (function(x){
+      return (function (x){
         x = 2;
         return arguments[0] === 1;
-      })(1) && (function(x){
+      })(1) && (function (x){
         arguments[0] = 2;
         return x === 1;
       })(1);
@@ -2226,7 +2226,7 @@ exports.tests = [
   },
   {
     name: 'eval() can\'t create bindings',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('var __some_unique_variable;'); __some_unique_variable; } catch (err) { return err instanceof ReferenceError; }
     */},
@@ -2256,7 +2256,7 @@ exports.tests = [
   },
   {
     name: 'deleting bindings is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('var x; delete x;'); } catch (err) { return err instanceof SyntaxError; }
     */},
@@ -2286,7 +2286,7 @@ exports.tests = [
   },
   {
     name: 'deleting non-configurable properties is a TypeError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { delete Object.prototype; } catch (err) { return err instanceof TypeError; }
     */},
@@ -2316,7 +2316,7 @@ exports.tests = [
   },
   {
     name: '"with" is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('with({}){}'); } catch (err) { return err instanceof SyntaxError; }
     */},
@@ -2346,7 +2346,7 @@ exports.tests = [
   },
   {
     name: 'repeated parameter names is a SyntaxError',
-    exec: function() {/*
+    exec: function () {/*
       'use strict';
       try { eval('function f(x, x) { }'); } catch (err) { return err instanceof SyntaxError; }
     */},
@@ -2376,7 +2376,7 @@ exports.tests = [
   },
   {
     name: 'function expressions with matching name and argument are valid',
-    exec: function() {/*
+    exec: function () {/*
       var foo = function bar(bar) {'use strict'};
       return typeof foo === 'function';
     */},
