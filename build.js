@@ -20,7 +20,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-require('object.assign').shim();
+var assign = require('object.assign/polyfill')();
 var pickBy = require('lodash.pickby');
 
 var environments = require('./environments');
@@ -113,9 +113,10 @@ process.nextTick(function () {
       compiler: String,
     },
   ].forEach(function (e){
-    Object.assign(es5, e);
-    es5.browsers = {};
-    es5.skeleton_file = 'es5/compiler-skeleton.html';
+    assign(es5, e, {
+      browsers: {},
+      skeleton_file: 'es5/compiler-skeleton.html',
+    });
     handle(es5);
   });
   [
@@ -301,9 +302,10 @@ process.nextTick(function () {
     },
     */
   ].forEach(function (e){
-    Object.assign(es6, e);
-    es6.browsers = {};
-    es6.skeleton_file = 'es6/compiler-skeleton.html';
+    assign(es6, e, {
+      browsers: {},
+      skeleton_file: 'es6/compiler-skeleton.html',
+    });
     handle(es6);
   });
   [
@@ -341,9 +343,10 @@ process.nextTick(function () {
       compiler: ts.transpile
     },
   ].forEach(function (e){
-    Object.assign(esnext, e);
-    esnext.browsers = {};
-    esnext.skeleton_file = 'esnext/compiler-skeleton.html';
+    assign(esnext, e, {
+      browsers: {},
+      skeleton_file: 'esnext/compiler-skeleton.html',
+    });
     handle(esnext);
   });
   [
@@ -381,9 +384,10 @@ process.nextTick(function () {
       compiler: ts.transpile
     },
   ].forEach(function (e){
-    Object.assign(es2016plus, e);
-    es2016plus.browsers = {};
-    es2016plus.skeleton_file = 'es2016plus/compiler-skeleton.html';
+    assign(es2016plus, e, {
+      browsers: {},
+      skeleton_file: 'es2016plus/compiler-skeleton.html',
+    });
     handle(es2016plus);
   });
 });
