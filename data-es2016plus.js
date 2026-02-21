@@ -3596,6 +3596,7 @@ exports.tests = [
         */},
         res: {
           chrome128: false,
+          chrome145: true,
           node22_0: false,
           firefox115: false,
           firefox128: false,
@@ -7134,6 +7135,7 @@ exports.tests = [
           firefox140: true,
           safari15: true,
           chrome90: false,
+          chrome145: true,
           graalvm21_3_3: graalvm.esStagingFlag,
           graalvm22_2: true,
           hermes0_7_0: false,
@@ -7587,6 +7589,7 @@ exports.tests = [
         res: {
           ie11: false,
           chrome128: false,
+          chrome145: true,
           node22_0: false,
           firefox115: false,
           firefox128: false,
