@@ -46513,11 +46513,1116 @@ return RegExp.escape(&quot;The Quick Brown Fox&quot;) === &quot;\\x54he\\x20Quic
 <td class="unknown" data-browser="opera_mobile77">?</td>
 <td class="unknown" data-browser="reactnative0_70_3">?</td>
 </tr>
+<tr class="supertest" significance="0.25"><td id="test-Uint8Array_to/from_base64_and_hex"><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex">&#xA7;</a><a href="https://github.com/tc39/proposal-arraybuffer-base64">Uint8Array to/from base64 and hex</a></span></td>
+<td class="tally obsolete" data-browser="tr" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="babel6corejs2" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="babel7corejs2" data-tally="0">0/6</td>
+<td class="tally" data-browser="babel7corejs3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20200927" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20210808" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20210906" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20211006" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20211107" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20220502" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="closure20220719" data-tally="0">0/6</td>
+<td class="tally" data-browser="closure20230228" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript2_9corejs2" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript3_9corejs3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript4_9corejs3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript5_6corejs3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript5_7corejs3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="typescript5_8corejs3" data-tally="0">0/6</td>
+<td class="tally" data-browser="typescript5_9corejs3" data-tally="0">0/6</td>
+<td class="tally" data-browser="es7shim" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ie11" data-tally="0">0/6</td>
+<td class="tally" data-browser="firefox115" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="firefox128" data-tally="0" data-flagged-tally="1">0/6</td>
+<td class="tally obsolete" data-browser="firefox134" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox135" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox136" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox137" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox138" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox139" data-tally="1">6/6</td>
+<td class="tally" data-browser="firefox140" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox141" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox142" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox143" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox144" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox145" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="firefox146" data-tally="1">6/6</td>
+<td class="tally" data-browser="firefox147" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="firefox148" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="firefox149" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="opera12_10" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome136" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome137" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome138" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome139" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome140" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="chrome141" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="chrome142" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="chrome143" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="chrome144" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="chrome145" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="chrome146" data-tally="1">6/6</td>
+<td class="tally" data-browser="chrome147" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="chrome148" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="chrome149" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge136" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="edge137" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="edge138" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="edge139" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="edge140" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="edge141" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge142" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge143" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge144" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge145" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="edge146" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="edge147" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari15_6" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="safari17_5" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="safari17_6" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="safari18" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="safari18_1" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="safari18_2" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari18_3" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari18_4" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari18_5" data-tally="1">6/6</td>
+<td class="tally" data-browser="safari18_6" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari26" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari26_1" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari26_2" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="safari26_3" data-tally="1">6/6</td>
+<td class="tally" data-browser="safari26_4" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="safaritp" data-tally="1">6/6</td>
+<td class="tally unstable" data-browser="webkit" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="opera102" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera103" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera104" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera105" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera106" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera107" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera108" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera109" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera110" data-tally="0">0/6</td>
+<td class="tally" data-browser="opera111" data-tally="0">0/6</td>
+<td class="tally unstable" data-browser="opera112" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="rhino1_7_15" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="rhino1_8_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="rhino1_9_0" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="phantom2_1" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="node18_3" data-tally="0">0/6</td>
+<td class="tally" data-browser="node20_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="node22_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="node23_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="node24_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="node25_0" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="duktape2_6" data-tally="0">0/6</td>
+<td class="tally" data-browser="duktape2_7" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="jerryscript2_3_0" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="jerryscript2_4_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="jerryscript3_0_0" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm19" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm19_3_6" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm20" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm20_1" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm20_3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm20_3_1" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="graalvm21" data-tally="0">0/6</td>
+<td class="tally" data-browser="graalvm21_3_3" data-tally="0">0/6</td>
+<td class="tally" data-browser="graalvm22_2" data-tally="0">0/6</td>
+<td class="tally" data-browser="graalvm25_0_1" data-tally="0" data-flagged-tally="1">0/6</td>
+<td class="tally obsolete" data-browser="hermes0_7_0" data-tally="0">0/6</td>
+<td class="tally" data-browser="hermes0_12_0" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="deno1_33" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="deno1_34" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="deno1_35" data-tally="0">0/6</td>
+<td class="tally" data-browser="deno1_36" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="android4_4" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="android4_4_3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios12_2" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios13_4" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios14_5" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios16_6" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_1" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_2" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_3" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_4" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_5" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="ios17_6" data-tally="0">0/6</td>
+<td class="tally" data-browser="ios18" data-tally="0">0/6</td>
+<td class="tally" data-browser="ios26" data-tally="1">6/6</td>
+<td class="tally obsolete" data-browser="samsung24" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="samsung25" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="samsung26" data-tally="0">0/6</td>
+<td class="tally" data-browser="samsung27" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera_mobile72" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera_mobile73" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera_mobile74" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera_mobile75" data-tally="0">0/6</td>
+<td class="tally obsolete" data-browser="opera_mobile76" data-tally="0">0/6</td>
+<td class="tally" data-browser="opera_mobile77" data-tally="0">0/6</td>
+<td class="tally" data-browser="reactnative0_70_3" data-tally="0">0/6</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.toBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.toBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.toBase64() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toBase64" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+return arr.toBase64() === &quot;SGVsbG8gV29ybGQ=&quot;;
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("292");try{return Function("asyncTestPassed","\nconst arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nreturn arr.toBase64() === \"SGVsbG8gV29ybGQ=\";\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("292");return Function("asyncTestPassed","'use strict';"+"\nconst arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nreturn arr.toBase64() === \"SGVsbG8gV29ybGQ=\";\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.fromBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.fromBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.fromBase64() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromBase64" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+const arr2 = Uint8Array.fromBase64(&quot;SGVsbG8gV29ybGQ=&quot;);
+return arr1.length === arr2.length &amp;&amp;
+       arr1.every((element, index) =&gt; element === arr2[index]);
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("293");try{return Function("asyncTestPassed","\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nconst arr2 = Uint8Array.fromBase64(\"SGVsbG8gV29ybGQ=\");\nreturn arr1.length === arr2.length &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("293");return Function("asyncTestPassed","'use strict';"+"\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nconst arr2 = Uint8Array.fromBase64(\"SGVsbG8gV29ybGQ=\");\nreturn arr1.length === arr2.length &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.setFromBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.setFromBase64()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromBase64_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.setFromBase64() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromBase64" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+let arr2 = new Uint8Array(16);
+let { read, written } = arr2.setFromBase64(&quot;SGVsbG8gV29ybGQ=&quot;);
+return read == 16 &amp;&amp; written == 11 &amp;&amp;
+       arr1.every((element, index) =&gt; element === arr2[index]);
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("294");try{return Function("asyncTestPassed","\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nlet arr2 = new Uint8Array(16);\nlet { read, written } = arr2.setFromBase64(\"SGVsbG8gV29ybGQ=\");\nreturn read == 16 && written == 11 &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("294");return Function("asyncTestPassed","'use strict';"+"\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nlet arr2 = new Uint8Array(16);\nlet { read, written } = arr2.setFromBase64(\"SGVsbG8gV29ybGQ=\");\nreturn read == 16 && written == 11 &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.toHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.toHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.toHex() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toHex" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+return arr.toHex() === &quot;48656c6c6f20576f726c64&quot;;
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("295");try{return Function("asyncTestPassed","\nconst arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nreturn arr.toHex() === \"48656c6c6f20576f726c64\";\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("295");return Function("asyncTestPassed","'use strict';"+"\nconst arr = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nreturn arr.toHex() === \"48656c6c6f20576f726c64\";\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.fromHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.fromHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.fromHex() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromHex" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+const arr2 = Uint8Array.fromHex(&quot;48656c6c6f20576f726c64&quot;);
+return arr1.length === arr2.length &amp;&amp;
+       arr1.every((element, index) =&gt; element === arr2[index]);
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("296");try{return Function("asyncTestPassed","\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nconst arr2 = Uint8Array.fromHex(\"48656c6c6f20576f726c64\");\nreturn arr1.length === arr2.length &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("296");return Function("asyncTestPassed","'use strict';"+"\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nconst arr2 = Uint8Array.fromHex(\"48656c6c6f20576f726c64\");\nreturn arr1.length === arr2.length &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
+<tr class="subtest" data-parent="Uint8Array_to/from_base64_and_hex" id="test-Uint8Array_to/from_base64_and_hex_Uint8Array.setFromHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;"><td><span><a class="anchor" href="#test-Uint8Array_to/from_base64_and_hex_Uint8Array.setFromHex()_a_href=_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromHex_title=_MDN_documentation_img_src=_../mdn.png_alt=_MDN_(Mozilla_Development_Network)_logo_width=_15_height=_13_/_/a_nbsp;">&#xA7;</a>Uint8Array.setFromHex() <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromHex" title="MDN documentation"><img src="../mdn.png" alt="MDN (Mozilla Development Network) logo" width="15" height="13"></a>&#xA0;</span><script data-source="
+const arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);
+let arr2 = new Uint8Array(16);
+let { read, written } = arr2.setFromHex(&quot;48656c6c6f20576f726c64&quot;);
+return read == 22 &amp;&amp; written == 11 &amp;&amp;
+       arr1.every((element, index) =&gt; element === arr2[index]);
+        ">test(function (){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("297");try{return Function("asyncTestPassed","\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nlet arr2 = new Uint8Array(16);\nlet { read, written } = arr2.setFromHex(\"48656c6c6f20576f726c64\");\nreturn read == 22 && written == 11 &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("297");return Function("asyncTestPassed","'use strict';"+"\nconst arr1 = new Uint8Array([72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]);\nlet arr2 = new Uint8Array(16);\nlet { read, written } = arr2.setFromHex(\"48656c6c6f20576f726c64\");\nreturn read == 22 && written == 11 &&\n       arr1.every((element, index) => element === arr2[index]);\n        ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+</script></td>
+<td class="unknown obsolete" data-browser="tr">?</td>
+<td class="unknown obsolete" data-browser="babel6corejs2">?</td>
+<td class="unknown obsolete" data-browser="babel7corejs2">?</td>
+<td class="unknown" data-browser="babel7corejs3">?</td>
+<td class="unknown obsolete" data-browser="closure20200927">?</td>
+<td class="unknown obsolete" data-browser="closure20210808">?</td>
+<td class="unknown obsolete" data-browser="closure20210906">?</td>
+<td class="unknown obsolete" data-browser="closure20211006">?</td>
+<td class="unknown obsolete" data-browser="closure20211107">?</td>
+<td class="unknown obsolete" data-browser="closure20220502">?</td>
+<td class="unknown obsolete" data-browser="closure20220719">?</td>
+<td class="unknown" data-browser="closure20230228">?</td>
+<td class="unknown obsolete" data-browser="typescript2_9corejs2">?</td>
+<td class="unknown obsolete" data-browser="typescript3_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript4_9corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_6corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_7corejs3">?</td>
+<td class="unknown obsolete" data-browser="typescript5_8corejs3">?</td>
+<td class="unknown" data-browser="typescript5_9corejs3">?</td>
+<td class="unknown" data-browser="es7shim">?</td>
+<td class="no obsolete" data-browser="ie11">No</td>
+<td class="no" data-browser="firefox115">No</td>
+<td class="no flagged obsolete" data-browser="firefox128">Flag<a href="#ff-uint8-hex-base64-note"><sup>[31]</sup></a></td>
+<td class="yes obsolete" data-browser="firefox134">Yes</td>
+<td class="yes obsolete" data-browser="firefox135">Yes</td>
+<td class="yes obsolete" data-browser="firefox136">Yes</td>
+<td class="yes obsolete" data-browser="firefox137">Yes</td>
+<td class="yes obsolete" data-browser="firefox138">Yes</td>
+<td class="yes obsolete" data-browser="firefox139">Yes</td>
+<td class="yes" data-browser="firefox140">Yes</td>
+<td class="yes obsolete" data-browser="firefox141">Yes</td>
+<td class="yes obsolete" data-browser="firefox142">Yes</td>
+<td class="yes obsolete" data-browser="firefox143">Yes</td>
+<td class="yes obsolete" data-browser="firefox144">Yes</td>
+<td class="yes obsolete" data-browser="firefox145">Yes</td>
+<td class="yes obsolete" data-browser="firefox146">Yes</td>
+<td class="yes" data-browser="firefox147">Yes</td>
+<td class="yes unstable" data-browser="firefox148">Yes</td>
+<td class="yes unstable" data-browser="firefox149">Yes</td>
+<td class="unknown obsolete" data-browser="opera12_10">?</td>
+<td class="no obsolete" data-browser="chrome136">No</td>
+<td class="no obsolete" data-browser="chrome137">No</td>
+<td class="no obsolete" data-browser="chrome138">No</td>
+<td class="no obsolete" data-browser="chrome139">No</td>
+<td class="no obsolete" data-browser="chrome140">No</td>
+<td class="yes obsolete" data-browser="chrome141">Yes</td>
+<td class="yes obsolete" data-browser="chrome142">Yes</td>
+<td class="yes obsolete" data-browser="chrome143">Yes</td>
+<td class="yes obsolete" data-browser="chrome144">Yes</td>
+<td class="yes obsolete" data-browser="chrome145">Yes</td>
+<td class="yes obsolete" data-browser="chrome146">Yes</td>
+<td class="yes" data-browser="chrome147">Yes</td>
+<td class="yes unstable" data-browser="chrome148">Yes</td>
+<td class="yes unstable" data-browser="chrome149">Yes</td>
+<td class="no obsolete" data-browser="edge136">No</td>
+<td class="no obsolete" data-browser="edge137">No</td>
+<td class="no obsolete" data-browser="edge138">No</td>
+<td class="no obsolete" data-browser="edge139">No</td>
+<td class="no obsolete" data-browser="edge140">No</td>
+<td class="yes obsolete" data-browser="edge141">Yes</td>
+<td class="yes obsolete" data-browser="edge142">Yes</td>
+<td class="yes obsolete" data-browser="edge143">Yes</td>
+<td class="yes obsolete" data-browser="edge144">Yes</td>
+<td class="yes obsolete" data-browser="edge145">Yes</td>
+<td class="yes obsolete" data-browser="edge146">Yes</td>
+<td class="yes unstable" data-browser="edge147">Yes</td>
+<td class="unknown obsolete" data-browser="safari15_6">?</td>
+<td class="unknown obsolete" data-browser="safari17_5">?</td>
+<td class="unknown obsolete" data-browser="safari17_6">?</td>
+<td class="unknown obsolete" data-browser="safari18">?</td>
+<td class="unknown obsolete" data-browser="safari18_1">?</td>
+<td class="yes obsolete" data-browser="safari18_2">Yes</td>
+<td class="yes obsolete" data-browser="safari18_3">Yes</td>
+<td class="yes obsolete" data-browser="safari18_4">Yes</td>
+<td class="yes obsolete" data-browser="safari18_5">Yes</td>
+<td class="yes" data-browser="safari18_6">Yes</td>
+<td class="yes obsolete" data-browser="safari26">Yes</td>
+<td class="yes obsolete" data-browser="safari26_1">Yes</td>
+<td class="yes obsolete" data-browser="safari26_2">Yes</td>
+<td class="yes obsolete" data-browser="safari26_3">Yes</td>
+<td class="yes" data-browser="safari26_4">Yes</td>
+<td class="yes unstable" data-browser="safaritp">Yes</td>
+<td class="yes unstable" data-browser="webkit">Yes</td>
+<td class="unknown obsolete" data-browser="opera102">?</td>
+<td class="unknown obsolete" data-browser="opera103">?</td>
+<td class="unknown obsolete" data-browser="opera104">?</td>
+<td class="unknown obsolete" data-browser="opera105">?</td>
+<td class="unknown obsolete" data-browser="opera106">?</td>
+<td class="unknown obsolete" data-browser="opera107">?</td>
+<td class="unknown obsolete" data-browser="opera108">?</td>
+<td class="unknown obsolete" data-browser="opera109">?</td>
+<td class="unknown obsolete" data-browser="opera110">?</td>
+<td class="unknown" data-browser="opera111">?</td>
+<td class="unknown unstable" data-browser="opera112">?</td>
+<td class="unknown obsolete" data-browser="rhino1_7_15">?</td>
+<td class="no obsolete" data-browser="rhino1_8_0">No</td>
+<td class="no" data-browser="rhino1_9_0">No</td>
+<td class="unknown obsolete" data-browser="phantom2_1">?</td>
+<td class="unknown obsolete" data-browser="node18_3">?</td>
+<td class="unknown" data-browser="node20_0">?</td>
+<td class="unknown" data-browser="node22_0">?</td>
+<td class="no" data-browser="node23_0">No</td>
+<td class="no" data-browser="node24_0">No</td>
+<td class="yes" data-browser="node25_0">Yes</td>
+<td class="unknown obsolete" data-browser="duktape2_6">?</td>
+<td class="unknown" data-browser="duktape2_7">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_3_0">?</td>
+<td class="unknown obsolete" data-browser="jerryscript2_4_0">?</td>
+<td class="unknown" data-browser="jerryscript3_0_0">?</td>
+<td class="unknown obsolete" data-browser="graalvm19">?</td>
+<td class="unknown obsolete" data-browser="graalvm19_3_6">?</td>
+<td class="unknown obsolete" data-browser="graalvm20">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3">?</td>
+<td class="unknown obsolete" data-browser="graalvm20_3_1">?</td>
+<td class="unknown obsolete" data-browser="graalvm21">?</td>
+<td class="no" data-browser="graalvm21_3_3">No</td>
+<td class="no" data-browser="graalvm22_2">No</td>
+<td class="no flagged" data-browser="graalvm25_0_1">Flag<a href="#graalvm-js-ecmascript-version-staging-note"><sup>[23]</sup></a></td>
+<td class="unknown obsolete" data-browser="hermes0_7_0">?</td>
+<td class="unknown" data-browser="hermes0_12_0">?</td>
+<td class="unknown obsolete" data-browser="deno1_33">?</td>
+<td class="unknown obsolete" data-browser="deno1_34">?</td>
+<td class="unknown obsolete" data-browser="deno1_35">?</td>
+<td class="unknown" data-browser="deno1_36">?</td>
+<td class="unknown obsolete" data-browser="android4_4">?</td>
+<td class="unknown obsolete" data-browser="android4_4_3">?</td>
+<td class="unknown obsolete" data-browser="ios12_2">?</td>
+<td class="unknown obsolete" data-browser="ios13_4">?</td>
+<td class="unknown obsolete" data-browser="ios14_5">?</td>
+<td class="unknown obsolete" data-browser="ios16_6">?</td>
+<td class="unknown obsolete" data-browser="ios17">?</td>
+<td class="unknown obsolete" data-browser="ios17_1">?</td>
+<td class="unknown obsolete" data-browser="ios17_2">?</td>
+<td class="unknown obsolete" data-browser="ios17_3">?</td>
+<td class="unknown obsolete" data-browser="ios17_4">?</td>
+<td class="unknown obsolete" data-browser="ios17_5">?</td>
+<td class="unknown obsolete" data-browser="ios17_6">?</td>
+<td class="unknown" data-browser="ios18">?</td>
+<td class="yes" data-browser="ios26">Yes</td>
+<td class="unknown obsolete" data-browser="samsung24">?</td>
+<td class="unknown obsolete" data-browser="samsung25">?</td>
+<td class="unknown obsolete" data-browser="samsung26">?</td>
+<td class="unknown" data-browser="samsung27">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile72">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile73">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile74">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile75">?</td>
+<td class="unknown obsolete" data-browser="opera_mobile76">?</td>
+<td class="unknown" data-browser="opera_mobile77">?</td>
+<td class="unknown" data-browser="reactnative0_70_3">?</td>
+</tr>
 </tbody>
     </table>
     <div id="footnotes">
       <!-- FOOTNOTES -->
-    <p id="harmony-flag-old-note">  <sup>[1]</sup> Flagged features have to be enabled via <code>--harmony</code> flag</p><p id="harmony-flag-note">  <sup>[2]</sup> Flagged features have to be enabled via <code>--harmony</code> or <code>--es_staging</code> flag</p><p id="graalvm-node-mode-note">  <sup>[3]</sup> Executed in Node.js/JVM mode via <code>graalvm/bin/node --jvm</code>.</p><p id="graalvm-js-intl-mode-note">  <sup>[4]</sup> Executed using <code>js --js.intl-402</code>.</p><p id="babel-core-js-note">  <sup>[5]</sup> This feature is supported when using Babel with <a href="https://github.com/zloirock/core-js">core-js</a>.</p><p id="typescript-core-js-note">  <sup>[6]</sup> This feature is supported when using TypeScript with <a href="https://github.com/zloirock/core-js">core-js</a>.</p><p id="new-gen-fn-note">  <sup>[7]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#67-new--generatorfunction">TC39 meeting notes from July 28, 2015.</a></p><p id="gen-throw-note">  <sup>[8]</sup> <a href="https://github.com/tc39/ecma262/issues/293">&apos;Semantics of yield* in throw case&apos; GitHub issue in ECMA-262 repo.</a></p><p id="typescript-downlevel-iteration-note">  <sup>[9]</sup> Requires the <code>downlevelIteration</code> compile option.</p><p id="strict-fn-non-strict-params-note">  <sup>[10]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-29.md#611-the-scope-of-use-strict-with-respect-to-destructuring-in-parameter-lists">TC39 meeting notes from July 29, 2015.</a></p><p id="nested-rest-destruct-decl-note">  <sup>[11]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#66-bindingrestelement-should-allow-a-bindingpattern-ala-assignmentrestelement">TC39 meeting notes from July 28, 2015.</a></p><p id="nested-rest-destruct-params-note">  <sup>[12]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#66-bindingrestelement-should-allow-a-bindingpattern-ala-assignmentrestelement">TC39 meeting notes from July 28, 2015.</a></p><p id="proxy-enumerate-removed-note">  <sup>[13]</sup> <a href="https://github.com/tc39/ecma262/pull/367">&apos;Normative: Remove [[Enumerate]] and associated reflective capabilities&apos; GitHub Pull Request in ECMA-262 repo.</a></p><p id="babel-regenerator-note">  <sup>[14]</sup> This feature requires native generators or <code>regenerator-runtime</code>, it&apos;s a part of <code>babel-polyfill</code> or <code>babel-runtime</code>.</p><p id="fx-shared-memory-cors-isolation-note">  <sup>[15]</sup> The feature is available with <a href="https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/">properly set CORS isolation headers</a> or via enabling <code>dom.postMessage.sharedArrayBuffer.bypassCOOP_COEP.insecure.enabled</code> setting under <code>about:config</code></p><p id="sf-shared-memory-spectre-note">  <sup>[16]</sup> The feature was <a href="https://webkit.org/blog/8048/what-spectre-and-meltdown-mean-for-webkit/">temporarily disabled</a> to mitigate the Meltdown and Spectre CPU bugs.</p><p id="chrome-experimental-note">  <sup>[17]</sup> The feature has to be enabled via &quot;Experimental Javascript features&quot; setting under <code>about:flags</code></p><p id="closure-object-assign-note">  <sup>[18]</sup> Requires native support for <code>Object.assign</code></p><p id="typescript-es6-note">  <sup>[19]</sup> TypeScript&apos;s compiler will accept code using this feature if the <code>--target ES6</code> flag is set, but passes it through unmodified and does not supply a runtime polyfill.</p><p id="flatten-compat-issue-note">  <sup>[20]</sup> Name of <code>Array.prototype.flatten()</code> changed to <code>Array.prototype.flat()</code> due to <a href="https://github.com/tc39/proposal-flatMap/pull/56">web compatibility issues.</a></p><p id="graalvm-js-ecmascript-version-2020-note">  <sup>[21]</sup> Requires the <code>--js.ecmascript-version=2020</code> flag.</p><p id="graalvm-js-ecmascript-version-2021-note">  <sup>[22]</sup> Requires the <code>--js.ecmascript-version=2021</code> flag.</p><p id="graalvm-js-ecmascript-version-staging-note">  <sup>[23]</sup> Requires the <code>--js.ecmascript-version=staging</code> flag.</p><p id="closure-at-method-note">  <sup>[24]</sup> Requires native support for <code>Math.trunc</code></p><p id="graalvm-js-ecmascript-version-2022-note">  <sup>[25]</sup> Requires the <code>--js.ecmascript-version=2022</code> flag.</p><p id="safari-at-method-note">  <sup>[26]</sup> The feature has to be enabled via <code>jscOptions=--useAtMethod=true</code> flag.</p><p id="closure-typed-array-note">  <sup>[27]</sup> Requires native support for typed arrays</p><p id="ff-array-grouping-note">  <sup>[28]</sup> The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.array_grouping</code> setting under <code>about:config</code>.</p><p id="chrome-harmony-note">  <sup>[29]</sup> The feature has to be enabled via <code>--js-flags=&quot;--harmony&quot;</code> flag</p><p id="ff-iterator-helpers-note">  <sup>[30]</sup> The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.iterator_helpers</code> setting under <code>about:config</code>.</p></div>
+    <p id="harmony-flag-old-note">  <sup>[1]</sup> Flagged features have to be enabled via <code>--harmony</code> flag</p><p id="harmony-flag-note">  <sup>[2]</sup> Flagged features have to be enabled via <code>--harmony</code> or <code>--es_staging</code> flag</p><p id="graalvm-node-mode-note">  <sup>[3]</sup> Executed in Node.js/JVM mode via <code>graalvm/bin/node --jvm</code>.</p><p id="graalvm-js-intl-mode-note">  <sup>[4]</sup> Executed using <code>js --js.intl-402</code>.</p><p id="babel-core-js-note">  <sup>[5]</sup> This feature is supported when using Babel with <a href="https://github.com/zloirock/core-js">core-js</a>.</p><p id="typescript-core-js-note">  <sup>[6]</sup> This feature is supported when using TypeScript with <a href="https://github.com/zloirock/core-js">core-js</a>.</p><p id="new-gen-fn-note">  <sup>[7]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#67-new--generatorfunction">TC39 meeting notes from July 28, 2015.</a></p><p id="gen-throw-note">  <sup>[8]</sup> <a href="https://github.com/tc39/ecma262/issues/293">&apos;Semantics of yield* in throw case&apos; GitHub issue in ECMA-262 repo.</a></p><p id="typescript-downlevel-iteration-note">  <sup>[9]</sup> Requires the <code>downlevelIteration</code> compile option.</p><p id="strict-fn-non-strict-params-note">  <sup>[10]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-29.md#611-the-scope-of-use-strict-with-respect-to-destructuring-in-parameter-lists">TC39 meeting notes from July 29, 2015.</a></p><p id="nested-rest-destruct-decl-note">  <sup>[11]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#66-bindingrestelement-should-allow-a-bindingpattern-ala-assignmentrestelement">TC39 meeting notes from July 28, 2015.</a></p><p id="nested-rest-destruct-params-note">  <sup>[12]</sup> <a href="https://github.com/rwaldron/tc39-notes/blob/master/es7/2015-07/july-28.md#66-bindingrestelement-should-allow-a-bindingpattern-ala-assignmentrestelement">TC39 meeting notes from July 28, 2015.</a></p><p id="proxy-enumerate-removed-note">  <sup>[13]</sup> <a href="https://github.com/tc39/ecma262/pull/367">&apos;Normative: Remove [[Enumerate]] and associated reflective capabilities&apos; GitHub Pull Request in ECMA-262 repo.</a></p><p id="babel-regenerator-note">  <sup>[14]</sup> This feature requires native generators or <code>regenerator-runtime</code>, it&apos;s a part of <code>babel-polyfill</code> or <code>babel-runtime</code>.</p><p id="fx-shared-memory-cors-isolation-note">  <sup>[15]</sup> The feature is available with <a href="https://hacks.mozilla.org/2020/07/safely-reviving-shared-memory/">properly set CORS isolation headers</a> or via enabling <code>dom.postMessage.sharedArrayBuffer.bypassCOOP_COEP.insecure.enabled</code> setting under <code>about:config</code></p><p id="sf-shared-memory-spectre-note">  <sup>[16]</sup> The feature was <a href="https://webkit.org/blog/8048/what-spectre-and-meltdown-mean-for-webkit/">temporarily disabled</a> to mitigate the Meltdown and Spectre CPU bugs.</p><p id="chrome-experimental-note">  <sup>[17]</sup> The feature has to be enabled via &quot;Experimental Javascript features&quot; setting under <code>about:flags</code></p><p id="closure-object-assign-note">  <sup>[18]</sup> Requires native support for <code>Object.assign</code></p><p id="typescript-es6-note">  <sup>[19]</sup> TypeScript&apos;s compiler will accept code using this feature if the <code>--target ES6</code> flag is set, but passes it through unmodified and does not supply a runtime polyfill.</p><p id="flatten-compat-issue-note">  <sup>[20]</sup> Name of <code>Array.prototype.flatten()</code> changed to <code>Array.prototype.flat()</code> due to <a href="https://github.com/tc39/proposal-flatMap/pull/56">web compatibility issues.</a></p><p id="graalvm-js-ecmascript-version-2020-note">  <sup>[21]</sup> Requires the <code>--js.ecmascript-version=2020</code> flag.</p><p id="graalvm-js-ecmascript-version-2021-note">  <sup>[22]</sup> Requires the <code>--js.ecmascript-version=2021</code> flag.</p><p id="graalvm-js-ecmascript-version-staging-note">  <sup>[23]</sup> Requires the <code>--js.ecmascript-version=staging</code> flag.</p><p id="closure-at-method-note">  <sup>[24]</sup> Requires native support for <code>Math.trunc</code></p><p id="graalvm-js-ecmascript-version-2022-note">  <sup>[25]</sup> Requires the <code>--js.ecmascript-version=2022</code> flag.</p><p id="safari-at-method-note">  <sup>[26]</sup> The feature has to be enabled via <code>jscOptions=--useAtMethod=true</code> flag.</p><p id="closure-typed-array-note">  <sup>[27]</sup> Requires native support for typed arrays</p><p id="ff-array-grouping-note">  <sup>[28]</sup> The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.array_grouping</code> setting under <code>about:config</code>.</p><p id="chrome-harmony-note">  <sup>[29]</sup> The feature has to be enabled via <code>--js-flags=&quot;--harmony&quot;</code> flag</p><p id="ff-iterator-helpers-note">  <sup>[30]</sup> The feature is only available on Nightly builds, and has to be enabled via <code>javascript.options.experimental.iterator_helpers</code> setting under <code>about:config</code>.</p><p id="ff-uint8-hex-base64-note">  <sup>[31]</sup> The feature has to be enabled via <code>javascript.options.experimental.uint8array_base64</code> setting under <code>about:config</code>.</p></div>
   </div>
   <pre class="info-tooltip" style="display:none"></pre>
 </body>
