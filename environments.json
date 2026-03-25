@@ -958,6 +958,19 @@
       "esnext"
     ]
   },
+  "typescript6corejs3": {
+    "full": "TypeScript 6.0 + core-js 3",
+    "short": "TypeScript+<br /><nobr>core-js 3</nobr>",
+    "family": "TypeScript",
+    "platformtype": "compiler",
+    "release": "2026-03-23",
+    "obsolete": false,
+    "test_suites": [
+      "es6",
+      "es2016plus",
+      "esnext"
+    ]
+  },
   "es5shim": {
     "full": "es5-shim",
     "short": "es5-shim",

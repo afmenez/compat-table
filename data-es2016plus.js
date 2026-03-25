@@ -8775,6 +8775,7 @@ exports.tests = [
       graalvm21_3_3: false,
       graalvm25_0_1: true,
       rhino1_8_0: false,
+      typescript6corejs3: true,
     }
   },
   {
