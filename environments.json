@@ -4620,10 +4620,17 @@
     "obsolete": true
   },
   "safari18_5": {
-    "full": "Safari 18.5 beta",
+    "full": "Safari 18.5",
     "family": "JavaScriptCore",
     "short": "SF&nbsp;18.5",
     "release": "2025-05-12",
+    "obsolete": true
+  },
+  "safari18_6": {
+    "full": "Safari 18.6",
+    "family": "JavaScriptCore",
+    "short": "SF&nbsp;18.6",
+    "release": "2025-07-29",
     "obsolete": false
   },
   "safari26": {
@@ -4631,8 +4638,36 @@
     "family": "JavaScriptCore",
     "short": "SF 26",
     "release": "2025-09-15",
-    "obsolete": false
+    "obsolete": true
   },
+  "safari26_1": {
+    "full": "Safari 26.1",
+    "family": "JavaScriptCore",
+    "short": "SF 26.1",
+    "release": "2025-11-03",
+    "obsolete": true
+  },
+  "safari26_2": {
+    "full": "Safari 26.2",
+    "family": "JavaScriptCore",
+    "short": "SF 26.2",
+    "release": "2025-12-12",
+    "obsolete": true
+  },
+  "safari26_3": {
+    "full": "Safari 26.3",
+    "family": "JavaScriptCore",
+    "short": "SF 26.3",
+    "release": "2026-02-11",
+    "obsolete": true
+  },
+  "safari26_4": {
+    "full": "Safari 26.4",
+    "family": "JavaScriptCore",
+    "short": "SF 26.4",
+    "release": "2026-03-24",
+    "obsolete": false
+  },  
   "safaritp": {
     "full": "Safari Technology Preview 217",
     "family": "JavaScriptCore",

@@ -3626,6 +3626,7 @@ exports.tests = [
           firefox146: false,
           firefox147: true,
           safari18_5: false,
+          safari26_4: true,
           graalvm21_3_3: false,
           rhino1_9_0: false
         }
